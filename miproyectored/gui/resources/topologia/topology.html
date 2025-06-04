@@ -68,7 +68,7 @@
         var edges = null;
         var network = null;
         var tooltip = document.getElementById('tooltip');
-        
+
         // Network data will be injected here by Python
         // INJECT_NETWORK_DATA_HERE
 
@@ -137,7 +137,7 @@
                 interaction: {
                     hover: true,
                     tooltipDelay: 0,
-                    hideEdgesOnDrag: true,
+                    hideEdgesOnDrag: false,  // Changed to false to keep edges visible when dragging
                     hideNodesOnDrag: false,
                     tooltip: false, // Desactivar completamente el tooltip nativo
                     hover: {
@@ -148,44 +148,44 @@
 
             // Initialize your network!
             network = new vis.Network(container, data, options);
-            
+
             // Hide loading message
             document.getElementById('loading').style.display = 'none';
 
             // Handle node hover for tooltips
             // Desactivar eventos de tooltip nativo
             network.off('hoverNode');
-            
+
             // Usar el evento de movimiento del mouse para controlar el tooltip personalizado
             network.on('hoverNode', function(params) {
                 var nodeId = params.node;
                 var node = nodes.get(nodeId);
-                
+
                 if (node) {
                     var tooltipContent = '';
-                    
+
                     // Añadir IP
                     if (node.ip) {
                         tooltipContent += '<div><span class="tooltip-label">IP:</span> ' + node.ip + '</div>';
                     }
-                    
+
                     // Añadir Hostname (usando node.label como hostname)
                     if (node.label) {
                         tooltipContent += '<div><span class="tooltip-label">Hostname:</span> ' + node.label + '</div>';
                     }
-                    
+
                     // Añadir MAC
                     if (node.mac) {
                         tooltipContent += '<div><span class="tooltip-label">MAC:</span> ' + node.mac + '</div>';
                     }
-                    
+
                     tooltip.innerHTML = tooltipContent;
                     tooltip.style.display = 'block';
-                    
+
                     // Obtener posición del nodo
                     var position = network.getPosition(nodeId);
                     var canvasPosition = network.canvasToDOM(position);
-                    
+
                     // Posicionar el tooltip ligeramente a la derecha del nodo
                     tooltip.style.left = (canvasPosition.x + 20) + 'px';
                     tooltip.style.top = (canvasPosition.y - 20) + 'px';
@@ -196,7 +196,7 @@
             network.on('blurNode', function() {
                 tooltip.style.display = 'none';
             });
-            
+
             // También ocultar tooltip cuando el mouse sale del contenedor
             document.getElementById('mynetwork').addEventListener('mouseleave', function() {
                 tooltip.style.display = 'none';

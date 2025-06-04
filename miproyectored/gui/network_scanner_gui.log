@@ -1,26 +1,26 @@
-2025-06-04 22:55:13,720 - miproyectored - INFO - ================================================================================
-2025-06-04 22:55:13,721 - miproyectored - INFO - Iniciando nueva sesión - 2025-06-04 22:55:13
-2025-06-04 22:55:13,721 - miproyectored - INFO - ================================================================================
-2025-06-04 22:55:13,844 - miproyectored - INFO - Rango de red local detectado: 192.168.1.0/24
-2025-06-04 22:55:13,975 - miproyectored - INFO - Interfaz gráfica inicializada correctamente
-2025-06-04 22:55:17,091 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
-2025-06-04 22:55:17,091 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
-2025-06-04 22:55:17,091 - miproyectored - DEBUG - [DEBUG] No hay dispositivos en self.scan_results para mostrar
-2025-06-04 22:55:17,092 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo rápido para encontrar hosts activos
-2025-06-04 22:55:23,558 - miproyectored - DEBUG - [DEBUG] Escaneo rápido completado. IPs activas encontradas: 11
-2025-06-04 22:55:23,558 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 11 IPs activas
-2025-06-04 22:55:23,562 - miproyectored - DEBUG - [DEBUG] Usando 5 workers para escaneo paralelo
-2025-06-04 22:55:23,562 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.1
-2025-06-04 22:55:23,563 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.37
-2025-06-04 22:55:23,563 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.44
-2025-06-04 22:55:23,563 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.47
-2025-06-04 22:55:23,564 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.51
-2025-06-04 22:55:53,146 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.51 (return code 0):
+2025-06-04 23:26:38,688 - miproyectored - INFO - ================================================================================
+2025-06-04 23:26:38,688 - miproyectored - INFO - Iniciando nueva sesión - 2025-06-04 23:26:38
+2025-06-04 23:26:38,688 - miproyectored - INFO - ================================================================================
+2025-06-04 23:26:38,797 - miproyectored - INFO - Rango de red local detectado: 192.168.1.0/24
+2025-06-04 23:26:38,928 - miproyectored - INFO - Interfaz gráfica inicializada correctamente
+2025-06-04 23:26:40,471 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:26:40,471 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:26:40,471 - miproyectored - DEBUG - [DEBUG] No hay dispositivos en self.scan_results para mostrar
+2025-06-04 23:26:40,472 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo rápido para encontrar hosts activos
+2025-06-04 23:26:47,565 - miproyectored - DEBUG - [DEBUG] Escaneo rápido completado. IPs activas encontradas: 11
+2025-06-04 23:26:47,566 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 11 IPs activas
+2025-06-04 23:26:47,571 - miproyectored - DEBUG - [DEBUG] Usando 5 workers para escaneo paralelo
+2025-06-04 23:26:47,572 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.1
+2025-06-04 23:26:47,572 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.37
+2025-06-04 23:26:47,573 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.47
+2025-06-04 23:26:47,573 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.51
+2025-06-04 23:26:47,573 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.56
+2025-06-04 23:27:15,879 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.51 (return code 0):
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.51 -->
-<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.51" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:26:47 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.51 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.51" start="1749076007" startstr="Wed Jun  4 23:26:47 2025" version="7.97" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
@@ -30,7 +30,7 @@
 <hostnames>
 </hostnames>
 </hosthint>
-<host starttime="1749074124" endtime="1749074153"><status state="up" reason="arp-response" reason_ttl="0"/>
+<host starttime="1749076008" endtime="1749076035"><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.1.51" addrtype="ipv4"/>
 <address addr="26:96:82:AE:20:66" addrtype="mac"/>
 <hostnames>
@@ -41,40 +41,40 @@
 <port protocol="tcp" portid="46155"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
 </ports>
 <os><portused state="closed" proto="tcp" portid="1"/>
-<portused state="closed" proto="udp" portid="42482"/>
+<portused state="closed" proto="udp" portid="39007"/>
 </os>
 <distance value="1"/>
 <trace>
-<hop ttl="1" ipaddr="192.168.1.51" rtt="4.88"/>
+<hop ttl="1" ipaddr="192.168.1.51" rtt="7.34"/>
 </trace>
-<times srtt="4875" rttvar="983" to="100000"/>
+<times srtt="7345" rttvar="3875" to="100000"/>
 </host>
-<runstats><finished time="1749074153" timestr="Wed Jun  4 22:55:53 2025" summary="Nmap done at Wed Jun  4 22:55:53 2025; 1 IP address (1 host up) scanned in 29.54 seconds" elapsed="29.54" exit="success"/><hosts up="1" down="0" total="1"/>
+<runstats><finished time="1749076035" timestr="Wed Jun  4 23:27:15 2025" summary="Nmap done at Wed Jun  4 23:27:15 2025; 1 IP address (1 host up) scanned in 28.25 seconds" elapsed="28.25" exit="success"/><hosts up="1" down="0" total="1"/>
 </runstats>
 </nmaprun>
 
-2025-06-04 22:55:53,147 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.51
-2025-06-04 22:55:53,147 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.58
-2025-06-04 22:55:53,147 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.51
-2025-06-04 22:55:53,147 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.51, Hostname=192.168.1.51, Tipo=<class 'miproyectored.model.device.Device'>
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.51
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.51
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 1
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51']
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 1 dispositivos
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51']
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
-2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
-2025-06-04 22:55:53,158 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
-2025-06-04 22:56:45,113 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.37 (return code 0):
+2025-06-04 23:27:15,880 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.51
+2025-06-04 23:27:15,880 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.58
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.51
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.51, Hostname=192.168.1.51, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.51
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.51
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 1
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51']
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 1 dispositivos
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51']
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:27:15,881 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:27:15,886 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 23:28:10,312 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.37 (return code 0):
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.37 -->
-<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.37" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:26:47 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.37 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.37" start="1749076007" startstr="Wed Jun  4 23:26:47 2025" version="7.97" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
@@ -84,7 +84,7 @@
 <hostnames>
 </hostnames>
 </hosthint>
-<host starttime="1749074124" endtime="1749074204"><status state="up" reason="arp-response" reason_ttl="0"/>
+<host starttime="1749076008" endtime="1749076090"><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.1.37" addrtype="ipv4"/>
 <address addr="90:39:5F:E4:D8:B8" addrtype="mac" vendor="Amazon Technologies"/>
 <hostnames>
@@ -96,13 +96,13 @@
 <port protocol="tcp" portid="8009"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tcpwrapped" method="probed" conf="8"/><script id="ajp-methods" output="Failed to get a valid response for the OPTION request"/></port>
 <port protocol="tcp" portid="36065"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Amazon FireTV Stick" devicetype="media device" method="probed" conf="10"/><script id="http-headers" output="&#xa;  &#xa;  (Request type: GET)&#xa;"/><script id="http-title" output="Site doesn&apos;t have a title."></script></port>
 <port protocol="tcp" portid="40027"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tcpwrapped" method="probed" conf="8"/></port>
-<port protocol="tcp" portid="55442"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="nagios-nsca" product="Nagios NSCA" method="probed" conf="10"/><script id="banner" output="HTTP/1.1 500 Server Error\x0D\x0AContent-Length: 48\x0D\x0ADate&#xa;: Wed, 04 Jun 2025 21:55:53 GMT\x0D\x0AConnection: close"/></port>
+<port protocol="tcp" portid="55442"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="nagios-nsca" product="Nagios NSCA" method="probed" conf="10"/><script id="banner" output="HTTP/1.1 500 Server Error\x0D\x0AContent-Length: 48\x0D\x0ADate&#xa;: Wed, 04 Jun 2025 22:27:18 GMT\x0D\x0AConnection: close\x0D\x0A\x0D...&#xa;"/></port>
 <port protocol="tcp" portid="55443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" tunnel="ssl" method="table" conf="3"/></port>
 <port protocol="tcp" portid="60000"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tcpwrapped" method="probed" conf="8"/></port>
 </ports>
 <os><portused state="open" proto="tcp" portid="5555"/>
 <portused state="closed" proto="tcp" portid="1"/>
-<portused state="closed" proto="udp" portid="41319"/>
+<portused state="closed" proto="udp" portid="40183"/>
 <osmatch name="Linux 5.4" accuracy="97" line="72252">
 <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:5.4</cpe></osclass>
 </osmatch>
@@ -138,30 +138,45 @@
 <osmatch name="Linux 2.6.18 - 2.6.32" accuracy="94" line="53704">
 <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="94"><cpe>cpe:/o:linux:linux_kernel:2.6</cpe></osclass>
 </osmatch>
-<osfingerprint fingerprint="OS:SCAN(V=7.97%E=4%D=6/4%OT=5555%CT=1%CU=41319%PV=Y%DS=1%DC=D%G=Y%M=90395F%&#xa;OS:TM=6840C11D%P=i686-pc-windows-windows)SEQ(SP=102%GCD=1%ISR=109%TI=Z%CI=Z&#xa;OS:%II=I%TS=A)SEQ(SP=106%GCD=1%ISR=109%TI=Z%CI=Z%II=I%TS=A)SEQ(SP=FD%GCD=1%&#xa;OS:ISR=10E%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M5B4ST11NW8%O2=M5B4ST11NW8%O3=M5B4NNT&#xa;OS:11NW8%O4=M5B4ST11NW8%O5=M5B4ST11NW8%O6=M5B4ST11)WIN(W1=FE88%W2=FE88%W3=F&#xa;OS:E88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M5B4%CC=N%Q=)T1(R&#xa;OS:=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=&#xa;OS:A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=&#xa;OS:Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=A&#xa;OS:R%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%R&#xa;OS:UD=G)IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
+<osfingerprint fingerprint="OS:SCAN(V=7.97%E=4%D=6/4%OT=5555%CT=1%CU=40183%PV=Y%DS=1%DC=D%G=Y%M=90395F%&#xa;OS:TM=6840C87A%P=i686-pc-windows-windows)SEQ(SP=104%GCD=1%ISR=10C%TI=Z%CI=Z&#xa;OS:%II=I%TS=A)SEQ(SP=107%GCD=2%ISR=10A%TI=Z%CI=Z%II=I%TS=A)SEQ(SP=108%GCD=1&#xa;OS:%ISR=108%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M5B4ST11NW8%O2=M5B4ST11NW8%O3=M5B4NN&#xa;OS:T11NW8%O4=M5B4ST11NW8%O5=M5B4ST11NW8%O6=M5B4ST11)WIN(W1=FE88%W2=FE88%W3=&#xa;OS:FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M5B4%CC=N%Q=)T1(&#xa;OS:R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S&#xa;OS:=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R&#xa;OS:=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=&#xa;OS:AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%&#xa;OS:RUD=G)IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
 </os>
-<uptime seconds="2102842" lastboot="Sun May 11 14:49:23 2025"/>
+<uptime seconds="2104727" lastboot="Sun May 11 14:49:23 2025"/>
 <distance value="1"/>
-<tcpsequence index="262" difficulty="Good luck!" values="70DF8F41,8484D61E,7471DD46,C21AB61A,43E3346C,8714673A"/>
+<tcpsequence index="260" difficulty="Good luck!" values="4D652BC0,9BEFE039,6D438EE3,F30CA2F4,60820BC4,451BACAF"/>
 <ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
-<tcptssequence class="1000HZ" values="7D560A9B,7D560AD1,7D560B46,7D560BDB,7D560C1B,7D560CA0"/>
+<tcptssequence class="1000HZ" values="7D72CD5B,7D72CDD1,7D72CE06,7D72CE9B,7D72CF1B,7D72CF60"/>
 <trace>
-<hop ttl="1" ipaddr="192.168.1.37" rtt="9.95"/>
+<hop ttl="1" ipaddr="192.168.1.37" rtt="6.85"/>
 </trace>
-<times srtt="9955" rttvar="6086" to="100000"/>
+<times srtt="6847" rttvar="4573" to="100000"/>
 </host>
-<runstats><finished time="1749074205" timestr="Wed Jun  4 22:56:45 2025" summary="Nmap done at Wed Jun  4 22:56:45 2025; 1 IP address (1 host up) scanned in 81.48 seconds" elapsed="81.48" exit="success"/><hosts up="1" down="0" total="1"/>
+<runstats><finished time="1749076090" timestr="Wed Jun  4 23:28:10 2025" summary="Nmap done at Wed Jun  4 23:28:10 2025; 1 IP address (1 host up) scanned in 82.68 seconds" elapsed="82.68" exit="success"/><hosts up="1" down="0" total="1"/>
 </runstats>
 </nmaprun>
 
-2025-06-04 22:56:45,116 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.37
-2025-06-04 22:56:45,117 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.59
-2025-06-04 22:56:50,585 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.58 (return code 0):
+2025-06-04 23:28:10,313 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.37
+2025-06-04 23:28:10,313 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.59
+2025-06-04 23:28:10,313 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.37
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.37, Hostname=192.168.1.37, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.37
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.37
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 2
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37']
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 2 dispositivos
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37']
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:28:10,314 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:28:10,335 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 23:28:13,108 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.58 (return code 0):
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:53 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.58 -->
-<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.58" start="1749074153" startstr="Wed Jun  4 22:55:53 2025" version="7.97" xmloutputversion="1.05">
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:27:16 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.58 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.58" start="1749076036" startstr="Wed Jun  4 23:27:16 2025" version="7.97" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
@@ -171,7 +186,7 @@
 <hostnames>
 </hostnames>
 </hosthint>
-<host starttime="1749074154" endtime="1749074210"><status state="up" reason="arp-response" reason_ttl="0"/>
+<host starttime="1749076037" endtime="1749076092"><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.1.58" addrtype="ipv4"/>
 <address addr="26:96:82:AE:20:66" addrtype="mac"/>
 <hostnames>
@@ -179,12 +194,12 @@
 <ports><extraports state="closed" count="65530">
 <extrareasons reason="reset" count="65530" proto="tcp" ports="1-21,23-79,81-442,444-3516,3518-7546,7548-65535"/>
 </extraports>
-<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="Dropbear sshd" version="2022.83" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:matt_johnston:dropbear_ssh_server:2022.83</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-auth-methods" output="&#xa;  Supported authentication methods: &#xa;    password"><table key="Supported authentication methods">
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="Dropbear sshd" version="2022.83" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:matt_johnston:dropbear_ssh_server:2022.83</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="banner" output="SSH-2.0-dropbear_2022.83\x0D\x0A\x00\x00\x01\x84\x0B\x14\x0Fv&apos;t&#xa;/[\xEB\x13IR|\xB4\x9F\x89=P\x00\x00\x00\x84curve25519-sha256,curve25...&#xa;"/><script id="ssh-auth-methods" output="&#xa;  Supported authentication methods: &#xa;    password"><table key="Supported authentication methods">
 <elem>password</elem>
 </table>
-</script><script id="banner" output="SSH-2.0-dropbear_2022.83\x0D\x0A\x00\x00\x01\x84\x0B\x14\xF4\xC&#xa;8\x0E\x83\x08\xCA\xFF\x13\xB1[}wZ\x13Ru\x00\x00\x00\x84curve25519-sh...&#xa;"/></port>
-<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="rtsp" method="probed" conf="10"/><script id="http-title" output="movistar"><elem key="title">movistar</elem>
-</script><script id="rtsp-methods" output="ERROR: Script execution failed (use -d to debug)"/><script id="http-headers" output="&#xa;  Server: mini_httpd&#xa;  Date: Wed, 04 Jun 2025 22:56:33 GMT&#xa;  X-Frame-Options: SAMEORIGIN&#xa;  Content-Security-Policy: default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;;style-src &apos;self&apos; &apos;unsafe-inline&apos;&#xa;  X-Content-Type-Options: nosniff&#xa;  X-XSS-Protection: 1; mode=block&#xa;  Content-Type: text/html&#xa;  &#xa;  (Request type: GET)&#xa;"/></port>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="rtsp" method="probed" conf="10"/><script id="rtsp-methods" output="ERROR: Script execution failed (use -d to debug)"/><script id="http-headers" output="&#xa;  Server: mini_httpd&#xa;  Date: Wed, 04 Jun 2025 23:27:54 GMT&#xa;  X-Frame-Options: SAMEORIGIN&#xa;  Content-Security-Policy: default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;;style-src &apos;self&apos; &apos;unsafe-inline&apos;&#xa;  X-Content-Type-Options: nosniff&#xa;  X-XSS-Protection: 1; mode=block&#xa;  Content-Type: text/html&#xa;  &#xa;  (Request type: GET)&#xa;"/><script id="http-title" output="movistar"><elem key="title">movistar</elem>
+</script></port>
 <port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="https" tunnel="ssl" method="table" conf="3"/><script id="ssl-cert" output="Subject: commonName=192.168.1.90/organizationName=Grupo Telefonica/stateOrProvinceName=A78923125/countryName=PL&#xa;Not valid before: 2025-01-23T05:39:14&#xa;Not valid after:  2030-01-22T05:39:14"><table key="subject">
 <elem key="commonName">192.168.1.90</elem>
 <elem key="countryName">PL</elem>
@@ -220,14 +235,14 @@
 <elem key="sha1">cad4156af7fcdad56232f454cdbce4d2f36c5d3d</elem>
 <elem key="sha256">14a4103270868c56339f39571ad406b7b7f9662fdf904c6696b9a3510b5ccaac</elem>
 <elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDrTCCApWgAwIBAgIUNAQGiSYDTMSocTdXdwK1en+EwXEwDQYJKoZIhvcNAQEL&#xa;BQAwgYQxCzAJBgNVBAYTAlBMMRIwEAYDVQQIDAlBNzg5MjMxMjUxLzAtBgNVBAcM&#xa;JlBaLiBERSBMQSBJTkRFUEVOREVOQ0lBIDYgMjgwMDEgTUFEUklEMRkwFwYDVQQK&#xa;DBBHcnVwbyBUZWxlZm9uaWNhMRUwEwYDVQQDDAwxOTIuMTY4LjEuOTAwHhcNMjUw&#xa;MTIzMDUzOTE0WhcNMzAwMTIyMDUzOTE0WjCBhDELMAkGA1UEBhMCUEwxEjAQBgNV&#xa;BAgMCUE3ODkyMzEyNTEvMC0GA1UEBwwmUFouIERFIExBIElOREVQRU5ERU5DSUEg&#xa;NiAyODAwMSBNQURSSUQxGTAXBgNVBAoMEEdydXBvIFRlbGVmb25pY2ExFTATBgNV&#xa;BAMMDDE5Mi4xNjguMS45MDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB&#xa;AKn7nTGyOJwnQribZsankBAOZ6KQXzusLOzLz2n0bUNVf68uPJyszS9xVfhKuofj&#xa;nsWBJ90CAF9iMgWDa7rzncwfrss+UNT+l4K474/jAXwMTaUQfp5Wb0FCNKr3zfN3&#xa;HpAkBAtuZOkASBPG2U0WUumu+S80+kuiD0MA/QkMUIR5XPaHrihoUB1nGSdMuZ6g&#xa;hzXDaohPRAP+fPQsmwzkBCLEqMc80VUOjTdXStHST+V+SzxXMw8/zCo7iul9ACZP&#xa;LwU9gNeARGcqc7aUQUl3Nv8Fx7j+7DwRHcL2oGrfGX5s3ZkjCbnMRQgDfmMiGKs3&#xa;DNbsmE9CKMVRHxGdMBmMus8CAwEAAaMVMBMwEQYJYIZIAYb4QgEBBAQDAgZAMA0G&#xa;CSqGSIb3DQEBCwUAA4IBAQCm3cYrBpUyZxreUoGTV0gdvWrJR/+tusOqPXYGqHTu&#xa;DXybee4hbvHqu2ux26RFiQ+hQryW5H2NRfvaOVUL+gdu25loCDx1MYDcr6MUjADr&#xa;ftPHb+Va+qaQMr7kLHck5oqCX6QbFMQxM7IjwGRedeFjfxcIfKR6Rs7KHL1cciMb&#xa;B6Ds0KMqfv4XUlQuipfAUnfBozW2c27Uw6j7FVrNhXghGPPT/QyMrSo4iYkPrJJw&#xa;gG3eCFw1Nf/HCh8I1l0QqR5GuJKM24FmlpN713kAhsbyKAwFRyji7kyBFWyXaCS6&#xa;v5SkhznWo9XfHGnHdtNHxPEGZeqaT3FfaYHAAmoNpyPu&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
-</script><script id="http-headers" output="&#xa;  Server: mini_httpd&#xa;  Date: Wed, 04 Jun 2025 22:56:33 GMT&#xa;  X-Frame-Options: SAMEORIGIN&#xa;  Content-Security-Policy: default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;;style-src &apos;self&apos; &apos;unsafe-inline&apos;&#xa;  X-Content-Type-Options: nosniff&#xa;  X-XSS-Protection: 1; mode=block&#xa;  Content-Type: text/html&#xa;  &#xa;  (Request type: GET)&#xa;"/><script id="http-title" output="movistar"><elem key="title">movistar</elem>
+</script><script id="http-headers" output="&#xa;  Server: mini_httpd&#xa;  Date: Wed, 04 Jun 2025 23:27:56 GMT&#xa;  X-Frame-Options: SAMEORIGIN&#xa;  Content-Security-Policy: default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;;style-src &apos;self&apos; &apos;unsafe-inline&apos;&#xa;  X-Content-Type-Options: nosniff&#xa;  X-XSS-Protection: 1; mode=block&#xa;  Content-Type: text/html&#xa;  &#xa;  (Request type: GET)&#xa;"/><script id="http-title" output="movistar"><elem key="title">movistar</elem>
 </script></port>
 <port protocol="tcp" portid="3517"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="802-11-iapp" method="table" conf="3"/></port>
 <port protocol="tcp" portid="7547"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tcpwrapped" method="probed" conf="8"/></port>
 </ports>
 <os><portused state="open" proto="tcp" portid="22"/>
 <portused state="closed" proto="tcp" portid="1"/>
-<portused state="closed" proto="udp" portid="37944"/>
+<portused state="closed" proto="udp" portid="44662"/>
 <osmatch name="Linux 4.15 - 5.19" accuracy="100" line="70534">
 <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:4</cpe></osclass>
 <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
@@ -236,23 +251,23 @@
 <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:5.4</cpe></osclass>
 </osmatch>
 </os>
-<uptime seconds="877805" lastboot="Sun May 25 19:06:45 2025"/>
+<uptime seconds="879688" lastboot="Sun May 25 19:06:45 2025"/>
 <distance value="1"/>
-<tcpsequence index="259" difficulty="Good luck!" values="769AB823,B560728F,47D0D5DB,DCF25E3D,FC6CAB9B,D1C7D49C"/>
+<tcpsequence index="263" difficulty="Good luck!" values="3A8EB85B,B53FB6E0,C191AF6C,212489A5,EF60656,FB9A63E2"/>
 <ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
-<tcptssequence class="1000HZ" values="3451EB7B,3451EBE9,3451EC58,3451ECC1,3451ED30,3451ED9C"/>
+<tcptssequence class="1000HZ" values="346EA50D,346EA57B,346EA5E9,346EA657,346EA6C6,346EA732"/>
 <trace>
-<hop ttl="1" ipaddr="192.168.1.58" rtt="4.72"/>
+<hop ttl="1" ipaddr="192.168.1.58" rtt="11.33"/>
 </trace>
-<times srtt="4722" rttvar="2408" to="100000"/>
+<times srtt="11330" rttvar="10922" to="100000"/>
 </host>
-<runstats><finished time="1749074210" timestr="Wed Jun  4 22:56:50 2025" summary="Nmap done at Wed Jun  4 22:56:50 2025; 1 IP address (1 host up) scanned in 57.37 seconds" elapsed="57.37" exit="success"/><hosts up="1" down="0" total="1"/>
+<runstats><finished time="1749076093" timestr="Wed Jun  4 23:28:13 2025" summary="Nmap done at Wed Jun  4 23:28:13 2025; 1 IP address (1 host up) scanned in 57.17 seconds" elapsed="57.17" exit="success"/><hosts up="1" down="0" total="1"/>
 </runstats>
 </nmaprun>
 
-2025-06-04 22:56:50,590 - miproyectored - DEBUG - Nmap stderr for 192.168.1.58:
+2025-06-04 23:28:13,112 - miproyectored - DEBUG - Nmap stderr for 192.168.1.58:
 WARNING: Service 192.168.1.58:80 had already soft-matched rtsp, but now soft-matched sip; ignoring second value
-NSOCK ERROR [57.3070s] poll_loop(): nsock_loop error 10022: An invalid argument was supplied. 
+NSOCK ERROR [57.1220s] poll_loop(): nsock_loop error 10022: An invalid argument was supplied. 
 NSE: Script Engine Scan Aborted.
 An error was thrown by the engine: C:\Program Files (x86)\Nmap/nse_main.lua:1078: a fatal error occurred in nsock_loop
 stack traceback:
@@ -260,7 +275,7 @@ stack traceback:
 	C:\Program Files (x86)\Nmap/nse_main.lua:1078: in upvalue 'run'
 	C:\Program Files (x86)\Nmap/nse_main.lua:1488: in function <C:\Program Files (x86)\Nmap/nse_main.lua:1435>
 	[C]: in ?
-NSOCK ERROR [57.3660s] poll_loop(): nsock_loop error 10022: An invalid argument was supplied. 
+NSOCK ERROR [57.1690s] poll_loop(): nsock_loop error 10022: An invalid argument was supplied. 
 NSE: Script Engine Scan Aborted.
 An error was thrown by the engine: C:\Program Files (x86)\Nmap/nse_main.lua:1078: a fatal error occurred in nsock_loop
 stack traceback:
@@ -269,118 +284,93 @@ stack traceback:
 	C:\Program Files (x86)\Nmap/nse_main.lua:1488: in function <C:\Program Files (x86)\Nmap/nse_main.lua:1435>
 	[C]: in ?
 
-2025-06-04 22:56:50,592 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.58
-2025-06-04 22:56:50,592 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.60
-2025-06-04 22:57:12,973 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.37
-2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.37, Hostname=192.168.1.37, Tipo=<class 'miproyectored.model.device.Device'>
-2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.37
-2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.37
-2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 2
-2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
-2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37']
-2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
-2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
-2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 2 dispositivos
-2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37']
-2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
-2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
-2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
-2025-06-04 22:57:13,001 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
-2025-06-04 22:57:13,001 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.58
-2025-06-04 22:57:13,001 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.58, Hostname=192.168.1.58, Tipo=<class 'miproyectored.model.device.Device'>
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.58
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.58
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 3
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37', '192.168.1.58']
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 3 dispositivos
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58']
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
-2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
-2025-06-04 22:57:13,021 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
-2025-06-04 22:57:15,901 - miproyectored - INFO - Cerrando la aplicación.
-2025-06-04 22:57:18,175 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.47 (return code 3221225786):
+2025-06-04 23:28:13,113 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.58
+2025-06-04 23:28:13,113 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.60
+2025-06-04 23:28:13,113 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.58
+2025-06-04 23:28:13,113 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.58, Hostname=192.168.1.58, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.58
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.58
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 3
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37', '192.168.1.58']
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 3 dispositivos
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58']
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:28:13,114 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:28:13,126 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 23:28:15,789 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.59 (return code 0):
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.47 -->
-<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.47" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:28:10 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.59 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.59" start="1749076090" startstr="Wed Jun  4 23:28:10 2025" version="7.97" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
-<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.47" addrtype="ipv4"/>
-<address addr="A0:D7:F3:6B:DA:E0" addrtype="mac" vendor="Samsung Electronics"/>
-<hostnames>
-</hostnames>
-</hosthint>
+<runstats><finished time="1749076095" timestr="Wed Jun  4 23:28:15 2025" summary="Nmap done at Wed Jun  4 23:28:15 2025; 1 IP address (0 hosts up) scanned in 5.43 seconds" elapsed="5.43" exit="success"/><hosts up="0" down="1" total="1"/>
+</runstats>
+</nmaprun>
 
-2025-06-04 22:57:18,175 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.44 (return code 3221225786):
+2025-06-04 23:28:15,789 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.59
+2025-06-04 23:28:15,789 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.62
+2025-06-04 23:28:15,789 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.59
+2025-06-04 23:28:18,585 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.60 (return code 0):
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.44 -->
-<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.44" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:28:13 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.60 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.60" start="1749076093" startstr="Wed Jun  4 23:28:13 2025" version="7.97" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
-<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.44" addrtype="ipv4"/>
-<address addr="26:96:82:AE:20:66" addrtype="mac"/>
-<hostnames>
-</hostnames>
-</hosthint>
+<runstats><finished time="1749076098" timestr="Wed Jun  4 23:28:18 2025" summary="Nmap done at Wed Jun  4 23:28:18 2025; 1 IP address (0 hosts up) scanned in 5.43 seconds" elapsed="5.43" exit="success"/><hosts up="0" down="1" total="1"/>
+</runstats>
+</nmaprun>
 
-2025-06-04 22:57:18,175 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.47
-2025-06-04 22:57:18,176 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.59 (return code 3221225786):
+2025-06-04 23:28:18,585 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.60
+2025-06-04 23:28:18,585 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.78
+2025-06-04 23:28:18,585 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.60
+2025-06-04 23:28:21,290 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.62 (return code 0):
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.97 scan initiated Wed Jun  4 22:56:45 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.59 -->
-<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.59" start="1749074205" startstr="Wed Jun  4 22:56:45 2025" version="7.97" xmloutputversion="1.05">
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:28:15 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.62 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.62" start="1749076095" startstr="Wed Jun  4 23:28:15 2025" version="7.97" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
-<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.59" addrtype="ipv4"/>
-<address addr="F0:F0:A4:53:D4:B4" addrtype="mac" vendor="Amazon Technologies"/>
-<hostnames>
-</hostnames>
-</hosthint>
+<runstats><finished time="1749076101" timestr="Wed Jun  4 23:28:21 2025" summary="Nmap done at Wed Jun  4 23:28:21 2025; 1 IP address (0 hosts up) scanned in 5.45 seconds" elapsed="5.45" exit="success"/><hosts up="0" down="1" total="1"/>
+</runstats>
+</nmaprun>
 
-2025-06-04 22:57:18,176 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.44
-2025-06-04 22:57:18,176 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.62
-2025-06-04 22:57:18,176 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.47
-2025-06-04 22:57:18,178 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.78
-2025-06-04 22:57:18,178 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.59
-2025-06-04 22:57:18,179 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.33
-2025-06-04 22:57:18,181 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.60 (return code 3221225786):
+2025-06-04 23:28:21,291 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.62
+2025-06-04 23:28:21,291 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.33
+2025-06-04 23:28:21,291 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.62
+2025-06-04 23:28:24,042 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.78 (return code 0):
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.97 scan initiated Wed Jun  4 22:56:50 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.60 -->
-<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.60" start="1749074210" startstr="Wed Jun  4 22:56:50 2025" version="7.97" xmloutputversion="1.05">
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:28:18 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.78 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.78" start="1749076098" startstr="Wed Jun  4 23:28:18 2025" version="7.97" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
-<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
-<address addr="192.168.1.60" addrtype="ipv4"/>
-<address addr="26:96:82:AE:20:66" addrtype="mac"/>
-<hostnames>
-</hostnames>
-</hosthint>
+<runstats><finished time="1749076104" timestr="Wed Jun  4 23:28:24 2025" summary="Nmap done at Wed Jun  4 23:28:24 2025; 1 IP address (0 hosts up) scanned in 5.41 seconds" elapsed="5.41" exit="success"/><hosts up="0" down="1" total="1"/>
+</runstats>
+</nmaprun>
 
-2025-06-04 22:57:18,181 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.60
-2025-06-04 22:57:18,185 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.1 (return code 3221225786):
+2025-06-04 23:28:24,042 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.78
+2025-06-04 23:28:24,042 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.78
+2025-06-04 23:29:01,564 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.1 (return code 0):
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.1 -->
-<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.1" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:26:47 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.1 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.1" start="1749076007" startstr="Wed Jun  4 23:26:47 2025" version="7.97" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
@@ -390,5 +380,494 @@ stack traceback:
 <hostnames>
 </hostnames>
 </hosthint>
+<host starttime="1749076008" endtime="1749076141"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.1" addrtype="ipv4"/>
+<address addr="98:97:D1:33:2C:27" addrtype="mac" vendor="MitraStar Technology"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="64136">
+<extrareasons reason="reset" count="64136" proto="tcp" ports="1-13,15-20,24-35,37-79,82-87,89-135,137-182,184-202,204-209,211-224,226,228-296,299-335,337-350,352-366,368-413,415-442,444-546,548-609,611-729,731-870,872-884,886-951,953-1012,1014-1028,1030-1034,1036-1115,1117-1149,1151-1246,1248-1273,1275-1370,1372-1386,1388-1393,1395-1447,1450-1622,1624-1627,1629-1662,1664-1700,1702-1728,1730-1745,1747-1755,1757-1765,1767-1823,1825-1909,1911-1943,1945-1989,1991-2033,2035-2041,2043-2186,2188-2220,2222-2254,2256-2305,2307-2309,2311-2318,2320-2328,2330-2451,2453-2503,2505-2568,2570-2610,2612-2634,2636-2652,2654-2675,2677-2726,2728-2786,2788-2844,2846-2850,2852-2895,2897-2940,2942-2965,2967,2969-3016,3018-3054,3056-3064,3066-3073,3075-3079,3081-3212,3214-3287,3289-3354,3356-3399,3401-3539,3541-3542,3544-3621,3623-3644,3646-3729,3731-3778,3780-3834,3836-3854,3856-3862,3864-3880,3882-3938,3940-4071,4073-4087,4089-4090,4092-4100,4102-4290,4292-4309,4311-4352,4354-4362,4364-4385,4387-4399,4401-4450,4452-4478,4480-4548,4550-4697,4699-4706,4708-4711,4713-4867,4869-4915,4917-4958,4960-5007,5009-5017,5019-5093,5095-5148,5150-5188,5190-5199,5201-5281,5283-5371,5373-5393,5396-5542,5544-5545,5547-5592,5594,5596-5600,5602-5623,5625-5737,5739-5740,5742-5759,5761-5765,5767-5825,5827-5862,5864-5989,5991-6012,6014-6110,6112-6127,6129-6187,6189-6206,6208-6228,6230-6231,6233-6241,6243-6332,6334-6432,6434-6614,6616-6623,6625-6626,6628-6636,6638-6660,6662-6671,6673-6745,6747-6774,6776-6794,6796-6835,6837-6936,6938-6945,6947-6996,6998-7065,7067,7069-7106,7108-7114,7116-7135,7137-7163,7165-7237,7239-7276,7278-7366,7368-7387,7389-7474,7476-7478,7480-7481,7483-7546,7548-7689,7691-7698,7700-7789,7791-7794,7796-7845,7847-7869,7871-7915,7917-8082,8084-8163,8165-8181,8183-8332,8334-8350,8352-8417,8419-8480,8482-8542,8544-8609,8611,8613-8676,8678-8680,8682-8773,8775-8851,8853-9014,9016-9035,9037-9044,9046-9050,9052-9062,9064-9160,9162-9240,9242-9296,9298-9319,9321-9324,9326-9327,9329-9389,9391-9403,9405-9420,9422-9433,9435-9449,9451-9463,9465-9534,9536-9556,9558-9591,9593-9654,9656-9677,9679-9743,9745-9801,9803-9842,9844-9950,9952-9997,9999-10020,10022-10102,10104-10111,10113-10140,10142-10519,10521-10575,10577-10611,10613-10626,10628-10722,10724-10725,10727-10743,10745-10766,10768-10852,10854-10886,10888-10889,10891-10893,10895-10935,10937-11005,11007,11009-11047,11049-11170,11172-11184,11186-11193,11195-11223,11225-11259,11261-11380,11382-11480,11482-11570,11572-11584,11586-11605,11607-11624,11626-11654,11656-11682,11684-11747,11749-11753,11755-11777,11779-11792,11794-11801,11803-11834,11836-11939,11941-11987,11989-12004,12006-12073,12075-12100,12102-12166,12168-12177,12179-12188,12190-12264,12266-12291,12293-12313,12315-12372,12374-12402,12404-12415,12417-12453,12455-12461,12463-12497,12499-12596,12598-12639,12641-12646,12648-12654,12656-12668,12670-12700,12702-12726,12728-12738,12740-12750,12752-12788,12790-12890,12892-12901,12903-13089,13091-13217,13219-13277,13279-13356,13358-13427,13429-13492,13494-13545,13547-13568,13570-13607,13609-13685,13687-13759,13761-13790,13792-13854,13856-13870,13872-13877,13879-13948,13950-14032,14034-14218,14220-14269,14271-14399,14401-14420,14422-14427,14429-14542,14544-14672,14674-14713,14715-14727,14729-14747,14749-14781,14783-14787,14789-14821,14823-14851,14853-14878,14880-14895,14897-14918,14920-14923,14925-14951,14953-14963,14965-15093,15095-15141,15143-15146,15148-15152,15154-15171,15173-15189,15191-15224,15226-15241,15243-15251,15253-15302,15304-15334,15336-15337,15339-15358,15360-15383,15385-15416,15418-15428,15430-15467,15469-15530,15532-15541,15543-15654,15656-15659,15661-15704,15706-15768,15770-15810,15812-15848,15851-15878,15880-15921,15923-15938,15940-15977,15979-16092,16094-16104,16106-16137,16139-16222,16224-16254,16256-16264,16266-16315,16317-16378,16380-16382,16384-16441,16443,16445-16457,16459-16506,16508-16509,16511-16573,16575-16592,16594-16596,16598-16622,16624-16666,16668-16717,16719,16721-16737,16739-16807,16809-16828,16830-16852,16854-16887,16889-16915,16917-16966,16968-16991,16993-17035,17037-17108,17110-17132,17134-17135,17137-17152,17155-17194,17196-17199,17201-17325,17327-17358,17360-17389,17391-17396,17398-17408,17410-17479,17481-17563,17565-17608,17610-17628,17630-17712,17714-17730,17732-17808,17810-17834,17836-17837,17839-17943,17945-17954,17956-17957,17959-17974,17976-17978,17980-18025,18027-18227,18229-18279,18281-18341,18343-18345,18347-18356,18358-18408,18410-18472,18474-18580,18582-18655,18657-18822,18824-18899,18901-19059,19061-19074,19076-19095,19097-19243,19245-19277,19279-19291,19293-19319,19321-19324,19326-19368,19370-19433,19435-19494,19496-19538,19540,19542-19584,19586-19636,19639-19646,19648-19863,19865-19869,19872-19969,19971-20045,20047-20061,20063-20065,20067-20072,20074-20081,20083-20357,20359-20396,20398-20446,20448-20497,20499-20546,20548-20596,20598-20610,20612-20667,20669-20672,20674-20708,20710-20790,20792-20836,20838-20849,20851-20854,20856-20966,20968-20998,21001-21039,21041-21121,21123-21160,21162-21185,21187-21190,21192-21230,21232-21372,21374-21422,21424-21442,21444-21453,21455-21578,21580-21664,21666-21757,21759-21798,21800-21827,21829-21920,21922-21982,21984-21990,21992-22002,22004-22098,22100-22126,22128-22133,22135-22139,22141-22145,22147-22184,22186-22212,22214-22230,22233-22317,22319-22335,22337-22378,22380-22440,22442,22444-22536,22539-22558,22560-22599,22601-22665,22667-22695,22697-22732,22734-22741,22743-22784,22786-22801,22803-22848,22850-22905,22907-22930,22932-22937,22939-22961,22963-22988,22990-23041,23043-23129,23131-23156,23158-23275,23277-23311,23313-23317,23319-23330,23332-23336,23338-23396,23398-23479,23481-23602,23604-23644,23646-23794,23796-23797,23799-23862,23864-24010,24012-24310,24312-24327,24329-24396,24398-24409,24411-24423,24425-24497,24499-24518,24520-24598,24600-24617,24619-24661,24663-24675,24677-24719,24721-24725,24727-24741,24743-24825,24827-24842,24844-24848,24850-24947,24949-24951,24953,24955-24994,24996-25028,25030-25054,25056-25086,25088-25116,25118-25154,25156-25241,25243-25247,25249-25252,25254-25299,25301-25459,25461-25481,25483-25490,25492-25514,25516-25546,25548-25589,25591-25659,25661-25678,25680-25697,25699-25731,25733-25775,25777-25810,25812-25975,25977-25989,25991-26074,26076-26187,26189-26227,26229-26288,26290-26349,26351-26365,26367-26436,26438-26451,26454-26539,26541-26589,26591-26605,26607-26664,26666-26670,26672-26690,26692-26810,26812-26813,26815-26914,26916-26955,26957-26963,26965-27057,27059-27131,27133-27247,27249-27282,27284-27408,27410-27486,27488-27567,27569-27603,27605-27652,27654-27675,27677-27832,27834-27877,27879-28034,28036-28039,28041-28047,28049-28072,28074-28125,28127-28172,28174-28202,28204-28209,28211-28238,28240-28276,28278-28320,28322-28430,28432-28468,28470-28501,28503-28549,28551-28585,28587-28614,28616-28684,28687-28709,28711-28723,28725-28802,28804-28944,28946-28951,28953-29061,29063-29125,29127-29154,29156-29157,29159-29160,29162-29338,29340-29343,29345-29418,29420-29462,29464-29476,29478-29550,29552-29628,29630-29664,29666-29695,29697,29699-29785,29787-29790,29792-29799,29801-29806,29808-29816,29818-29828,29830-29842,29845-29898,29900-29988,29990-30019,30021-30081,30083-30093,30095-30289,30291-30305,30307-30311,30313-30323,30325-30447,30449-30451,30453-30483,30485-30576,30578-30611,30613-30623,30625-30647,30649-30863,30865-30903,30905-30985,30987-31060,31062-31072,31074-31102,31104-31144,31146-31190,31192-31273,31275-31280,31282-31288,31290-31307,31309-31369,31371-31395,31397-31459,31461-31514,31516-31567,31569-31635,31637-31711,31713-31719,31721-31730,31732-31782,31784-31799,31801-31826,31828-31835,31837-31848,31850-31863,31865-32108,32110-32118,32120-32152,32154-32239,32241-32347,32349-32396,32398-32404,32406-32504,32506-32530,32532-32644,32646-32652,32654-32670,32672-32678,32680-32695,32697-32765,32767-32769,32771-32802,32804-32840,32842-32930,32932,32934-32973,32975-32999,33001-33004,33006-33011,33013-33122,33124-33210,33212-33213,33215-33303,33305-33392,33394-33520,33522-33632,33634-33756,33758-33851,33853-33997,33999-34042,34044-34061,34063-34066,34068-34088,34090-34118,34120-34160,34162-34209,34211-34300,34302-34318,34320-34386,34388-34401,34403-34449,34451-34452,34454-34629,34631-34669,34671-34693,34695-34724,34726-34852,34854-34857,34859-34974,34976-35008,35010-35017,35019-35021,35023-35069,35071-35171,35173-35227,35229-35316,35318-35331,35333-35351,35353-35361,35363-35372,35374-35397,35399-35412,35414-35440,35442,35444-35502,35504-35540,35542-35677,35679-35708,35710-35834,35836-35896,35898-35934,35936-36098,36100-36251,36253-36274,36276-36364,36366-36367,36369-36388,36390-36426,36428-36452,36454-36546,36548-36661,36664-36696,36698-36743,36745-36760,36762,36764-36769,36771-36899,36901-36918,36920,36922-36978,36980-36987,36989-37012,37014-37032,37034-37073,37075-37099,37101-37290,37292-37308,37310-37383,37385-37434,37436-37444,37446-37450,37452-37481,37483-37493,37495-37546,37548-37554,37556-37559,37561-37570,37572-37589,37591-37645,37647-37655,37657-37755,37757-37774,37776-37845,37847-37886,37888-37891,37893-37917,37919-37937,37939-37995,37997-38003,38005-38101,38103-38200,38202-38265,38267-38378,38380-38445,38447-38460,38462-38471,38473-38484,38486-38507,38509-38558,38560-38575,38577-38620,38622-38650,38652-38715,38717-38760,38763-38798,38800-38810,38812-38844,38846-38931,38933-38973,38975-38993,38995-39004,39006-39036,39038-39064,39066-39100,39102-39106,39108-39145,39147-39194,39196-39264,39266-39328,39330-39332,39334-39472,39474-39568,39570-39652,39654,39656-39659,39661-39669,39671-39700,39702-39734,39736-39812,39814-39818,39820-39853,39855-39878,39880-39935,39937-39961,39963-39985,39987-40053,40055-40074,40076-40098,40100-40131,40133,40135-40151,40153-40293,40295-40302,40304-40307,40309-40409,40411-40414,40416-40521,40523-40524,40526-40534,40536,40538-40572,40574-40677,40679-40743,40745-40793,40795-40902,40904-40950,40952-40981,40983-41037,41039-41208,41210-41239,41241-41247,41249-41261,41263-41280,41282-41414,41416-41425,41427-41614,41616-41639,41641-41740,41742-41757,41759,41761-41781,41783-41836,41838-41964,41966-42000,42002-42010,42012-42018,42020-42113,42115-42135,42137-42217,42219-42331,42333-42363,42365-42381,42383-42405,42407-42563,42565-42585,42587-42746,42748-42820,42822-42832,42834-42879,42881-42956,42958-42966,42968-42976,42978-42996,42998-43003,43005-43079,43081-43084,43086-43178,43180-43212,43214-43228,43230-43266,43268-43319,43321-43411,43413-43450,43452-43468,43471-43506,43508-43548,43550-43551,43553-43591,43594-43651,43653-43722,43724-43820,43822-43823,43825-43885,43887-43890,43892-43959,43961-44065,44067-44116,44118-44381,44383-44400,44402-44443,44446-44448,44450-44492,44494-44549,44551-44677,44679-44786,44788-44805,44807-44894,44896-44930,44933-44957,44959-45017,45019-45020,45022-45114,45116-45135,45137-45149,45151-45211,45213-45232,45234-45279,45281-45293,45295-45341,45343-45344,45346-45428,45430-45457,45459-45481,45483-45528,45530-45594,45596-45597,45599-45670,45672-45681,45683-45688,45690-45793,45795-45900,45902-45942,45944-45950,45952-45953,45955-45988,45990-46006,46008-46045,46047-46098,46101-46226,46228-46348,46350-46537,46539-46549,46551-46572,46574-46578,46580-46587,46589-46617,46619-46893,46895-46900,46902-46922,46924-47036,47039-47049,47051-47229,47231-47284,47286-47287,47289-47372,47374-47406,47408-47433,47435-47559,47561-47577,47579-47626,47628-47672,47674-47681,47683-47689,47691-47719,47721-47730,47733-47777,47779-47850,47852-47870,47872-47883,47885-47948,47950-47971,47973-47994,47996-48087,48089-48092,48094-48151,48154-48167,48169-48311,48313-48337,48339-48368,48370-48422,48424-48429,48431-48435,48437-48449,48451-48466,48468-48489,48491-48495,48497-48526,48528-48590,48592-48599,48601-48685,48687-48688,48690-48741,48743-48787,48789-48828,48830-48841,48843-48855,48857-48918,48920-49118,49120-49149,49151-49174,49176-49291,49293-49325,49327-49330,49332-49367,49369-49404,49406-49450,49452-49491,49493-49534,49536-49567,49569-49593,49595-49644,49646-49738,49740-49860,49862-49889,49892-49959,49961-49975,49977-49999,50001-50005,50007-50016,50018-50022,50024-50109,50111-50112,50114-50261,50263-50303,50305-50308,50310-50365,50367-50482,50484-50529,50531-50537,50539-50554,50556-50582,50584-50599,50601-50671,50673-50745,50747-50754,50756-50910,50912-50920,50922-51067,51069-51089,51091-51186,51188-51213,51215-51227,51229-51232,51234-51240,51242-51263,51265-51279,51281-51329,51331-51346,51348-51352,51354-51360,51362-51421,51423-51458,51460-51484,51486-51529,51531,51533-51540,51542-51569,51571-51628,51630-51679,51681-51754,51756-51778,51780-51797,51799-51856,51858-52040,52042-52134,52136-52146,52148-52179,52181-52196,52198-52269,52271-52288,52290-52305,52307-52312,52314-52365,52367,52369-52371,52373-52414,52416,52418-52501,52503-52510,52512-52528,52530-52565,52567-52585,52587-52710,52712-52722,52724-52729,52731-52742,52744-52775,52777-52781,52783-52915,52917-52932,52934-52935,52937-52963,52965-52968,52970-52978,52980-53018,53020-53025,53027-53053,53055-53111,53113-53117,53119-53264,53266-53291,53293-53298,53300-53357,53359-53399,53401-53432,53434-53651,53653-53694,53696-53823,53825-53849,53851-53922,53924-53937,53939-53942,53944-54070,54072-54101,54103-54136,54138-54151,54153-54159,54161-54175,54177-54208,54210-54222,54224-54391,54393-54429,54431-54494,54496-54506,54508-54534,54536-54557,54559-54563,54565-54569,54571-54607,54609-54632,54634-54669,54671-54771,54773-54859,54861-54919,54921-54998,55000-55011,55013-55046,55048-55074,55077-55128,55130-55171,55173-55233,55235-55462,55464-55506,55508-55595,55597-55675,55677-55688,55690-55725,55727-55734,55736-55759,55761-55831,55833-55847,55849-55857,55859-55869,55871-55877,55879-55909,55911-55914,55916-55939,55941-56116,56118-56125,56127-56149,56151-56220,56222-56298,56300-56318,56320-56352,56354-56388,56390-56422,56424-56427,56429-56500,56502-56503,56505-56524,56526-56562,56564-56570,56572-56684,56686-56713,56716-56732,56734-56743,56745-56794,56796-56921,56923-56967,56969-56979,56981-57016,57018-57135,57137-57158,57160-57191,57193-57211,57213-57416,57418-57419,57421-57481,57483-57499,57501-57534,57536-57593,57595-57661,57663-57700,57702-57710,57712-57743,57745-57780,57782-57910,57912-57916,57918-57941,57943-58073,58075-58153,58155-58199,58201-58205,58207-58256,58258-58279,58281,58283-58343,58345-58368,58370-58382,58384-58469,58471-58481,58483-58512,58514-58594,58596-58602,58604-58631,58633-58794,58796-58804,58806-58881,58883-58930,58932-59055,59057-59101,59103-59164,59166-59183,59185-59287,59289-59364,59366-59390,59392-59411,59413-59445,59447-59521,59523,59525-59560,59562-59703,59705-59815,59817,59819-59840,59842-59859,59861,59863-59873,59875-59883,59885-60049,60051-60159,60161-60181,60183-60219,60221-60277,60279-60467,60469-60517,60519-60537,60539-60563,60565-60606,60608-60639,60641-60728,60730-60818,60820-60838,60840-61029,61031-61081,61083-61182,61184-61217,61219-61299,61301-61317,61319-61435,61437-61447,61449-61460,61462-61488,61490-61543,61545-61561,61563-61626,61628-61662,61664-61665,61667-61758,61760-61767,61769-61787,61789-61835,61837-61853,61855-61889,61891-61960,61962-62081,62083-62211,62213-62216,62218-62412,62414-62434,62436-62480,62482-62514,62516-62529,62531-62755,62757-62785,62787-62807,62809-62913,62915-62935,62937-63141,63143-63164,63166-63184,63186-63303,63305-63363,63365-63404,63406-63521,63523-63632,63634-63671,63673-63738,63740-63791,63793-63912,63914-63959,63961-64082,64084-64093,64095-64124,64126-64155,64157-64198,64200,64202-64272,64274-64275,64277-64435,64437-64483,64485-64504,64506-64556,64558-64595,64597-64696,64698-64754,64756-64817,64819-64838,64840-64855,64857-64955,64957-65001,65003-65114,65116-65124,65126-65144,65146-65214,65216-65221,65223-65297,65299-65355,65357-65382,65384-65426,65428-65476,65478-65524,65526-65535"/>
+</extraports>
+<extraports state="filtered" count="1395">
+<extrareasons reason="no-response" count="1395" proto="tcp" ports="14,21,23,36,81,88,136,183,203,210,225,227,297-298,336,351,367,414,547,610,730,871,885,952,1013,1029,1035,1116,1150,1247,1274,1371,1387,1394,1448-1449,1623,1628,1663,1701,1729,1746,1756,1766,1824,1910,1944,1990,2034,2042,2187,2221,2255,2306,2310,2319,2329,2452,2504,2569,2611,2635,2653,2676,2727,2787,2845,2851,2896,2941,2966,2968,3017,3055,3065,3074,3080,3213,3288,3355,3400,3540,3543,3622,3645,3730,3779,3835,3855,3863,3881,3939,4072,4088,4091,4101,4291,4310,4353,4363,4386,4400,4451,4479,4549,4698,4707,4712,4868,4916,4959,5008,5018,5094,5149,5189,5200,5282,5372,5394-5395,5543,5546,5593,5595,5601,5624,5738,5741,5760,5766,5826,5863,5990,6013,6111,6128,6188,6207,6229,6232,6242,6333,6433,6615,6624,6627,6637,6661,6672,6746,6775,6795,6836,6937,6946,6997,7066,7068,7107,7115,7136,7164,7238,7277,7367,7388,7475,7479,7482,7547,7690,7699,7790,7795,7846,7870,7916,8083,8164,8182,8333,8351,8418,8481,8543,8610,8612,8677,8681,8774,8852,9015,9036,9045,9051,9063,9161,9241,9297,9320,9325,9328,9390,9404,9421,9434,9450,9464,9535,9557,9592,9655,9678,9744,9802,9843,9951,9998,10021,10103,10112,10141,10520,10576,10612,10627,10723,10726,10744,10767,10853,10887,10890,10894,10936,11006,11008,11048,11171,11185,11194,11224,11260,11381,11481,11571,11585,11606,11625,11655,11683,11748,11754,11778,11793,11802,11835,11940,11988,12005,12074,12101,12167,12178,12189,12265,12292,12314,12373,12403,12416,12454,12462,12498,12597,12640,12647,12655,12669,12701,12727,12739,12751,12789,12891,12902,13090,13218,13278,13357,13428,13493,13546,13569,13608,13686,13760,13791,13855,13871,13878,13949,14033,14219,14270,14400,14421,14428,14543,14673,14714,14728,14748,14782,14788,14822,14852,14879,14896,14919,14924,14952,14964,15094,15142,15147,15153,15172,15190,15225,15242,15252,15303,15335,15338,15359,15384,15417,15429,15468,15531,15542,15655,15660,15705,15769,15811,15849-15850,15879,15922,15939,15978,16093,16105,16138,16223,16255,16265,16316,16379,16383,16442,16444,16458,16507,16510,16574,16593,16597,16623,16718,16720,16738,16808,16829,16853,16888,16916,16967,16992,17036,17109,17133,17136,17153-17154,17195,17200,17326,17359,17390,17397,17409,17480,17564,17609,17629,17713,17731,17809,17835,17838,17944,17955,17958,17975,17979,18026,18228,18280,18342,18346,18357,18409,18473,18581,18656,18823,18900,19060,19075,19096,19244,19278,19292,19320,19325,19369,19434,19495,19539,19541,19585,19637-19638,19647,19864,19870-19871,19970,20046,20062,20066,20073,20082,20358,20397,20447,20498,20547,20597,20611,20668,20673,20709,20791,20837,20850,20855,20967,20999-21000,21040,21122,21161,21186,21191,21231,21373,21423,21443,21454,21579,21665,21758,21799,21828,21921,21983,21991,22003,22099,22127,22134,22140,22146,22185,22213,22231-22232,22318,22336,22379,22441,22443,22537-22538,22559,22600,22666,22696,22733,22742,22785,22802,22849,22906,22931,22938,22962,22989,23042,23130,23157,23276,23312,23318,23331,23337,23397,23480,23603,23645,23795,23798,23863,24011,24311,24328,24397,24410,24424,24498,24519,24599,24618,24662,24676,24720,24726,24742,24826,24843,24849,24948,24952,24954,24995,25029,25055,25087,25117,25155,25242,25248,25253,25300,25460,25482,25491,25515,25547,25590,25660,25679,25698,25732,25776,25811,25976,25990,26075,26188,26228,26289,26350,26366,26437,26452-26453,26540,26590,26606,26665,26671,26691,26811,26814,26915,26956,26964,27058,27132,27248,27283,27409,27487,27568,27604,27653,27676,27833,27878,28035,28040,28048,28073,28126,28173,28203,28210,28239,28277,28321,28431,28469,28502,28550,28586,28615,28685-28686,28710,28724,28803,28945,28952,29062,29126,29155,29158,29161,29339,29344,29419,29463,29477,29551,29629,29665,29696,29698,29786,29791,29800,29807,29817,29829,29843-29844,29899,29989,30020,30082,30094,30290,30306,30312,30324,30448,30452,30484,30577,30612,30624,30648,30864,30904,30986,31061,31073,31103,31145,31191,31274,31281,31289,31308,31370,31396,31460,31515,31568,31636,31712,31720,31731,31783,31800,31827,31836,31849,31864,32109,32119,32153,32240,32348,32397,32405,32505,32531,32645,32653,32671,32679,32696,32766,32770,32803,32841,32931,32933,32974,33000,33005,33012,33123,33211,33214,33304,33393,33521,33633,33757,33852,33998,34043,34062,34067,34089,34119,34161,34210,34301,34319,34387,34402,34450,34453,34630,34670,34694,34725,34853,34858,34975,35009,35018,35022,35070,35172,35228,35317,35332,35352,35362,35373,35398,35413,35441,35443,35503,35541,35678,35709,35835,35897,35935,36099,36252,36275,36365,36368,36389,36427,36453,36547,36662-36663,36697,36744,36761,36763,36770,36900,36919,36921,36979,36988,37013,37033,37074,37100,37291,37309,37384,37435,37445,37451,37482,37494,37547,37555,37560,37571,37590,37646,37656,37756,37775,37846,37887,37892,37918,37938,37996,38004,38102,38201,38266,38379,38446,38461,38472,38485,38508,38559,38576,38621,38651,38716,38761-38762,38799,38811,38845,38932,38974,38994,39005,39037,39065,39101,39107,39146,39195,39265,39329,39333,39473,39569,39653,39655,39660,39670,39701,39735,39813,39819,39854,39879,39936,39962,39986,40054,40075,40099,40132,40134,40152,40294,40303,40308,40410,40415,40522,40525,40535,40537,40573,40678,40744,40794,40903,40951,40982,41038,41209,41240,41248,41262,41281,41415,41426,41615,41640,41741,41758,41760,41782,41837,41965,42001,42011,42019,42114,42136,42218,42332,42364,42382,42406,42564,42586,42747,42821,42833,42880,42957,42967,42977,42997,43004,43080,43085,43179,43213,43229,43267,43320,43412,43451,43469-43470,43507,43549,43552,43592-43593,43652,43723,43821,43824,43886,43891,43960,44066,44117,44382,44401,44444-44445,44449,44493,44550,44678,44787,44806,44895,44931-44932,44958,45018,45021,45115,45136,45150,45212,45233,45280,45294,45342,45345,45429,45458,45482,45529,45595,45598,45671,45682,45689,45794,45901,45943,45951,45954,45989,46007,46046,46099-46100,46227,46349,46538,46550,46573,46579,46588,46618,46894,46901,46923,47037-47038,47050,47230,47285,47288,47373,47407,47434,47560,47578,47627,47673,47682,47690,47720,47731-47732,47778,47851,47871,47884,47949,47972,47995,48088,48093,48152-48153,48168,48312,48338,48369,48423,48430,48436,48450,48467,48490,48496,48527,48591,48600,48686,48689,48742,48788,48829,48842,48856,48919,49119,49150,49175,49292,49326,49331,49368,49405,49451,49492,49535,49568,49594,49645,49739,49861,49890-49891,49960,49976,50000,50006,50017,50023,50110,50113,50262,50304,50309,50366,50483,50530,50538,50555,50583,50600,50672,50746,50755,50911,50921,51068,51090,51187,51214,51228,51233,51241,51264,51280,51330,51347,51353,51361,51422,51459,51485,51530,51532,51541,51570,51629,51680,51755,51779,51798,51857,52041,52135,52147,52180,52197,52270,52289,52306,52313,52366,52368,52372,52415,52417,52502,52511,52529,52566,52586,52711,52723,52730,52743,52776,52782,52916,52933,52936,52964,52969,52979,53019,53026,53054,53112,53118,53265,53292,53299,53358,53400,53433,53652,53695,53824,53850,53923,53938,53943,54071,54102,54137,54152,54160,54176,54209,54223,54392,54430,54495,54507,54535,54558,54564,54570,54608,54633,54670,54772,54860,54920,54999,55012,55047,55075-55076,55129,55172,55234,55463,55507,55596,55676,55689,55726,55735,55760,55832,55848,55858,55870,55878,55910,55915,55940,56117,56126,56150,56221,56299,56319,56353,56389,56423,56428,56501,56504,56525,56563,56571,56685,56714-56715,56733,56744,56795,56922,56968,56980,57017,57136,57159,57192,57212,57417,57420,57482,57500,57535,57594,57662,57701,57711,57744,57781,57911,57917,57942,58074,58154,58200,58206,58257,58280,58282,58344,58369,58383,58470,58482,58513,58595,58603,58632,58795,58805,58882,58931,59056,59102,59165,59184,59288,59365,59391,59412,59446,59522,59524,59561,59704,59816,59818,59841,59860,59862,59874,59884,60050,60160,60182,60220,60278,60468,60518,60538,60564,60607,60640,60729,60819,60839,61030,61082,61183,61218,61300,61318,61436,61448,61461,61489,61544,61562,61627,61663,61666,61759,61768,61788,61836,61854,61890,61961,62082,62212,62217,62413,62435,62481,62515,62530,62756,62786,62808,62914,62936,63142,63165,63185,63304,63364,63405,63522,63633,63672,63739,63792,63913,63960,64083,64094,64125,64156,64199,64201,64273,64276,64436,64484,64505,64557,64596,64697,64755,64818,64839,64856,64956,65002,65115,65125,65145,65215,65222,65298,65356,65383,65427,65477,65525"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="Dropbear sshd" version="2019.78" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:matt_johnston:dropbear_ssh_server:2019.78</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-auth-methods" output="ERROR: Script execution failed (use -d to debug)"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="micro_httpd" method="probed" conf="10"><cpe>cpe:/a:acme:micro_httpd</cpe></service><script id="http-headers" output="&#xa;  Server: micro_httpd&#xa;  Cache-Control: no-cache&#xa;  Pragma: no-cache&#xa;  X-Frame-Options: SAMEORIGIN&#xa;  Content-Security-Policy: frame-ancestors &apos;self&apos;;default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;;style-src &apos;self&apos; &apos;unsafe-inline&apos;&#xa;  X-XSS-Protection: 1; mode=block&#xa;  X-Content-Type-Options: &apos;nosniff&apos;&#xa;  Date: Wed, 04 Jun 2025 23:28:53 GMT&#xa;  Content-Type: text/html&#xa;  Set-Cookie: SESSION=; expires=Thu, 01-Jan-1970 00:00:00 GMT; path=/; HttpOnly&#xa;  Connection: close&#xa;  &#xa;  (Request type: GET)&#xa;"/><script id="http-title" output="movistar"><elem key="title">movistar</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="micro_httpd" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:acme:micro_httpd</cpe></service><script id="ssl-cert" output="Subject: commonName=CA Telefonica Moviles Espana SA/organizationName=Grupo Telefonica/stateOrProvinceName=A78923125/countryName=PL&#xa;Not valid before: 2015-09-22T06:17:02&#xa;Not valid after:  2025-09-19T06:17:02"><table key="subject">
+<elem key="commonName">CA Telefonica Moviles Espana SA</elem>
+<elem key="countryName">PL</elem>
+<elem key="localityName">PZ. DE LA INDEPENDENCIA 6 28001 MADRID</elem>
+<elem key="organizationName">Grupo Telefonica</elem>
+<elem key="stateOrProvinceName">A78923125</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">CA Telefonica Moviles Espana SA</elem>
+<elem key="countryName">PL</elem>
+<elem key="localityName">PZ. DE LA INDEPENDENCIA 6 28001 MADRID</elem>
+<elem key="organizationName">Grupo Telefonica</elem>
+<elem key="stateOrProvinceName">A78923125</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">ED904A6CDFF8EDB2242D62789589762F58D16C412E10CAA8B60C2B1874BD56310F7E02B7882CC4C85EB7F7C4B2658ED0947289C30A519C1B88BAEA3815111EA814EFA84F443C504FEC1DAE2B78A93DD99D9F014419F3B66EE50CBA27689405DE5A97E207863790E2B905F4F89A50B3D9C7CA051C16E47861F1D3F2A102B2C2EB45E33F80533EC2FB7ABF798B930375CD8BCC64310DBC31143407CA6612B043B3E9D3E4B8F3F731140373D8991D1473A645B743AACADBAEC9DD5094234D43E21ECC1D166DCA185C7930DAE8E41CD3BA52826E49A56DEF0AB5F075B6558B86978FCB0A4F28970B57B268116510C8FA51B53BE960A39AFE43BED863C58C68EC23DD</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">58:E4:8C:EE:C1:4C:F8:26:18:2E:33:58:46:24:6E:30:62:90:93:AB</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:58:E4:8C:EE:C1:4C:F8:26:18:2E:33:58:46:24:6E:30:62:90:93:AB&#xa;DirName:/C=PL/ST=A78923125/L=PZ. DE LA INDEPENDENCIA 6 28001 MADRID/O=Grupo Telefonica/CN=CA Telefonica Moviles Espana SA&#xa;serial:DC:92:EE:A1:08:34:2B:23</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:TRUE</elem>
+</table>
+</table>
+<elem key="sig_algo">sha1WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2015-09-22T06:17:02</elem>
+<elem key="notAfter">2025-09-19T06:17:02</elem>
+</table>
+<elem key="md5">237dca8ba6eccc19753649836beb6c9f</elem>
+<elem key="sha1">52e41c6fa636712e42b4a94a05d48910be0d194c</elem>
+<elem key="sha256">0f1bc60808ee8ae4a5f58b6a432ff5fd6f0094562eed9cc0eeeb66b412cb9b5c</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIEszCCA5ugAwIBAgIJANyS7qEINCsjMA0GCSqGSIb3DQEBBQUAMIGXMQswCQYD&#xa;VQQGEwJQTDESMBAGA1UECBMJQTc4OTIzMTI1MS8wLQYDVQQHEyZQWi4gREUgTEEg&#xa;SU5ERVBFTkRFTkNJQSA2IDI4MDAxIE1BRFJJRDEZMBcGA1UEChMQR3J1cG8gVGVs&#xa;ZWZvbmljYTEoMCYGA1UEAxMfQ0EgVGVsZWZvbmljYSBNb3ZpbGVzIEVzcGFuYSBT&#xa;QTAeFw0xNTA5MjIwNjE3MDJaFw0yNTA5MTkwNjE3MDJaMIGXMQswCQYDVQQGEwJQ&#xa;TDESMBAGA1UECBMJQTc4OTIzMTI1MS8wLQYDVQQHEyZQWi4gREUgTEEgSU5ERVBF&#xa;TkRFTkNJQSA2IDI4MDAxIE1BRFJJRDEZMBcGA1UEChMQR3J1cG8gVGVsZWZvbmlj&#xa;YTEoMCYGA1UEAxMfQ0EgVGVsZWZvbmljYSBNb3ZpbGVzIEVzcGFuYSBTQTCCASIw&#xa;DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAO2QSmzf+O2yJC1ieJWJdi9Y0WxB&#xa;LhDKqLYMKxh0vVYxD34Ct4gsxMhet/fEsmWO0JRyicMKUZwbiLrqOBURHqgU76hP&#xa;RDxQT+wdrit4qT3ZnZ8BRBnztm7lDLonaJQF3lqX4geGN5DiuQX0+JpQs9nHygUc&#xa;FuR4YfHT8qECssLrReM/gFM+wvt6v3mLkwN1zYvMZDENvDEUNAfKZhKwQ7Pp0+S4&#xa;8/cxFANz2JkdFHOmRbdDqsrbrsndUJQjTUPiHswdFm3KGFx5MNro5BzTulKCbkml&#xa;be8KtfB1tlWLhpePywpPKJcLV7JoEWUQyPpRtTvpYKOa/kO+2GPFjGjsI90CAwEA&#xa;AaOB/zCB/DAdBgNVHQ4EFgQUWOSM7sFM+CYYLjNYRiRuMGKQk6swgcwGA1UdIwSB&#xa;xDCBwYAUWOSM7sFM+CYYLjNYRiRuMGKQk6uhgZ2kgZowgZcxCzAJBgNVBAYTAlBM&#xa;MRIwEAYDVQQIEwlBNzg5MjMxMjUxLzAtBgNVBAcTJlBaLiBERSBMQSBJTkRFUEVO&#xa;REVOQ0lBIDYgMjgwMDEgTUFEUklEMRkwFwYDVQQKExBHcnVwbyBUZWxlZm9uaWNh&#xa;MSgwJgYDVQQDEx9DQSBUZWxlZm9uaWNhIE1vdmlsZXMgRXNwYW5hIFNBggkA3JLu&#xa;oQg0KyMwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOCAQEASkDPu7Pt5UXO&#xa;x4Q3OL9t3rDrmuYIpr8E0S1Dd4ar/BpsJuvvrseDozeFMI5S3wSGrTEkWj6MNpVX&#xa;Ey2Rx/eULAiY+a+lBm6Uksi4AfbBBCjZbxIKHLVJpvI3mOvOeVzYmS/7nj+Pn1/U&#xa;MMs64PubEEUILHhfFryj5DdIbhAORkisxg0ZkZg9uy4pveQaj1WtzsrM2nXDwkzs&#xa;YwVq8GaxNaRnZ1yVdHU0qFelDh3q8J+KhHq3oksJXhN1D5bFuD9rKlpYoQUqzafl&#xa;tIxWkfyQM8qFgXPEllEwAXC84ZaGNpjti+9bnYe7ZxKS87UxxZGAacX8Uqn5mIkf&#xa;Hv7IL0fetw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script></port>
+<port protocol="tcp" portid="16667"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="micro_httpd" method="probed" conf="10"><cpe>cpe:/a:acme:micro_httpd</cpe></service></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="22"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="43100"/>
+<osmatch name="Linux 2.6.32 - 3.10" accuracy="100" line="59874">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:2.6</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:3</cpe></osclass>
+</osmatch>
+</os>
+<uptime seconds="3198988" lastboot="Mon Apr 28 22:52:33 2025"/>
+<distance value="1"/>
+<tcpsequence index="252" difficulty="Good luck!" values="42DC4903,F0EAD4DE,74E271BD,FB08407C,78CC148F,E6FF5B5C"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="1000HZ" values="BEAC2E81,BEAC2F2C,BEAC2FD2,BEAC303D,BEAC30AC,BEAC3136"/>
+<trace>
+<hop ttl="1" ipaddr="192.168.1.1" rtt="48.24"/>
+</trace>
+<times srtt="48238" rttvar="44533" to="226370"/>
+</host>
+<runstats><finished time="1749076141" timestr="Wed Jun  4 23:29:01 2025" summary="Nmap done at Wed Jun  4 23:29:01 2025; 1 IP address (1 host up) scanned in 133.93 seconds" elapsed="133.93" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
 
-2025-06-04 22:57:18,185 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.1
+2025-06-04 23:29:01,580 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.1
+2025-06-04 23:29:01,580 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.1
+2025-06-04 23:29:01,580 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.1, Hostname=192.168.1.1, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 23:29:01,580 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.1
+2025-06-04 23:29:01,580 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.1
+2025-06-04 23:29:01,580 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 4
+2025-06-04 23:29:01,580 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1']
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 4 dispositivos
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1']
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:29:01,581 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:29:01,593 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 23:29:06,501 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.56 (return code 0):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:26:47 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.56 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.56" start="1749076007" startstr="Wed Jun  4 23:26:47 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.56" addrtype="ipv4"/>
+<address addr="EC:C4:0D:3C:E6:51" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1749076008" endtime="1749076146"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.56" addrtype="ipv4"/>
+<address addr="EC:C4:0D:3C:E6:51" addrtype="mac" vendor="Nintendo"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="filtered" count="65516">
+<extrareasons reason="no-response" count="65516" proto="tcp" ports="1-20,23-52,54-112,114-134,136-198,200-442,444,446-553,555-992,994,996-1024,1026-1719,1721-1722,1724-3305,3307-3388,3390-5899,5901-8079,8081-8887,8889-65535"/>
+</extraports>
+<port protocol="tcp" portid="21"><state state="closed" reason="reset" reason_ttl="64"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="closed" reason="reset" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="53"><state state="closed" reason="reset" reason_ttl="64"/><service name="domain" method="table" conf="3"/></port>
+<port protocol="tcp" portid="113"><state state="closed" reason="reset" reason_ttl="64"/><service name="ident" method="table" conf="3"/></port>
+<port protocol="tcp" portid="135"><state state="closed" reason="reset" reason_ttl="64"/><service name="msrpc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="199"><state state="closed" reason="reset" reason_ttl="64"/><service name="smux" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+<port protocol="tcp" portid="445"><state state="closed" reason="reset" reason_ttl="64"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="554"><state state="closed" reason="reset" reason_ttl="64"/><service name="rtsp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="993"><state state="closed" reason="reset" reason_ttl="64"/><service name="imaps" method="table" conf="3"/></port>
+<port protocol="tcp" portid="995"><state state="closed" reason="reset" reason_ttl="64"/><service name="pop3s" method="table" conf="3"/></port>
+<port protocol="tcp" portid="1025"><state state="closed" reason="reset" reason_ttl="64"/><service name="NFS-or-IIS" method="table" conf="3"/></port>
+<port protocol="tcp" portid="1720"><state state="closed" reason="reset" reason_ttl="64"/><service name="h323q931" method="table" conf="3"/></port>
+<port protocol="tcp" portid="1723"><state state="closed" reason="reset" reason_ttl="64"/><service name="pptp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="3306"><state state="closed" reason="reset" reason_ttl="64"/><service name="mysql" method="table" conf="3"/></port>
+<port protocol="tcp" portid="3389"><state state="closed" reason="reset" reason_ttl="64"/><service name="ms-wbt-server" method="table" conf="3"/></port>
+<port protocol="tcp" portid="5900"><state state="closed" reason="reset" reason_ttl="64"/><service name="vnc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8080"><state state="closed" reason="reset" reason_ttl="64"/><service name="http-proxy" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8888"><state state="closed" reason="reset" reason_ttl="64"/><service name="sun-answerbook" method="table" conf="3"/></port>
+</ports>
+<os><portused state="closed" proto="tcp" portid="21"/>
+<osmatch name="Microsoft Windows 10 - 11" accuracy="100" line="74431">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="10" accuracy="100"><cpe>cpe:/o:microsoft:windows_10</cpe></osclass>
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="11" accuracy="100"><cpe>cpe:/o:microsoft:windows_11</cpe></osclass>
+</osmatch>
+<osmatch name="Microsoft Windows Server 2016" accuracy="100" line="81849">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="2016" accuracy="100"><cpe>cpe:/o:microsoft:windows_server_2016</cpe></osclass>
+</osmatch>
+<osmatch name="Microsoft Xbox 360 Dashboard" accuracy="100" line="91139">
+<osclass type="media device" vendor="Microsoft" osfamily="Xbox 360" accuracy="100"><cpe>cpe:/h:microsoft:xbox_360_kernel</cpe></osclass>
+</osmatch>
+<osmatch name="NTI E-MICRO-TRHP temperature sensor" accuracy="100" line="96049">
+<osclass type="specialized" vendor="NTI" osfamily="embedded" accuracy="100"/>
+</osmatch>
+</os>
+<distance value="1"/>
+<trace>
+<hop ttl="1" ipaddr="192.168.1.56" rtt="71.67"/>
+</trace>
+<times srtt="71668" rttvar="26805" to="178888"/>
+</host>
+<runstats><finished time="1749076146" timestr="Wed Jun  4 23:29:06 2025" summary="Nmap done at Wed Jun  4 23:29:06 2025; 1 IP address (1 host up) scanned in 138.87 seconds" elapsed="138.87" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
+
+2025-06-04 23:29:06,514 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.56
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.56
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.56, Hostname=192.168.1.56, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.56
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.56
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 5
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56']
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:29:06,515 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 5 dispositivos
+2025-06-04 23:29:06,516 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56']
+2025-06-04 23:29:06,516 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:29:06,516 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:29:06,516 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:29:06,516 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:29:06,516 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:29:06,516 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:29:06,529 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 23:29:16,280 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.47 (return code 0):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:26:47 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.47 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.47" start="1749076007" startstr="Wed Jun  4 23:26:47 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.47" addrtype="ipv4"/>
+<address addr="A0:D7:F3:6B:DA:E0" addrtype="mac" vendor="Samsung Electronics"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1749076008" endtime="1749076156"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.47" addrtype="ipv4"/>
+<address addr="A0:D7:F3:6B:DA:E0" addrtype="mac" vendor="Samsung Electronics"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="filtered" count="65535">
+<extrareasons reason="no-response" count="65535" proto="tcp" ports="1-65535"/>
+</extraports>
+</ports>
+<os></os>
+<distance value="1"/>
+<trace>
+<hop ttl="1" ipaddr="192.168.1.47" rtt="203.00"/>
+</trace>
+<times srtt="203000" rttvar="203000" to="1015000"/>
+</host>
+<runstats><finished time="1749076156" timestr="Wed Jun  4 23:29:16 2025" summary="Nmap done at Wed Jun  4 23:29:16 2025; 1 IP address (1 host up) scanned in 148.65 seconds" elapsed="148.65" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
+
+2025-06-04 23:29:16,281 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.47
+2025-06-04 23:29:16,281 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.47
+2025-06-04 23:29:16,281 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.47, Hostname=192.168.1.47, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 23:29:16,281 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.47
+2025-06-04 23:29:16,281 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.47
+2025-06-04 23:29:16,281 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 6
+2025-06-04 23:29:16,281 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47']
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 6 dispositivos
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47']
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.47 - 192.168.1.47
+2025-06-04 23:29:16,282 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:29:16,297 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 23:30:35,098 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.33 (return code 0):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 23:28:21 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.33 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.33" start="1749076101" startstr="Wed Jun  4 23:28:21 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1749076103" endtime="1749076235"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="192.168.1.33" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65515">
+<extrareasons reason="reset" count="65515" proto="tcp" ports="1-134,136,138,140-444,446-901,903-911,913-5039,5041-5356,5358-5431,5433-7679,7681-49663,49670-50031,50033-50252,50254-51130,51132-64495,64497-65535"/>
+</extraports>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="137"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="netbios-ns" method="table" conf="3"/></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="902"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="vmware-auth" product="VMware Authentication Daemon" version="1.10" extrainfo="Uses VNC, SOAP" tunnel="ssl" method="probed" conf="10"/><script id="banner" output="220 VMware Authentication Daemon Version 1.10: SSL Required, Se&#xa;rverDaemonProtocol:SOAP, MKSDisplayProtocol:VNC , , NFCSSL supported/t,&#xa;"/></port>
+<port protocol="tcp" portid="912"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="vmware-auth" product="VMware Authentication Daemon" version="1.0" extrainfo="Uses VNC, SOAP" method="probed" conf="10"/><script id="banner" output="220 VMware Authentication Daemon Version 1.0, ServerDaemonProto&#xa;col:SOAP, MKSDisplayProtocol:VNC , , ,"/></port>
+<port protocol="tcp" portid="5040"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="5357"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="http" product="Microsoft HTTPAPI httpd" version="2.0" extrainfo="SSDP/UPnP" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-headers" output="&#xa;  Content-Type: text/html; charset=us-ascii&#xa;  Server: Microsoft-HTTPAPI/2.0&#xa;  Date: Wed, 04 Jun 2025 22:28:54 GMT&#xa;  Connection: close&#xa;  Content-Length: 326&#xa;  &#xa;  (Request type: GET)&#xa;"/><script id="http-title" output="Service Unavailable"><elem key="title">Service Unavailable</elem>
+</script></port>
+<port protocol="tcp" portid="5432"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="postgresql" product="PostgreSQL DB" extrainfo="Spanish" method="probed" conf="10"><cpe>cpe:/a:postgresql:postgresql::::es</cpe></service></port>
+<port protocol="tcp" portid="7680"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="pando-pub" method="table" conf="3"/></port>
+<port protocol="tcp" portid="49664"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49665"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49666"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49667"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49668"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49669"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="50032"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port50032-TCP:V=7.97%I=2%D=6/4%Time=6840C895%P=i686-pc-windows-windows%r(GetRequest,2D,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\n\r\n&quot;)%r(SSLSessionReq,42,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\nContent-Length:\x200\r\nConnection:\x20close\r\n\r\n&quot;)%r(TLSSessionReq,42,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\nContent-Length:\x200\r\nConnection:\x20close\r\n\r\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  GetRequest: &#xa;    HTTP/1.0 404 Not Found&#xa;    Content-Length: 0&#xa;  SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.0 400 Bad Request&#xa;    Content-Length: 0&#xa;    Connection: close"><elem key="GetRequest">&#xa;    HTTP/1.0 404 Not Found&#xa;    Content-Length: 0</elem>
+<elem key="SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.0 400 Bad Request&#xa;    Content-Length: 0&#xa;    Connection: close</elem>
+</script></port>
+<port protocol="tcp" portid="50253"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port50253-TCP:V=7.97%I=2%D=6/4%Time=6840C895%P=i686-pc-windows-windows%r(GetRequest,2D,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\n\r\n&quot;)%r(SSLSessionReq,42,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\nContent-Length:\x200\r\nConnection:\x20close\r\n\r\n&quot;)%r(TLSSessionReq,42,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\nContent-Length:\x200\r\nConnection:\x20close\r\n\r\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  GetRequest: &#xa;    HTTP/1.0 404 Not Found&#xa;    Content-Length: 0&#xa;  SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.0 400 Bad Request&#xa;    Content-Length: 0&#xa;    Connection: close"><elem key="GetRequest">&#xa;    HTTP/1.0 404 Not Found&#xa;    Content-Length: 0</elem>
+<elem key="SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.0 400 Bad Request&#xa;    Content-Length: 0&#xa;    Connection: close</elem>
+</script></port>
+<port protocol="tcp" portid="51131"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port51131-TCP:V=7.97%I=2%D=6/4%Time=6840C895%P=i686-pc-windows-windows%r(GetRequest,2D,&quot;HTTP/1\.0\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\n\r\n&quot;)%r(SSLSessionReq,42,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\nContent-Length:\x200\r\nConnection:\x20close\r\n\r\n&quot;)%r(TLSSessionReq,42,&quot;HTTP/1\.0\x20400\x20Bad\x20Request\r\nContent-Length:\x200\r\nConnection:\x20close\r\n\r\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  GetRequest: &#xa;    HTTP/1.0 404 Not Found&#xa;    Content-Length: 0&#xa;  SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.0 400 Bad Request&#xa;    Content-Length: 0&#xa;    Connection: close"><elem key="GetRequest">&#xa;    HTTP/1.0 404 Not Found&#xa;    Content-Length: 0</elem>
+<elem key="SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.0 400 Bad Request&#xa;    Content-Length: 0&#xa;    Connection: close</elem>
+</script></port>
+<port protocol="tcp" portid="64496"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="upnp" method="probed" conf="10"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="135"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="41653"/>
+<osmatch name="Microsoft Windows 10 1607 - 11 23H2" accuracy="100" line="74791">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="10" accuracy="100"><cpe>cpe:/o:microsoft:windows_10</cpe></osclass>
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="11" accuracy="100"><cpe>cpe:/o:microsoft:windows_11</cpe></osclass>
+</osmatch>
+</os>
+<uptime seconds="12493" lastboot="Wed Jun  4 20:02:22 2025"/>
+<distance value="0"/>
+<tcpsequence index="255" difficulty="Good luck!" values="FF22D568,36BAA5B2,935A1C95,D9F3D57B,B2E30C58,1604A54B"/>
+<ipidsequence class="Incremental" values="CE1,CE3,CE5,CE7,CE9,CEB"/>
+<tcptssequence class="1000HZ" values="BD0EE2,BD0F4F,BD0FBC,BD102A,BD1097,BD1103"/>
+<hostscript><script id="smb2-time" output="&#xa;  date: 2025-06-04T22:28:58&#xa;  start_date: N/A"><elem key="date">2025-06-04T22:28:58</elem>
+<elem key="start_date">N/A</elem>
+</script><script id="smb2-security-mode" output="&#xa;  3.1.1: &#xa;    Message signing enabled but not required"><table key="3.1.1">
+<elem>Message signing enabled but not required</elem>
+</table>
+</script></hostscript><times srtt="3899" rttvar="5366" to="100000"/>
+</host>
+<runstats><finished time="1749076235" timestr="Wed Jun  4 23:30:35 2025" summary="Nmap done at Wed Jun  4 23:30:35 2025; 1 IP address (1 host up) scanned in 133.75 seconds" elapsed="133.75" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
+
+2025-06-04 23:30:35,115 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.33
+2025-06-04 23:30:35,117 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.33, Hostname=192.168.1.33, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 23:30:35,118 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.33
+2025-06-04 23:30:35,118 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.33
+2025-06-04 23:30:35,118 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 7
+2025-06-04 23:30:35,118 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 23:30:35,118 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47', '192.168.1.33']
+2025-06-04 23:30:35,118 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:30:35,118 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:30:35,119 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 7 dispositivos
+2025-06-04 23:30:35,119 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.33
+2025-06-04 23:30:35,119 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47', '192.168.1.33']
+2025-06-04 23:30:35,120 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:30:35,121 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:30:35,121 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:30:35,121 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:30:35,121 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:30:35,121 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.47 - 192.168.1.47
+2025-06-04 23:30:35,121 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.33 - 192.168.1.33
+2025-06-04 23:30:35,122 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:30:35,122 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 23:30:35,131 - miproyectored - DEBUG - [DEBUG] Escaneo completado. Dispositivos encontrados: 7
+2025-06-04 23:30:35,132 - miproyectored - INFO - [INFO] Escaneo completado. Encontrados 7 dispositivos.
+2025-06-04 23:30:35,134 - miproyectored - DEBUG - [DEBUG] Iniciando escaneos detallados automáticos
+2025-06-04 23:30:35,139 - miproyectored.scanner.snmp_scanner - INFO - Iniciando escaneo SNMP para 192.168.1.51
+2025-06-04 23:30:35,139 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.1.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,140 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.2.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,140 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.3.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,140 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.4.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,140 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.5.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,140 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.6.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,141 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.7.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,141 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valores de columna SNMP para OID 1.3.6.1.2.1.2.2.1.1: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,141 - miproyectored.scanner.snmp_scanner - INFO - Escaneo SNMP exitoso para 192.168.1.51 con comunidad public
+2025-06-04 23:30:35,144 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:30:35,144 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:30:35,144 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 7 dispositivos
+2025-06-04 23:30:35,144 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47', '192.168.1.33']
+2025-06-04 23:30:35,144 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:30:35,144 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:30:35,144 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:30:35,145 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:30:35,145 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:30:35,145 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.47 - 192.168.1.47
+2025-06-04 23:30:35,145 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.33 - 192.168.1.33
+2025-06-04 23:30:35,145 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:30:35,159 - miproyectored.scanner.snmp_scanner - INFO - Iniciando escaneo SNMP para 192.168.1.37
+2025-06-04 23:30:35,159 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.1.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,159 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.2.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,160 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.3.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,160 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.4.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,160 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.5.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,160 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.6.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,160 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.7.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,160 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valores de columna SNMP para OID 1.3.6.1.2.1.2.2.1.1: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,160 - miproyectored.scanner.snmp_scanner - INFO - Escaneo SNMP exitoso para 192.168.1.37 con comunidad public
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 7 dispositivos
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47', '192.168.1.33']
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.47 - 192.168.1.47
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.33 - 192.168.1.33
+2025-06-04 23:30:35,161 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:30:35,161 - miproyectored.scanner.snmp_scanner - INFO - Iniciando escaneo SNMP para 192.168.1.58
+2025-06-04 23:30:35,162 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.1.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,162 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.2.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,162 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.3.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,162 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.4.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,174 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.5.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,174 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.6.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,174 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.7.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,174 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valores de columna SNMP para OID 1.3.6.1.2.1.2.2.1.1: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,175 - miproyectored.scanner.snmp_scanner - INFO - Escaneo SNMP exitoso para 192.168.1.58 con comunidad public
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 7 dispositivos
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47', '192.168.1.33']
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.47 - 192.168.1.47
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.33 - 192.168.1.33
+2025-06-04 23:30:35,175 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:30:35,175 - miproyectored.scanner.snmp_scanner - INFO - Iniciando escaneo SNMP para 192.168.1.1
+2025-06-04 23:30:35,176 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.1.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,176 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.2.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,176 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.3.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,176 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.4.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,176 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.5.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,177 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.6.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,177 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.7.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,177 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valores de columna SNMP para OID 1.3.6.1.2.1.2.2.1.1: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,177 - miproyectored.scanner.snmp_scanner - INFO - Escaneo SNMP exitoso para 192.168.1.1 con comunidad public
+2025-06-04 23:30:35,189 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:30:35,189 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:30:35,189 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 7 dispositivos
+2025-06-04 23:30:35,189 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47', '192.168.1.33']
+2025-06-04 23:30:35,189 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:30:35,189 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:30:35,190 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:30:35,190 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:30:35,190 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:30:35,190 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.47 - 192.168.1.47
+2025-06-04 23:30:35,190 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.33 - 192.168.1.33
+2025-06-04 23:30:35,190 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:30:35,190 - miproyectored.scanner.snmp_scanner - INFO - Iniciando escaneo SNMP para 192.168.1.56
+2025-06-04 23:30:35,190 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.1.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,191 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.2.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,191 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.3.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,191 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.4.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,191 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.5.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,191 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.6.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,192 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.7.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,192 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valores de columna SNMP para OID 1.3.6.1.2.1.2.2.1.1: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,192 - miproyectored.scanner.snmp_scanner - INFO - Escaneo SNMP exitoso para 192.168.1.56 con comunidad public
+2025-06-04 23:30:35,192 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:30:35,192 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:30:35,192 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 7 dispositivos
+2025-06-04 23:30:35,192 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47', '192.168.1.33']
+2025-06-04 23:30:35,192 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:30:35,192 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:30:35,192 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:30:35,205 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:30:35,205 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:30:35,206 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.47 - 192.168.1.47
+2025-06-04 23:30:35,206 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.33 - 192.168.1.33
+2025-06-04 23:30:35,206 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:30:35,206 - miproyectored.scanner.snmp_scanner - INFO - Iniciando escaneo SNMP para 192.168.1.47
+2025-06-04 23:30:35,206 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.1.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,207 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.2.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,207 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.3.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,207 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.4.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,207 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.5.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,208 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.6.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,208 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.7.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,208 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valores de columna SNMP para OID 1.3.6.1.2.1.2.2.1.1: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,208 - miproyectored.scanner.snmp_scanner - INFO - Escaneo SNMP exitoso para 192.168.1.47 con comunidad public
+2025-06-04 23:30:35,208 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 7 dispositivos
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47', '192.168.1.33']
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.47 - 192.168.1.47
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.33 - 192.168.1.33
+2025-06-04 23:30:35,209 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:30:35,209 - miproyectored.scanner.snmp_scanner - INFO - Iniciando escaneo SNMP para 192.168.1.33
+2025-06-04 23:30:35,210 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.1.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,220 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.2.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,221 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.3.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,221 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.4.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,221 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.5.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,222 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.6.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,222 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valor SNMP para OID 1.3.6.1.2.1.1.7.0: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,222 - miproyectored.scanner.snmp_client - ERROR - Error al obtener valores de columna SNMP para OID 1.3.6.1.2.1.2.2.1.1: ASN1_Object.__init__() missing 1 required positional argument: 'val'
+2025-06-04 23:30:35,222 - miproyectored.scanner.snmp_scanner - INFO - Escaneo SNMP exitoso para 192.168.1.33 con comunidad public
+2025-06-04 23:30:35,223 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 23:30:35,223 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 23:30:35,223 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 7 dispositivos
+2025-06-04 23:30:35,223 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58', '192.168.1.1', '192.168.1.56', '192.168.1.47', '192.168.1.33']
+2025-06-04 23:30:35,223 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 23:30:35,223 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 23:30:35,223 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 23:30:35,223 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.1 - 192.168.1.1
+2025-06-04 23:30:35,224 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.56 - 192.168.1.56
+2025-06-04 23:30:35,224 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.47 - 192.168.1.47
+2025-06-04 23:30:35,224 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.33 - 192.168.1.33
+2025-06-04 23:30:35,224 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 23:31:50,970 - miproyectored - DEBUG - Dispositivo seleccionado - IP: 192.168.1.33
+2025-06-04 23:31:50,970 - miproyectored - DEBUG - Dispositivo encontrado: 192.168.1.33 - 192.168.1.33
+2025-06-04 23:32:00,504 - miproyectored - INFO - Cerrando la aplicación.
