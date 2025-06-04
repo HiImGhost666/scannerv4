@@ -1,6 +1,394 @@
-2025-06-04 20:55:47,388 - miproyectored - INFO - ================================================================================
-2025-06-04 20:55:47,388 - miproyectored - INFO - Iniciando nueva sesión - 2025-06-04 20:55:47
-2025-06-04 20:55:47,388 - miproyectored - INFO - ================================================================================
-2025-06-04 20:55:47,494 - miproyectored - INFO - Rango de red local detectado: 192.168.1.0/24
-2025-06-04 20:55:47,629 - miproyectored - INFO - Interfaz gráfica inicializada correctamente
-2025-06-04 20:56:36,512 - miproyectored - INFO - Cerrando la aplicación.
+2025-06-04 22:55:13,720 - miproyectored - INFO - ================================================================================
+2025-06-04 22:55:13,721 - miproyectored - INFO - Iniciando nueva sesión - 2025-06-04 22:55:13
+2025-06-04 22:55:13,721 - miproyectored - INFO - ================================================================================
+2025-06-04 22:55:13,844 - miproyectored - INFO - Rango de red local detectado: 192.168.1.0/24
+2025-06-04 22:55:13,975 - miproyectored - INFO - Interfaz gráfica inicializada correctamente
+2025-06-04 22:55:17,091 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 22:55:17,091 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 22:55:17,091 - miproyectored - DEBUG - [DEBUG] No hay dispositivos en self.scan_results para mostrar
+2025-06-04 22:55:17,092 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo rápido para encontrar hosts activos
+2025-06-04 22:55:23,558 - miproyectored - DEBUG - [DEBUG] Escaneo rápido completado. IPs activas encontradas: 11
+2025-06-04 22:55:23,558 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 11 IPs activas
+2025-06-04 22:55:23,562 - miproyectored - DEBUG - [DEBUG] Usando 5 workers para escaneo paralelo
+2025-06-04 22:55:23,562 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.1
+2025-06-04 22:55:23,563 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.37
+2025-06-04 22:55:23,563 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.44
+2025-06-04 22:55:23,563 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.47
+2025-06-04 22:55:23,564 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.51
+2025-06-04 22:55:53,146 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.51 (return code 0):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.51 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.51" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.51" addrtype="ipv4"/>
+<address addr="26:96:82:AE:20:66" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1749074124" endtime="1749074153"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.51" addrtype="ipv4"/>
+<address addr="26:96:82:AE:20:66" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65534">
+<extrareasons reason="reset" count="65534" proto="tcp" ports="1-46154,46156-65535"/>
+</extraports>
+<port protocol="tcp" portid="46155"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+</ports>
+<os><portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="42482"/>
+</os>
+<distance value="1"/>
+<trace>
+<hop ttl="1" ipaddr="192.168.1.51" rtt="4.88"/>
+</trace>
+<times srtt="4875" rttvar="983" to="100000"/>
+</host>
+<runstats><finished time="1749074153" timestr="Wed Jun  4 22:55:53 2025" summary="Nmap done at Wed Jun  4 22:55:53 2025; 1 IP address (1 host up) scanned in 29.54 seconds" elapsed="29.54" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
+
+2025-06-04 22:55:53,147 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.51
+2025-06-04 22:55:53,147 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.58
+2025-06-04 22:55:53,147 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.51
+2025-06-04 22:55:53,147 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.51, Hostname=192.168.1.51, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.51
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.51
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 1
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51']
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 1 dispositivos
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51']
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 22:55:53,148 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 22:55:53,158 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 22:56:45,113 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.37 (return code 0):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.37 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.37" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.37" addrtype="ipv4"/>
+<address addr="90:39:5F:E4:D8:B8" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1749074124" endtime="1749074204"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.37" addrtype="ipv4"/>
+<address addr="90:39:5F:E4:D8:B8" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65528">
+<extrareasons reason="reset" count="65528" proto="tcp" ports="1-5554,5556-8008,8010-36064,36066-40026,40028-55441,55444-59999,60001-65535"/>
+</extraports>
+<port protocol="tcp" portid="5555"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="adb" product="Android Debug Bridge" extrainfo="token auth required" ostype="Android" method="probed" conf="10"><cpe>cpe:/o:linux:linux_kernel</cpe></service></port>
+<port protocol="tcp" portid="8009"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tcpwrapped" method="probed" conf="8"/><script id="ajp-methods" output="Failed to get a valid response for the OPTION request"/></port>
+<port protocol="tcp" portid="36065"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Amazon FireTV Stick" devicetype="media device" method="probed" conf="10"/><script id="http-headers" output="&#xa;  &#xa;  (Request type: GET)&#xa;"/><script id="http-title" output="Site doesn&apos;t have a title."></script></port>
+<port protocol="tcp" portid="40027"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tcpwrapped" method="probed" conf="8"/></port>
+<port protocol="tcp" portid="55442"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="nagios-nsca" product="Nagios NSCA" method="probed" conf="10"/><script id="banner" output="HTTP/1.1 500 Server Error\x0D\x0AContent-Length: 48\x0D\x0ADate&#xa;: Wed, 04 Jun 2025 21:55:53 GMT\x0D\x0AConnection: close"/></port>
+<port protocol="tcp" portid="55443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="unknown" tunnel="ssl" method="table" conf="3"/></port>
+<port protocol="tcp" portid="60000"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tcpwrapped" method="probed" conf="8"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="5555"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="41319"/>
+<osmatch name="Linux 5.4" accuracy="97" line="72252">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="97"><cpe>cpe:/o:linux:linux_kernel:5.4</cpe></osclass>
+</osmatch>
+<osmatch name="Android 10 (Linux 4.14)" accuracy="96" line="32718">
+<osclass type="phone" vendor="Google" osfamily="Android" osgen="10.X" accuracy="96"><cpe>cpe:/o:google:android:10</cpe></osclass>
+<osclass type="phone" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="96"><cpe>cpe:/o:linux:linux_kernel:4.14</cpe></osclass>
+</osmatch>
+<osmatch name="OpenWrt 21.02 (Linux 5.4)" accuracy="96" line="72530">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="96"><cpe>cpe:/o:linux:linux_kernel:5.4</cpe></osclass>
+</osmatch>
+<osmatch name="OpenWrt 22.03 (Linux 5.10)" accuracy="96" line="72603">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="96"><cpe>cpe:/o:linux:linux_kernel:5.10</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 4.15 - 5.19" accuracy="96" line="70534">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="96"><cpe>cpe:/o:linux:linux_kernel:4</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="96"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.32 - 3.10" accuracy="96" line="59874">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="96"><cpe>cpe:/o:linux:linux_kernel:2.6</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="96"><cpe>cpe:/o:linux:linux_kernel:3</cpe></osclass>
+</osmatch>
+<osmatch name="Asus RT-N10 router or AXIS 211A Network Camera (Linux 2.6)" accuracy="95" line="50785">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="95"><cpe>cpe:/o:linux:linux_kernel:2.6</cpe></osclass>
+<osclass type="WAP" vendor="Asus" osfamily="embedded" accuracy="95"><cpe>cpe:/h:asus:rt-n10</cpe></osclass>
+<osclass type="webcam" vendor="AXIS" osfamily="embedded" accuracy="95"><cpe>cpe:/h:axis:211_network_camera</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.18" accuracy="95" line="52829">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="95"><cpe>cpe:/o:linux:linux_kernel:2.6.18</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.16" accuracy="94" line="51611">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="94"><cpe>cpe:/o:linux:linux_kernel:2.6.16</cpe></osclass>
+</osmatch>
+<osmatch name="Linux 2.6.18 - 2.6.32" accuracy="94" line="53704">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="94"><cpe>cpe:/o:linux:linux_kernel:2.6</cpe></osclass>
+</osmatch>
+<osfingerprint fingerprint="OS:SCAN(V=7.97%E=4%D=6/4%OT=5555%CT=1%CU=41319%PV=Y%DS=1%DC=D%G=Y%M=90395F%&#xa;OS:TM=6840C11D%P=i686-pc-windows-windows)SEQ(SP=102%GCD=1%ISR=109%TI=Z%CI=Z&#xa;OS:%II=I%TS=A)SEQ(SP=106%GCD=1%ISR=109%TI=Z%CI=Z%II=I%TS=A)SEQ(SP=FD%GCD=1%&#xa;OS:ISR=10E%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M5B4ST11NW8%O2=M5B4ST11NW8%O3=M5B4NNT&#xa;OS:11NW8%O4=M5B4ST11NW8%O5=M5B4ST11NW8%O6=M5B4ST11)WIN(W1=FE88%W2=FE88%W3=F&#xa;OS:E88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M5B4%CC=N%Q=)T1(R&#xa;OS:=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=&#xa;OS:A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=&#xa;OS:Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=A&#xa;OS:R%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%R&#xa;OS:UD=G)IE(R=Y%DFI=N%T=40%CD=S)&#xa;"/>
+</os>
+<uptime seconds="2102842" lastboot="Sun May 11 14:49:23 2025"/>
+<distance value="1"/>
+<tcpsequence index="262" difficulty="Good luck!" values="70DF8F41,8484D61E,7471DD46,C21AB61A,43E3346C,8714673A"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="1000HZ" values="7D560A9B,7D560AD1,7D560B46,7D560BDB,7D560C1B,7D560CA0"/>
+<trace>
+<hop ttl="1" ipaddr="192.168.1.37" rtt="9.95"/>
+</trace>
+<times srtt="9955" rttvar="6086" to="100000"/>
+</host>
+<runstats><finished time="1749074205" timestr="Wed Jun  4 22:56:45 2025" summary="Nmap done at Wed Jun  4 22:56:45 2025; 1 IP address (1 host up) scanned in 81.48 seconds" elapsed="81.48" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
+
+2025-06-04 22:56:45,116 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.37
+2025-06-04 22:56:45,117 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.59
+2025-06-04 22:56:50,585 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.58 (return code 0):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:53 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.58 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.58" start="1749074153" startstr="Wed Jun  4 22:55:53 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.58" addrtype="ipv4"/>
+<address addr="26:96:82:AE:20:66" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1749074154" endtime="1749074210"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.58" addrtype="ipv4"/>
+<address addr="26:96:82:AE:20:66" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65530">
+<extrareasons reason="reset" count="65530" proto="tcp" ports="1-21,23-79,81-442,444-3516,3518-7546,7548-65535"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="Dropbear sshd" version="2022.83" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:matt_johnston:dropbear_ssh_server:2022.83</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-auth-methods" output="&#xa;  Supported authentication methods: &#xa;    password"><table key="Supported authentication methods">
+<elem>password</elem>
+</table>
+</script><script id="banner" output="SSH-2.0-dropbear_2022.83\x0D\x0A\x00\x00\x01\x84\x0B\x14\xF4\xC&#xa;8\x0E\x83\x08\xCA\xFF\x13\xB1[}wZ\x13Ru\x00\x00\x00\x84curve25519-sh...&#xa;"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="rtsp" method="probed" conf="10"/><script id="http-title" output="movistar"><elem key="title">movistar</elem>
+</script><script id="rtsp-methods" output="ERROR: Script execution failed (use -d to debug)"/><script id="http-headers" output="&#xa;  Server: mini_httpd&#xa;  Date: Wed, 04 Jun 2025 22:56:33 GMT&#xa;  X-Frame-Options: SAMEORIGIN&#xa;  Content-Security-Policy: default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;;style-src &apos;self&apos; &apos;unsafe-inline&apos;&#xa;  X-Content-Type-Options: nosniff&#xa;  X-XSS-Protection: 1; mode=block&#xa;  Content-Type: text/html&#xa;  &#xa;  (Request type: GET)&#xa;"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="https" tunnel="ssl" method="table" conf="3"/><script id="ssl-cert" output="Subject: commonName=192.168.1.90/organizationName=Grupo Telefonica/stateOrProvinceName=A78923125/countryName=PL&#xa;Not valid before: 2025-01-23T05:39:14&#xa;Not valid after:  2030-01-22T05:39:14"><table key="subject">
+<elem key="commonName">192.168.1.90</elem>
+<elem key="countryName">PL</elem>
+<elem key="localityName">PZ. DE LA INDEPENDENCIA 6 28001 MADRID</elem>
+<elem key="organizationName">Grupo Telefonica</elem>
+<elem key="stateOrProvinceName">A78923125</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">192.168.1.90</elem>
+<elem key="countryName">PL</elem>
+<elem key="localityName">PZ. DE LA INDEPENDENCIA 6 28001 MADRID</elem>
+<elem key="organizationName">Grupo Telefonica</elem>
+<elem key="stateOrProvinceName">A78923125</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">A9FB9D31B2389C2742B89B66C6A790100E67A2905F3BAC2CECCBCF69F46D43557FAF2E3C9CACCD2F7155F84ABA87E39EC58127DD02005F623205836BBAF39DCC1FAECB3E50D4FE9782B8EF8FE3017C0C4DA5107E9E566F414234AAF7CDF3771E9024040B6E64E9004813C6D94D1652E9AEF92F34FA4BA20F4300FD090C5084795CF687AE2868501D6719274CB99EA08735C36A884F4403FE7CF42C9B0CE40422C4A8C73CD1550E8D37574AD1D24FE57E4B3C57330F3FCC2A3B8AE97D00264F2F053D80D78044672A73B69441497736FF05C7B8FEEC3C111DC2F6A06ADF197E6CDD992309B9CC4508037E632218AB370CD6EC984F4228C5511F119D30198CBACF</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">Netscape Cert Type</elem>
+<elem key="value">SSL Server</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2025-01-23T05:39:14</elem>
+<elem key="notAfter">2030-01-22T05:39:14</elem>
+</table>
+<elem key="md5">d3093bceef098a793344f1e56854ade0</elem>
+<elem key="sha1">cad4156af7fcdad56232f454cdbce4d2f36c5d3d</elem>
+<elem key="sha256">14a4103270868c56339f39571ad406b7b7f9662fdf904c6696b9a3510b5ccaac</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDrTCCApWgAwIBAgIUNAQGiSYDTMSocTdXdwK1en+EwXEwDQYJKoZIhvcNAQEL&#xa;BQAwgYQxCzAJBgNVBAYTAlBMMRIwEAYDVQQIDAlBNzg5MjMxMjUxLzAtBgNVBAcM&#xa;JlBaLiBERSBMQSBJTkRFUEVOREVOQ0lBIDYgMjgwMDEgTUFEUklEMRkwFwYDVQQK&#xa;DBBHcnVwbyBUZWxlZm9uaWNhMRUwEwYDVQQDDAwxOTIuMTY4LjEuOTAwHhcNMjUw&#xa;MTIzMDUzOTE0WhcNMzAwMTIyMDUzOTE0WjCBhDELMAkGA1UEBhMCUEwxEjAQBgNV&#xa;BAgMCUE3ODkyMzEyNTEvMC0GA1UEBwwmUFouIERFIExBIElOREVQRU5ERU5DSUEg&#xa;NiAyODAwMSBNQURSSUQxGTAXBgNVBAoMEEdydXBvIFRlbGVmb25pY2ExFTATBgNV&#xa;BAMMDDE5Mi4xNjguMS45MDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB&#xa;AKn7nTGyOJwnQribZsankBAOZ6KQXzusLOzLz2n0bUNVf68uPJyszS9xVfhKuofj&#xa;nsWBJ90CAF9iMgWDa7rzncwfrss+UNT+l4K474/jAXwMTaUQfp5Wb0FCNKr3zfN3&#xa;HpAkBAtuZOkASBPG2U0WUumu+S80+kuiD0MA/QkMUIR5XPaHrihoUB1nGSdMuZ6g&#xa;hzXDaohPRAP+fPQsmwzkBCLEqMc80VUOjTdXStHST+V+SzxXMw8/zCo7iul9ACZP&#xa;LwU9gNeARGcqc7aUQUl3Nv8Fx7j+7DwRHcL2oGrfGX5s3ZkjCbnMRQgDfmMiGKs3&#xa;DNbsmE9CKMVRHxGdMBmMus8CAwEAAaMVMBMwEQYJYIZIAYb4QgEBBAQDAgZAMA0G&#xa;CSqGSIb3DQEBCwUAA4IBAQCm3cYrBpUyZxreUoGTV0gdvWrJR/+tusOqPXYGqHTu&#xa;DXybee4hbvHqu2ux26RFiQ+hQryW5H2NRfvaOVUL+gdu25loCDx1MYDcr6MUjADr&#xa;ftPHb+Va+qaQMr7kLHck5oqCX6QbFMQxM7IjwGRedeFjfxcIfKR6Rs7KHL1cciMb&#xa;B6Ds0KMqfv4XUlQuipfAUnfBozW2c27Uw6j7FVrNhXghGPPT/QyMrSo4iYkPrJJw&#xa;gG3eCFw1Nf/HCh8I1l0QqR5GuJKM24FmlpN713kAhsbyKAwFRyji7kyBFWyXaCS6&#xa;v5SkhznWo9XfHGnHdtNHxPEGZeqaT3FfaYHAAmoNpyPu&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-headers" output="&#xa;  Server: mini_httpd&#xa;  Date: Wed, 04 Jun 2025 22:56:33 GMT&#xa;  X-Frame-Options: SAMEORIGIN&#xa;  Content-Security-Policy: default-src &apos;self&apos;; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos;;style-src &apos;self&apos; &apos;unsafe-inline&apos;&#xa;  X-Content-Type-Options: nosniff&#xa;  X-XSS-Protection: 1; mode=block&#xa;  Content-Type: text/html&#xa;  &#xa;  (Request type: GET)&#xa;"/><script id="http-title" output="movistar"><elem key="title">movistar</elem>
+</script></port>
+<port protocol="tcp" portid="3517"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="802-11-iapp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="7547"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="tcpwrapped" method="probed" conf="8"/></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="22"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="37944"/>
+<osmatch name="Linux 4.15 - 5.19" accuracy="100" line="70534">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:4</cpe></osclass>
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:5</cpe></osclass>
+</osmatch>
+<osmatch name="OpenWrt 21.02 (Linux 5.4)" accuracy="100" line="72530">
+<osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="5.X" accuracy="100"><cpe>cpe:/o:linux:linux_kernel:5.4</cpe></osclass>
+</osmatch>
+</os>
+<uptime seconds="877805" lastboot="Sun May 25 19:06:45 2025"/>
+<distance value="1"/>
+<tcpsequence index="259" difficulty="Good luck!" values="769AB823,B560728F,47D0D5DB,DCF25E3D,FC6CAB9B,D1C7D49C"/>
+<ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+<tcptssequence class="1000HZ" values="3451EB7B,3451EBE9,3451EC58,3451ECC1,3451ED30,3451ED9C"/>
+<trace>
+<hop ttl="1" ipaddr="192.168.1.58" rtt="4.72"/>
+</trace>
+<times srtt="4722" rttvar="2408" to="100000"/>
+</host>
+<runstats><finished time="1749074210" timestr="Wed Jun  4 22:56:50 2025" summary="Nmap done at Wed Jun  4 22:56:50 2025; 1 IP address (1 host up) scanned in 57.37 seconds" elapsed="57.37" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
+
+2025-06-04 22:56:50,590 - miproyectored - DEBUG - Nmap stderr for 192.168.1.58:
+WARNING: Service 192.168.1.58:80 had already soft-matched rtsp, but now soft-matched sip; ignoring second value
+NSOCK ERROR [57.3070s] poll_loop(): nsock_loop error 10022: An invalid argument was supplied. 
+NSE: Script Engine Scan Aborted.
+An error was thrown by the engine: C:\Program Files (x86)\Nmap/nse_main.lua:1078: a fatal error occurred in nsock_loop
+stack traceback:
+	[C]: in function 'nmap.socket.loop'
+	C:\Program Files (x86)\Nmap/nse_main.lua:1078: in upvalue 'run'
+	C:\Program Files (x86)\Nmap/nse_main.lua:1488: in function <C:\Program Files (x86)\Nmap/nse_main.lua:1435>
+	[C]: in ?
+NSOCK ERROR [57.3660s] poll_loop(): nsock_loop error 10022: An invalid argument was supplied. 
+NSE: Script Engine Scan Aborted.
+An error was thrown by the engine: C:\Program Files (x86)\Nmap/nse_main.lua:1078: a fatal error occurred in nsock_loop
+stack traceback:
+	[C]: in function 'nmap.socket.loop'
+	C:\Program Files (x86)\Nmap/nse_main.lua:1078: in upvalue 'run'
+	C:\Program Files (x86)\Nmap/nse_main.lua:1488: in function <C:\Program Files (x86)\Nmap/nse_main.lua:1435>
+	[C]: in ?
+
+2025-06-04 22:56:50,592 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.1.58
+2025-06-04 22:56:50,592 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.60
+2025-06-04 22:57:12,973 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.37
+2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.37, Hostname=192.168.1.37, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.37
+2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.37
+2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 2
+2025-06-04 22:57:12,974 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37']
+2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 2 dispositivos
+2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37']
+2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 22:57:12,975 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 22:57:13,001 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 22:57:13,001 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.1.58
+2025-06-04 22:57:13,001 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.1.58, Hostname=192.168.1.58, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.1.58
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.1.58
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 3
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.1.51', '192.168.1.37', '192.168.1.58']
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 3 dispositivos
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.1.51', '192.168.1.37', '192.168.1.58']
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.51 - 192.168.1.51
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.37 - 192.168.1.37
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.1.58 - 192.168.1.58
+2025-06-04 22:57:13,002 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 22:57:13,021 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 22:57:15,901 - miproyectored - INFO - Cerrando la aplicación.
+2025-06-04 22:57:18,175 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.47 (return code 3221225786):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.47 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.47" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.47" addrtype="ipv4"/>
+<address addr="A0:D7:F3:6B:DA:E0" addrtype="mac" vendor="Samsung Electronics"/>
+<hostnames>
+</hostnames>
+</hosthint>
+
+2025-06-04 22:57:18,175 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.44 (return code 3221225786):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.44 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.44" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.44" addrtype="ipv4"/>
+<address addr="26:96:82:AE:20:66" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+
+2025-06-04 22:57:18,175 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.47
+2025-06-04 22:57:18,176 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.59 (return code 3221225786):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 22:56:45 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.59 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.59" start="1749074205" startstr="Wed Jun  4 22:56:45 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.59" addrtype="ipv4"/>
+<address addr="F0:F0:A4:53:D4:B4" addrtype="mac" vendor="Amazon Technologies"/>
+<hostnames>
+</hostnames>
+</hosthint>
+
+2025-06-04 22:57:18,176 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.44
+2025-06-04 22:57:18,176 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.62
+2025-06-04 22:57:18,176 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.47
+2025-06-04 22:57:18,178 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.78
+2025-06-04 22:57:18,178 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.59
+2025-06-04 22:57:18,179 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.1.33
+2025-06-04 22:57:18,181 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.60 (return code 3221225786):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 22:56:50 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.60 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.60" start="1749074210" startstr="Wed Jun  4 22:56:50 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.60" addrtype="ipv4"/>
+<address addr="26:96:82:AE:20:66" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+
+2025-06-04 22:57:18,181 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.60
+2025-06-04 22:57:18,185 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.1.1 (return code 3221225786):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 22:55:23 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.1 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.1.1" start="1749074123" startstr="Wed Jun  4 22:55:23 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.1" addrtype="ipv4"/>
+<address addr="98:97:D1:33:2C:27" addrtype="mac" vendor="MitraStar Technology"/>
+<hostnames>
+</hostnames>
+</hosthint>
+
+2025-06-04 22:57:18,185 - miproyectored - WARNING - [WARN] No se pudo obtener información del dispositivo en 192.168.1.1

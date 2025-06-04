@@ -1709,13 +1709,203 @@ class NetworkScannerGUI(ttk.Window):
             messagebox.showerror("Error", f"Error al exportar resultados: {e}")
 
     def _show_topology(self):
-        """Muestra la topología de red."""
+        """Muestra la topología de red interactiva."""
         if not self.scan_results:
-            messagebox.showwarning("Topología", "No hay resultados para mostrar la topología.")
+            messagebox.showwarning("Topología", "No hay resultados de escaneo para mostrar la topología.")
             return
 
-        # Aquí iría la lógica para mostrar la topología
-        messagebox.showinfo("Topología", "Visualización de topología no implementada aún.")
+        try:
+            # Crear la estructura de datos para la topología
+            nodes = []
+            edges = []
+            node_id_map = {}
+            
+            # Añadir el router como nodo principal
+            router_ip = self.network_range.get().split('/')[0]
+            # Obtener la ruta base del directorio de recursos
+            import os
+            base_dir = os.path.join(os.path.dirname(__file__), 'resources', 'topologia', 'img')
+            router_icon = os.path.join('file://', base_dir, 'Router.png').replace('\\', '/')
+            
+            nodes.append({
+                'id': 1,
+                'label': 'Router',
+                'title': f'Router\nIP: {router_ip}',
+                'shape': 'image',
+                'image': router_icon,
+                'size': 40
+            })
+            node_id_map[router_ip] = 1
+            
+            # Obtener la ruta base del directorio de recursos de imágenes
+            import os
+            img_dir = os.path.join(os.path.dirname(__file__), 'resources', 'topologia', 'img')
+            
+            # Añadir los dispositivos escaneados
+            for i, device in enumerate(self.scan_results, 2):
+                # Usar getattr para acceder de forma segura a los atributos
+                ip = getattr(device, 'ip_address', f'unknown_ip_{i}')
+                hostname = getattr(device, 'hostname', f'Dispositivo {i-1}')
+                os_info = getattr(device, 'os', '')
+                mac = getattr(device, 'mac_address', '')
+                
+                node_id_map[ip] = i
+                
+                # Determinar el tipo de dispositivo y la imagen correspondiente
+                device_type = 'unknown'
+                image_url = os.path.join('file://', img_dir, 'PC.png').replace('\\', '/')  # Dispositivo genérico
+                
+                # Determinar el tipo de dispositivo basado en la información disponible
+                if os_info and 'windows' in str(os_info).lower():
+                    device_type = 'windows'
+                    image_url = os.path.join('file://', img_dir, 'Windows.png').replace('\\', '/')
+                elif os_info and 'linux' in str(os_info).lower():
+                    device_type = 'linux'
+                    image_url = os.path.join('file://', img_dir, 'linux.png').replace('\\', '/')
+                elif mac and any(mac.lower().startswith(prefix) for prefix in ['00:15:5d', '00:0c:29', '00:50:56']):
+                    device_type = 'virtual'
+                    image_url = os.path.join('file://', img_dir, 'virtual.png').replace('\\', '/')
+                
+                # Crear título con información del dispositivo
+                title = f'IP: {ip}\n'
+                if hostname and hostname != f'Dispositivo {i-1}':
+                    title += f'Hostname: {hostname}\n'
+                if os_info:
+                    title += f'OS: {os_info}\n'
+                if mac:
+                    title += f'MAC: {mac}'
+                
+                nodes.append({
+                    'id': i,
+                    'label': hostname,
+                    'title': title,
+                    'shape': 'image',
+                    'image': image_url,
+                    'size': 35
+                })
+                
+                # Conectar al router
+                edges.append({
+                    'from': 1,  # ID del router
+                    'to': i,    # ID del dispositivo actual
+                    'length': 150,
+                    'color': '#7A99AC',
+                    'width': 2
+                })
+            
+            # Crear la estructura de datos final
+            network_data = {
+                'nodes': nodes,
+                'edges': edges
+            }
+            
+            # Convertir a JSON seguro para JavaScript
+            import json
+            network_json = json.dumps(network_data, ensure_ascii=False)
+            
+            # Obtener la ruta al archivo HTML
+            import os
+            html_file = os.path.join(os.path.dirname(__file__), 'resources', 'topologia', 'topology.html')
+            
+            # Mostrar la ventana con la topología
+            self._show_network_topology(html_file, network_json)
+            
+        except Exception as e:
+            logger.error(f"Error al generar la topología de red: {e}", exc_info=True)
+            messagebox.showerror("Error", f"No se pudo generar la topología de red: {e}")
+    
+    def _show_network_topology(self, html_file, network_data):
+        """Muestra la topología de red en una ventana WebEngine."""
+        try:
+            from PyQt5.QtWebEngineWidgets import QWebEngineView
+            from PyQt5.QtCore import QUrl, Qt, QTimer
+            from PyQt5.QtWidgets import QApplication, QMainWindow
+            
+            # Verificar si ya hay una instancia de QApplication
+            app = QApplication.instance()
+            if app is None:
+                import sys
+                app = QApplication(sys.argv)
+                is_new_app = True
+            else:
+                is_new_app = False
+            
+            class TopologyViewer(QMainWindow):
+                def __init__(self, html_file, network_data, parent=None):
+                    super().__init__(parent, Qt.Window)
+                    self.setWindowTitle("Topología de Red")
+                    self.setGeometry(100, 100, 1000, 700)
+                    self.setWindowModality(Qt.NonModal)  # No bloquear la ventana principal
+                    
+                    # Crear el visor web
+                    self.browser = QWebEngineView()
+                    self.setCentralWidget(self.browser)
+                    
+                    # Cargar el HTML en un temporizador para asegurar que la ventana ya esté mostrándose
+                    QTimer.singleShot(100, lambda: self._load_html(html_file, network_data))
+                
+                def _load_html(self, html_file, network_data):
+                    try:
+                        # Cargar el HTML
+                        with open(html_file, 'r', encoding='utf-8') as f:
+                            html_content = f.read()
+                        
+                        # Inyectar los datos de la red en el HTML
+                        html_content = html_content.replace(
+                            '// INJECT_NETWORK_DATA_HERE',
+                            f'var initialNetworkData = {network_data};\n        updateNetworkData(initialNetworkData);'
+                        )
+                        
+                        # Cargar el HTML en el navegador
+                        self.browser.setHtml(html_content, QUrl.fromLocalFile(html_file))
+                    except Exception as e:
+                        logger.error(f"Error al cargar la topología: {e}", exc_info=True)
+                        self.browser.setHtml(f"""
+                            <html><body>
+                                <h2>Error al cargar la topología</h2>
+                                <p>{str(e)}</p>
+                            </body></html>
+                        """)
+            
+            # Crear y mostrar la ventana
+            self.topology_viewer = TopologyViewer(html_file, network_data, None)
+            self.topology_viewer.show()
+            
+            # Si es una nueva aplicación, iniciar el bucle de eventos
+            if is_new_app:
+                app.exec_()
+            
+            return True
+            
+        except ImportError as e:
+            logger.warning("PyQt5.QtWebEngine no está disponible. Mostrando datos en formato JSON.", exc_info=True)
+            try:
+                import json
+                from tkinter import Tk, scrolledtext
+                
+                # Crear una ventana de Tkinter para mostrar los datos JSON
+                root = Tk()
+                root.title("Datos de Topología (Vista JSON)")
+                
+                text_area = scrolledtext.ScrolledText(root, wrap='word', width=80, height=30)
+                text_area.pack(padx=10, pady=10, fill='both', expand=True)
+                
+                # Formatear el JSON con indentación
+                formatted_json = json.dumps(json.loads(network_data), indent=2)
+                text_area.insert('1.0', formatted_json)
+                text_area.config(state='disabled')
+                
+                root.mainloop()
+                return True
+            except Exception as json_err:
+                logger.error(f"Error al mostrar datos JSON: {json_err}", exc_info=True)
+                messagebox.showerror("Error", "No se pudo mostrar la topología en formato JSON.")
+                return False
+                
+        except Exception as e:
+            logger.error(f"Error inesperado al mostrar la topología: {e}", exc_info=True)
+            messagebox.showerror("Error", f"Error inesperado al mostrar la topología: {e}")
+            return False
 
     def _show_statistics(self):
         """Muestra estadísticas de los dispositivos escaneados."""
