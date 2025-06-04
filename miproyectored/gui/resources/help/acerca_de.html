@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de | LÃBERIT</title>
+    <style>
+        :root {
+            --primary-dark: #091F2C;  /* Pantone 5395 C */
+            --primary-red: #C10016;   /* Pantone 3517 C */
+            --secondary-blue: #B4B5DF; /* Pantone 270 C */
+            --gray-dark: #4F758B;     /* Pantone 5405 C */
+            --gray-medium: #7A99AC;   /* Pantone 5425 C */
+            --gray-light: #A6BBCB;    /* Pantone 5435 C */
+            --white: #FFFFFF;
+            --light-bg: #F0F0F0;
+        }
+
+        body {
+            font-family: 'Wix Madefor Text', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-dark);
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: var(--light-bg);
+        }
+
+        .about-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .header {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .logo {
+            color: white;
+            font-family: 'Wix Madefor Text', sans-serif;
+            font-weight: bold;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .version {
+            color: var(--gray-medium);
+            margin-bottom: 20px;
+        }
+
+        .separator {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
+            margin: 20px 0;
+            opacity: 0.5;
+            border: none;
+        }
+
+        .description {
+            color: var(--primary-dark);
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        .copyright {
+            color: var(--gray-medium);
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .close-btn {
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-family: 'Wix Madefor Text', sans-serif;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .close-btn:hover {
+            background-color: #A00016;
+        }
+
+        .brand-highlight {
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="about-container">
+    <div class="header">
+        <div class="logo">LÃBERIT</div>
+    </div>
+
+    <h1>Herramienta de Inventariado y Monitoreo de Red</h1>
+    <div class="version">Versión 3.0</div>
+
+    <hr class="separator">
+
+    <div class="description">
+        Esta aplicación permite escanear dispositivos en una red local,
+        detectar sus servicios activos, analizar riesgos de seguridad
+        y monitorear la red en tiempo real con nuestra tecnología
+        <span class="brand-highlight">propulsora</span>.
+    </div>
+
+    <div class="copyright">© 2025 LÃBERIT - Propulsando tus resultados</div>
+
+    <button class="close-btn" onclick="window.close()">Cerrar</button>
+</div>
+
+<script>
+    // Simular el comportamiento de cerrar ventana
+    function closeWindow() {
+        // Si está embebido en una aplicación, esto no funcionará
+        // pero podemos mostrar un mensaje
+        if (typeof window.close === "function") {
+            window.close();
+        } else {
+            alert("Ventana cerrada (simulado)");
+        }
+    }
+</script>
+</body>
+</html>

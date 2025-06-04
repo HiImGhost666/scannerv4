@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes | LÃBERIT</title>
+    <style>
+        :root {
+            --primary-dark: #091F2C;  /* Pantone 5395 C */
+            --primary-red: #C10016;   /* Pantone 3517 C */
+            --secondary-blue: #B4B5DF; /* Pantone 270 C */
+            --gray-dark: #4F758B;     /* Pantone 5405 C */
+            --gray-medium: #7A99AC;   /* Pantone 5425 C */
+            --gray-light: #A6BBCB;    /* Pantone 5435 C */
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Wix Madefor Text', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-dark);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-family: 'Wix Madefor Text', sans-serif;
+            font-weight: bold;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            color: var(--gray-medium);
+            font-weight: normal;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-dark);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-red);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background-color: var(--primary-red);
+            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12" y2="17"></line></svg>');
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-red);
+            box-shadow: 0 2px 8px rgba(193, 0, 22, 0.1);
+        }
+
+        .faq-question {
+            background-color: var(--gray-light);
+            padding: 15px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            color: var(--primary-dark);
+        }
+
+        .faq-question:hover {
+            background-color: var(--gray-medium);
+            color: white;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            background-color: white;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .faq-answer.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .icon {
+            transition: transform 0.3s;
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-red), var(--primary-dark));
+            margin: 30px 0;
+            opacity: 0.2;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        a {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        ol, ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--primary-red);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-blue);
+            text-decoration: none;
+        }
+
+        .brand-highlight {
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <div class="logo-container">
+        <div>
+            <div class="logo">LÃBERIT</div>
+            <div class="tagline">Boost your performance</div>
+        </div>
+    </div>
+    <h1>Preguntas Frecuentes</h1>
+</div>
+
+<div class="container">
+    <div class="center">
+        <p>Encuentra respuestas a las preguntas más comunes sobre el uso de nuestra herramienta de <span class="brand-highlight">inventariado y monitoreo de red</span>.</p>
+        <div class="divider"></div>
+    </div>
+
+    <h2>Escaneo de Red</h2>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            ¿Cómo realizo un escaneo de red básico?
+            <span class="icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            <p>Para realizar un escaneo básico de red:</p>
+            <ol>
+                <li>Abre la aplicación</li>
+                <li>Selecciona <strong>"Escaneo Rápido"</strong> en el menú principal</li>
+                <li>Haz clic en <strong>"Iniciar Escaneo"</strong></li>
+                <li>Espera a que se complete el análisis</li>
+                <li>Revisa los resultados en la tabla principal</li>
+            </ol>
+            <p>El escaneo básico detectará dispositivos activos en tu red local con nuestra tecnología <span class="brand-highlight">propulsora</span>.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            ¿Cuál es la diferencia entre un escaneo rápido y uno completo?
+            <span class="icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            <p><strong>Escaneo Rápido:</strong></p>
+            <ul>
+                <li>Duración: Menos de 1 minuto</li>
+                <li>Detecta solo dispositivos activos</li>
+                <li>No realiza escaneo de puertos</li>
+                <li>Ideal para un vistazo rápido de la red</li>
+            </ul>
+            <p><strong>Escaneo Completo:</strong></p>
+            <ul>
+                <li>Duración: Varios minutos (depende del tamaño de la red)</li>
+                <li>Detecta dispositivos activos y sus puertos abiertos</li>
+                <li>Identifica servicios y versiones</li>
+                <li>Realiza análisis de seguridad básico</li>
+                <li>Proporciona información detallada de cada dispositivo</li>
+            </ul>
+            <p>Nuestro <span class="brand-highlight">enfoque humanista e innovador</span> garantiza que ambos tipos de escaneo sean intuitivos y efectivos.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            ¿Puedo programar escaneos automáticos?
+            <span class="icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            <p>Sí, puedes programar escaneos automáticos siguiendo estos pasos:</p>
+            <ol>
+                <li>Ve a <strong>"Configuración" > "Escaneos Programados"</strong></li>
+                <li>Haz clic en <strong>"Agregar Nuevo Escaneo"</strong></li>
+                <li>Selecciona el tipo de escaneo (rápido o completo)</li>
+                <li>Configura la frecuencia (diario, semanal, mensual)</li>
+                <li>Establece la hora de inicio</li>
+                <li>Guarda la configuración</li>
+            </ol>
+            <p>Los resultados de los escaneos programados se guardarán automáticamente en la base de datos, <span class="brand-highlight">propulsando</span> tu capacidad de análisis histórico.</p>
+        </div>
+    </div>
+
+    <h2>Gestión de Dispositivos</h2>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            ¿Cómo agrego un dispositivo manualmente?
+            <span class="icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            <p>Para agregar un dispositivo manualmente:</p>
+            <ol>
+                <li>Ve al menú <strong>"Dispositivos"</strong></li>
+                <li>Selecciona <strong>"Agregar Dispositivo"</strong></li>
+                <li>Completa la información del dispositivo:
+                    <ul>
+                        <li>Dirección IP o nombre de host</li>
+                        <li>Nombre descriptivo</li>
+                        <li>Tipo de dispositivo (opcional)</li>
+                        <li>Ubicación (opcional)</li>
+                        <li>Notas (opcional)</li>
+                    </ul>
+                </li>
+                <li>Haz clic en <strong>"Guardar"</strong></li>
+            </ol>
+            <p>El dispositivo aparecerá en tu inventario y podrás realizarle seguimiento con nuestra herramienta <span class="brand-highlight">dinámica</span> y <span class="brand-highlight">ágil</span>.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            ¿Cómo edito la información de un dispositivo existente?
+            <span class="icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            <p>Para editar un dispositivo:</p>
+            <ol>
+                <li>Localiza el dispositivo en la tabla principal</li>
+                <li>Haz clic derecho sobre él</li>
+                <li>Selecciona <strong>"Editar Dispositivo"</strong></li>
+                <li>Modifica los campos necesarios</li>
+                <li>Haz clic en <strong>"Guardar Cambios"</strong></li>
+            </ol>
+            <p>También puedes hacer doble clic en cualquier dispositivo para editarlo, demostrando nuestro compromiso con la <span class="brand-highlight">experiencia de usuario empática</span>.</p>
+        </div>
+    </div>
+
+    <h2>Monitoreo y Alertas</h2>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            ¿Cómo configuro alertas para dispositivos críticos?
+            <span class="icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            <p>Para configurar alertas:</p>
+            <ol>
+                <li>Ve a <strong>"Configuración" > "Alertas"</strong></li>
+                <li>Haz clic en <strong>"Nueva Regla de Alerta"</strong></li>
+                <li>Selecciona el tipo de alerta (dispositivo inactivo, alto uso de ancho de banda, etc.)</li>
+                <li>Configura los umbrales y condiciones</li>
+                <li>Selecciona los dispositivos a monitorear</li>
+                <li>Configura los métodos de notificación (correo, notificación del sistema, etc.)</li>
+                <li>Guarda la configuración</li>
+            </ol>
+            <p>Recibirás notificaciones cuando se cumplan las condiciones establecidas, <span class="brand-highlight">impulsando</span> tu capacidad de respuesta ante incidentes.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            ¿Qué hago si un dispositivo aparece como inactivo pero sé que está en línea?
+            <span class="icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            <p>Si un dispositivo aparece como inactivo pero crees que debería estar en línea:</p>
+            <ol>
+                <li><strong>Verifica la conectividad manualmente</strong>: Intenta hacer ping a la dirección IP del dispositivo desde la línea de comandos.</li>
+                <li><strong>Revisa la configuración de firewall</strong>: Asegúrate de que el firewall no esté bloqueando las solicitudes ICMP (ping).</li>
+                <li><strong>Verifica la configuración de red</strong>: Confirma que la dirección IP del dispositivo no haya cambiado.</li>
+                <li><strong>Intenta un escaneo manual</strong>: Usa la opción "Escanear Ahora" para forzar una nueva verificación.</li>
+                <li><strong>Revisa los registros</strong>: Los registros de la aplicación pueden contener información sobre por qué el dispositivo se marcó como inactivo.</li>
+            </ol>
+            <p>Si el problema persiste, contacta a nuestro equipo de soporte que actuará con <span class="brand-highlight">integridad</span> y <span class="brand-highlight">know-how</span> para resolver tu problema.</p>
+        </div>
+    </div>
+
+    <h2>Exportación de Datos</h2>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+            ¿Qué formatos de exportación están disponibles?
+            <span class="icon">▼</span>
+        </div>
+        <div class="faq-answer">
+            <p>Actualmente, la aplicación soporta los siguientes formatos de exportación:</p>
+
+            <p><strong>1. CSV (Valores Separados por Comas)</strong></p>
+            <ul>
+                <li>Ideal para abrir en Excel o hojas de cálculo</li>
+                <li>Contiene datos tabulares sin formato</li>
+                <li>Se puede importar a otras aplicaciones</li>
+            </ul>
+
+            <p><strong>2. PDF</strong></p>
+            <ul>
+                <li>Formato de documento portátil</li>
+                <li>Incluye formato y diseño</li>
+                <li>Ideal para informes formales</li>
+            </ul>
+
+            <p><strong>3. JSON</strong></p>
+            <ul>
+                <li>Formato estructurado</li>
+                <li>Ideal para integración con otras aplicaciones</li>
+                <li>Contiene todos los metadatos</li>
+            </ul>
+
+            <p>Para exportar datos, ve a <strong>"Archivo" > "Exportar"</strong> y selecciona el formato deseado. Nuestro <span class="brand-highlight">enfoque pedagógico</span> garantiza que los datos sean accesibles y útiles.</p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="center">
+        <h3>¿No encuentras lo que buscas?</h3>
+        <p>Consulta nuestro <a href="user_manual.html">Manual de Usuario</a> completo o <a href="#">contacta con nuestro equipo de soporte</a>.</p>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-links">
+        <a href="#">Inicio</a>
+        <a href="#">Documentación</a>
+        <a href="#">Soporte</a>
+        <a href="#">Contacto</a>
+    </div>
+    <div class="logo">LÃBERIT</div>
+    <div class="tagline">Boost your performance</div>
+    <p>© 2025 LÃBERIT - Propulsando tus resultados</p>
+    <p>Oficinas en Valencia, Madrid, Bilbao y más</p>
+</div>
+
+<script>
+    function toggleAnswer(element) {
+        const answer = element.nextElementSibling;
+        const icon = element.querySelector('.icon');
+
+        // Cerrar todas las demás respuestas
+        document.querySelectorAll('.faq-answer').forEach(item => {
+            if (item !== answer) {
+                item.classList.remove('show');
+                item.previousElementSibling.querySelector('.icon').classList.remove('rotate');
+            }
+        });
+
+        // Alternar la respuesta actual
+        answer.classList.toggle('show');
+        icon.classList.toggle('rotate');
+    }
+
+    // Abrir la primera pregunta por defecto
+    document.addEventListener('DOMContentLoaded', function() {
+        const firstQuestion = document.querySelector('.faq-question');
+        if (firstQuestion) {
+            firstQuestion.click();
+        }
+    });
+</script>
+</body>
+</html>

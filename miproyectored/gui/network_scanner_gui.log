@@ -1,0 +1,130 @@
+2025-06-04 11:34:50,327 - miproyectored - INFO - ================================================================================
+2025-06-04 11:34:50,327 - miproyectored - INFO - Iniciando nueva sesión - 2025-06-04 11:34:50
+2025-06-04 11:34:50,327 - miproyectored - INFO - ================================================================================
+2025-06-04 11:34:50,504 - miproyectored.scanner.snmp_scanner - WARNING - Módulo SNMP no disponible. La funcionalidad de escaneo SNMP estará deshabilitada.
+2025-06-04 11:34:50,513 - miproyectored - INFO - Rango de red local detectado: 192.168.56.0/24
+2025-06-04 11:34:50,700 - miproyectored - INFO - Interfaz gráfica inicializada correctamente
+2025-06-04 11:34:52,160 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 11:34:52,160 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 11:34:52,160 - miproyectored - DEBUG - [DEBUG] No hay dispositivos en self.scan_results para mostrar
+2025-06-04 11:34:52,168 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo rápido para encontrar hosts activos
+2025-06-04 11:35:03,328 - miproyectored - DEBUG - [DEBUG] Escaneo rápido completado. IPs activas encontradas: 1
+2025-06-04 11:35:03,328 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 1 IPs activas
+2025-06-04 11:35:03,341 - miproyectored - DEBUG - [DEBUG] Usando 1 workers para escaneo paralelo
+2025-06-04 11:35:03,341 - miproyectored - DEBUG - [DEBUG] Iniciando escaneo detallado de 192.168.56.1
+2025-06-04 11:37:24,065 - miproyectored - DEBUG - Raw Nmap XML output for 192.168.56.1 (return code 0):
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.97 scan initiated Wed Jun  4 11:35:03 2025 as: nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.56.1 -->
+<nmaprun scanner="nmap" args="nmap -sS -sV -&#45;version-all -&#45;version-intensity 9 -&#45;version-light -O -p- -A -&#45;max-os-tries 3 -T4 -&#45;host-timeout 500s -&#45;script-timeout 50s -&#45;script=default,banner,http-title,ssl-cert,ssh-auth-methods,smb-os-discovery,smb-system-info,dns-service-discovery,nbstat,snmp-info,http-headers -&#45;min-rate 1000 -&#45;max-retries 3 -oX - 192.168.56.1" start="1749033303" startstr="Wed Jun  4 11:35:03 2025" version="7.97" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1749033308" endtime="1749033444"><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="192.168.56.1" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="65522">
+<extrareasons reason="reset" count="65522" proto="tcp" ports="1-134,136,138,140-444,446-5039,5041-6023,6025-49663,49669,49671-54605,54607-65535"/>
+</extraports>
+<port protocol="tcp" portid="135"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="137"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="netbios-ns" method="table" conf="3"/></port>
+<port protocol="tcp" portid="139"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="netbios-ssn" product="Microsoft Windows netbios-ssn" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+<port protocol="tcp" portid="445"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="microsoft-ds" method="table" conf="3"/></port>
+<port protocol="tcp" portid="5040"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="6024"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="x11" servicefp="SF-Port6024-TCP:V=7.97%I=2%D=6/4%Time=6840216A%P=i686-pc-windows-windows%r(GetRequest,168,&quot;HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Security-Policy:\x20default-src\x20&apos;none&apos;\r\nX-Content-Type-Options:\x20nosniff\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x20139\r\nDate:\x20Wed,\x2004\x20Jun\x202025\x2010:35:22\x20GMT\r\nConnection:\x20close\r\n\r\n&lt;!DOCTYPE\x20html&gt;\n&lt;html\x20lang=\&quot;en\&quot;&gt;\n&lt;head&gt;\n&lt;meta\x20charset=\&quot;utf-8\&quot;&gt;\n&lt;title&gt;Error&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;pre&gt;Cannot\x20GET\x20/&lt;/pre&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n&quot;)%r(SSLSessionReq,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(TLSSessionReq,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  GetRequest: &#xa;    HTTP/1.1 404 Not Found&#xa;    Content-Security-Policy: default-src &apos;none&apos;&#xa;    X-Content-Type-Options: nosniff&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Content-Length: 139&#xa;    Date: Wed, 04 Jun 2025 10:35:22 GMT&#xa;    Connection: close&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;html lang=&quot;en&quot;&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xa;    &lt;title&gt;Error&lt;/title&gt;&#xa;    &lt;/head&gt;&#xa;    &lt;body&gt;&#xa;    &lt;pre&gt;Cannot GET /&lt;/pre&gt;&#xa;    &lt;/body&gt;&#xa;    &lt;/html&gt;&#xa;  SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Connection: close"><elem key="GetRequest">&#xa;    HTTP/1.1 404 Not Found&#xa;    Content-Security-Policy: default-src &apos;none&apos;&#xa;    X-Content-Type-Options: nosniff&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Content-Length: 139&#xa;    Date: Wed, 04 Jun 2025 10:35:22 GMT&#xa;    Connection: close&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;html lang=&quot;en&quot;&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xa;    &lt;title&gt;Error&lt;/title&gt;&#xa;    &lt;/head&gt;&#xa;    &lt;body&gt;&#xa;    &lt;pre&gt;Cannot GET /&lt;/pre&gt;&#xa;    &lt;/body&gt;&#xa;    &lt;/html&gt;</elem>
+<elem key="SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Connection: close</elem>
+</script></port>
+<port protocol="tcp" portid="49664"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49665"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49666"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49667"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49668"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="49670"><state state="open" reason="syn-ack" reason_ttl="128"/></port>
+<port protocol="tcp" portid="54606"><state state="open" reason="syn-ack" reason_ttl="128"/><service name="unknown" servicefp="SF-Port54606-TCP:V=7.97%I=2%D=6/4%Time=6840216A%P=i686-pc-windows-windows%r(GetRequest,168,&quot;HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Security-Policy:\x20default-src\x20&apos;none&apos;\r\nX-Content-Type-Options:\x20nosniff\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x20139\r\nDate:\x20Wed,\x2004\x20Jun\x202025\x2010:35:22\x20GMT\r\nConnection:\x20close\r\n\r\n&lt;!DOCTYPE\x20html&gt;\n&lt;html\x20lang=\&quot;en\&quot;&gt;\n&lt;head&gt;\n&lt;meta\x20charset=\&quot;utf-8\&quot;&gt;\n&lt;title&gt;Error&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;pre&gt;Cannot\x20GET\x20/&lt;/pre&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n&quot;)%r(SSLSessionReq,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(TLSSessionReq,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  GetRequest: &#xa;    HTTP/1.1 404 Not Found&#xa;    Content-Security-Policy: default-src &apos;none&apos;&#xa;    X-Content-Type-Options: nosniff&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Content-Length: 139&#xa;    Date: Wed, 04 Jun 2025 10:35:22 GMT&#xa;    Connection: close&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;html lang=&quot;en&quot;&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xa;    &lt;title&gt;Error&lt;/title&gt;&#xa;    &lt;/head&gt;&#xa;    &lt;body&gt;&#xa;    &lt;pre&gt;Cannot GET /&lt;/pre&gt;&#xa;    &lt;/body&gt;&#xa;    &lt;/html&gt;&#xa;  SSLSessionReq, TLSSessionReq: &#xa;    HTTP/1.1 400 Bad Request&#xa;    Connection: close"><elem key="GetRequest">&#xa;    HTTP/1.1 404 Not Found&#xa;    Content-Security-Policy: default-src &apos;none&apos;&#xa;    X-Content-Type-Options: nosniff&#xa;    Content-Type: text/html; charset=utf-8&#xa;    Content-Length: 139&#xa;    Date: Wed, 04 Jun 2025 10:35:22 GMT&#xa;    Connection: close&#xa;    &lt;!DOCTYPE html&gt;&#xa;    &lt;html lang=&quot;en&quot;&gt;&#xa;    &lt;head&gt;&#xa;    &lt;meta charset=&quot;utf-8&quot;&gt;&#xa;    &lt;title&gt;Error&lt;/title&gt;&#xa;    &lt;/head&gt;&#xa;    &lt;body&gt;&#xa;    &lt;pre&gt;Cannot GET /&lt;/pre&gt;&#xa;    &lt;/body&gt;&#xa;    &lt;/html&gt;</elem>
+<elem key="SSLSessionReq, TLSSessionReq">&#xa;    HTTP/1.1 400 Bad Request&#xa;    Connection: close</elem>
+</script></port>
+</ports>
+<os><portused state="open" proto="tcp" portid="135"/>
+<portused state="closed" proto="tcp" portid="1"/>
+<portused state="closed" proto="udp" portid="34814"/>
+<osmatch name="Microsoft Windows 10 1607 - 11 23H2" accuracy="99" line="74791">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="10" accuracy="99"><cpe>cpe:/o:microsoft:windows_10</cpe></osclass>
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="11" accuracy="99"><cpe>cpe:/o:microsoft:windows_11</cpe></osclass>
+</osmatch>
+<osmatch name="Microsoft Windows 10 1511" accuracy="97" line="74530">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="10" accuracy="97"><cpe>cpe:/o:microsoft:windows_10</cpe></osclass>
+</osmatch>
+<osmatch name="Windows 11 21H2" accuracy="97" line="75587">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="11" accuracy="97"><cpe>cpe:/o:microsoft:windows_11</cpe></osclass>
+</osmatch>
+<osmatch name="Windows Server 2022" accuracy="97" line="82130">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="2022" accuracy="97"><cpe>cpe:/o:microsoft:windows_server_2022</cpe></osclass>
+</osmatch>
+<osmatch name="Microsoft Windows 10 1703" accuracy="96" line="74847">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="10" accuracy="96"><cpe>cpe:/o:microsoft:windows_10</cpe></osclass>
+</osmatch>
+<osmatch name="Microsoft Windows 10 1703 or Windows 11 21H2" accuracy="96" line="74943">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="10" accuracy="96"><cpe>cpe:/o:microsoft:windows_10</cpe></osclass>
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="11" accuracy="96"><cpe>cpe:/o:microsoft:windows_11</cpe></osclass>
+</osmatch>
+<osmatch name="Microsoft Windows 10 1703 - 11 21H2" accuracy="95" line="74920">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="10" accuracy="95"><cpe>cpe:/o:microsoft:windows_10</cpe></osclass>
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="11" accuracy="95"><cpe>cpe:/o:microsoft:windows_11</cpe></osclass>
+</osmatch>
+<osmatch name="Microsoft Windows 11 21H2" accuracy="95" line="75569">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="11" accuracy="95"><cpe>cpe:/o:microsoft:windows_11</cpe></osclass>
+</osmatch>
+<osmatch name="Microsoft Windows 7 or 8.1 R1" accuracy="94" line="82755">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="7" accuracy="94"><cpe>cpe:/o:microsoft:windows_7</cpe></osclass>
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="8.1" accuracy="94"><cpe>cpe:/o:microsoft:windows_8.1:r1</cpe></osclass>
+</osmatch>
+<osmatch name="Microsoft Windows 10 1607" accuracy="94" line="74626">
+<osclass type="general purpose" vendor="Microsoft" osfamily="Windows" osgen="10" accuracy="94"><cpe>cpe:/o:microsoft:windows_10</cpe></osclass>
+</osmatch>
+<osfingerprint fingerprint="OS:SCAN(V=7.97%E=4%D=6/4%OT=135%CT=1%CU=34814%PV=Y%DS=0%DC=L%G=Y%TM=684021E&#xa;OS:4%P=i686-pc-windows-windows)SEQ(SP=101%GCD=1%ISR=10A%TI=I%CI=I%II=I%SS=S&#xa;OS:%TS=A)SEQ(SP=106%GCD=3%ISR=107%TI=I%CI=I%II=I%SS=S%TS=A)SEQ(SP=FB%GCD=1%&#xa;OS:ISR=10A%TI=I%CI=I%II=I%SS=S%TS=A)OPS(O1=MFFD7NW8ST11%O2=MFFD7NW8ST11%O3=&#xa;OS:MFFD7NW8NNT11%O4=MFFD7NW8ST11%O5=MFFD7NW8ST11%O6=MFFD7ST11)WIN(W1=FFFF%W&#xa;OS:2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FFFF)ECN(R=Y%DF=Y%T=80%W=FFFF%O=MFFD7N&#xa;OS:W8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS%RD=0%Q=)T2(R=Y%DF=Y%T=80%W=&#xa;OS:0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%T=80%W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T&#xa;OS:4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+&#xa;OS:%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y&#xa;OS:%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%&#xa;OS:RID=G%RIPCK=Z%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=80%CD=Z)&#xa;"/>
+</os>
+<uptime seconds="259984" lastboot="Sun Jun  1 11:24:20 2025"/>
+<distance value="0"/>
+<tcpsequence index="262" difficulty="Good luck!" values="DC2F1E5D,CDF95C99,D0D2A025,F03B1FAB,5B5E1E3F,BE7CFB0A"/>
+<ipidsequence class="Incremental" values="1E78,1E7A,1E7C,1E7E,1E80,1E82"/>
+<tcptssequence class="1000HZ" values="F7D79EB,F7D7A5B,F7D7ACB,F7D7B38,F7D7BA9,F7D7C19"/>
+<hostscript><script id="smb2-time" output="&#xa;  date: 2025-06-04T10:35:45&#xa;  start_date: N/A"><elem key="date">2025-06-04T10:35:45</elem>
+<elem key="start_date">N/A</elem>
+</script><script id="smb2-security-mode" output="&#xa;  3.1.1: &#xa;    Message signing enabled but not required"><table key="3.1.1">
+<elem>Message signing enabled but not required</elem>
+</table>
+</script></hostscript><times srtt="976" rttvar="963" to="100000"/>
+</host>
+<runstats><finished time="1749033444" timestr="Wed Jun  4 11:37:24 2025" summary="Nmap done at Wed Jun  4 11:37:24 2025; 1 IP address (1 host up) scanned in 140.67 seconds" elapsed="140.67" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
+
+2025-06-04 11:37:24,068 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: 192.168.56.1
+2025-06-04 11:37:24,068 - miproyectored - DEBUG - [DEBUG] Dispositivo encontrado: IP=192.168.56.1, Hostname=192.168.56.1, Tipo=<class 'miproyectored.model.device.Device'>
+2025-06-04 11:37:24,068 - miproyectored - DEBUG - [DEBUG] Dispositivo procesado exitosamente: 192.168.56.1
+2025-06-04 11:37:24,068 - miproyectored - DEBUG - [DEBUG] Agregando nuevo dispositivo: 192.168.56.1
+2025-06-04 11:37:24,068 - miproyectored - DEBUG - [DEBUG] Nuevo dispositivo agregado: 192.168.56.1
+2025-06-04 11:37:24,068 - miproyectored - DEBUG - [DEBUG] Total de dispositivos en scan_results: 1
+2025-06-04 11:37:24,069 - miproyectored - DEBUG - [DEBUG] Iniciando actualización de UI...
+2025-06-04 11:37:24,069 - miproyectored - DEBUG - [DEBUG] Escaneo completado. Dispositivos encontrados: 1
+2025-06-04 11:37:24,069 - miproyectored - DEBUG - [DEBUG] Dispositivos antes de actualizar UI: ['192.168.56.1']
+2025-06-04 11:37:24,069 - miproyectored - INFO - [INFO] Escaneo completado. Encontrados 1 dispositivos.
+2025-06-04 11:37:24,069 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 11:37:24,071 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 11:37:24,071 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 1 dispositivos
+2025-06-04 11:37:24,071 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.56.1']
+2025-06-04 11:37:24,072 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.56.1 - 192.168.56.1
+2025-06-04 11:37:24,072 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 11:37:24,075 - miproyectored - DEBUG - [DEBUG] UI actualizada correctamente
+2025-06-04 11:37:24,075 - miproyectored - DEBUG - [DEBUG] Iniciando escaneos detallados automáticos
+2025-06-04 11:37:24,076 - miproyectored.scanner.snmp_scanner - WARNING - Escaneo SNMP deshabilitado para 192.168.56.1: Módulo SNMP no disponible
+2025-06-04 11:37:24,078 - miproyectored - DEBUG - [DEBUG] Iniciando actualización del árbol de resultados
+2025-06-04 11:37:24,078 - miproyectored - DEBUG - [DEBUG] Limpiando árbol de resultados existente
+2025-06-04 11:37:24,079 - miproyectored - DEBUG - [DEBUG] Intentando mostrar 1 dispositivos
+2025-06-04 11:37:24,079 - miproyectored - DEBUG - [DEBUG] Dispositivos en scan_results: ['192.168.56.1']
+2025-06-04 11:37:24,079 - miproyectored - DEBUG - [DEBUG] Dispositivo agregado al árbol: 192.168.56.1 - 192.168.56.1
+2025-06-04 11:37:24,079 - miproyectored - DEBUG - [DEBUG] Actualización del árbol de resultados completada exitosamente
+2025-06-04 11:37:34,779 - miproyectored - DEBUG - Dispositivo seleccionado - IP: 192.168.56.1
+2025-06-04 11:37:34,779 - miproyectored - DEBUG - Dispositivo encontrado: 192.168.56.1 - 192.168.56.1
