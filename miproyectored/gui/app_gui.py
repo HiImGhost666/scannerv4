@@ -1935,8 +1935,8 @@ class NetworkScannerGUI(ttk.Window):
 
     def _show_about(self):
         """Muestra información sobre la aplicación."""
-        from .help_functions import show_html_content
-        show_html_content(self, "Acerca de", "acerca_de.html")
+        from .help_functions import show_about_dialog
+        show_about_dialog(self)
 
     def _check_updates(self):
         """Verifica si hay actualizaciones disponibles."""

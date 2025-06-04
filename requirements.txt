@@ -1,7 +1,6 @@
 # Requisitos para MiProyectoRed - Herramienta de Escaneo de Red
 # GUI
 ttkbootstrap>=1.0.0
-tkinter
 
 # Escaneo de red
 python-nmap>=0.7.1
@@ -17,7 +16,6 @@ wmi>=1.5.1
 pywin32>=303; sys_platform == 'win32'
 
 # Base de datos
-sqlite3
 sqlite-web
 
 # Exportación
