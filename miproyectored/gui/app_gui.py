@@ -359,7 +359,7 @@ class NetworkScannerGUI(ttk.Window):
         scan_frame = ttk.Labelframe(left_frame_container, text="Configuración de Escaneo", padding=10)
         scan_frame.pack(fill=X, pady=5)
 
-        ttk.Label(scan_frame, text="Rango de Red (ej: 192.168.1.0/24):", style="Section.TLabel").pack(fill=X, pady=(0,2))
+        ttk.Label(scan_frame, text="Rango de Red", style="Section.TLabel").pack(fill=X, pady=(0,2))
         ttk.Entry(scan_frame, textvariable=self.network_range).pack(fill=X, pady=(0,5))
 
         # Opción para escaneo automático

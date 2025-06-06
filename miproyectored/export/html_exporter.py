@@ -1,3 +1,4 @@
+# html_exporter.py
 import os
 from datetime import datetime
 from html import escape # Importación movida al inicio del archivo
@@ -20,6 +21,20 @@ class HtmlExporter:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Escaneo de Red</title>
+    <!-- Estilos para el nuevo encabezado de la empresa -->
+    <style>
+        .company-header {{
+            padding: 10px 20px;
+            background-color: #FFFFFF; /* Blanco */
+            border-bottom: 1px solid #A6BBC8; /* azul_claro */
+            margin-bottom: 20px;
+            text-align: left;
+        }}
+        .company-header img {{
+            height: 45px; /* Altura como en app_gui.py */
+            width: auto;
+        }}
+    </style>
     <style>
         * {{
             box-sizing: border-box;
@@ -29,23 +44,23 @@ class HtmlExporter:
         body {{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #091F2C; /* azul_oscuro */
             max-width: 1200px;
             margin: 20px auto; /* Añadido margen superior/inferior */
             padding: 20px;
             background-color: #f5f7fa;
         }}
         h1, h2, h3 {{
-            color: #2c3e50;
+            color: #091F2C; /* azul_oscuro */
             margin-bottom: 15px;
         }}
         .report-header {{
             background-color: #fff;
             padding: 25px;
             border-radius: 8px;
-            margin-bottom: 25px;
+            margin-bottom: 20px; /* Reducido para compensar company-header */
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 5px solid #3498db;
+            border-left: 5px solid #C10016; /* rojo */
         }}
         .device-card {{
             background-color: #fff;
@@ -56,7 +71,7 @@ class HtmlExporter:
             border: 1px solid #e1e4e8;
         }}
         .device-header {{
-            background: linear-gradient(135deg, #3498db, #2c3e50);
+            background: linear-gradient(135deg, #7A99AC, #091F2C); /* azul_medio, azul_oscuro */
             color: white;
             padding: 18px 25px;
             /* margin: 0; Ya está reseteado por * */
@@ -85,7 +100,7 @@ class HtmlExporter:
             margin-bottom: 0; /* Quitar margen inferior del último device-section */
         }}
         .device-section h3 {{
-            color: #2c3e50;
+            color: #091F2C; /* azul_oscuro */
             padding-bottom: 10px;
             border-bottom: 2px solid #f0f2f5;
             margin-top: 0; /* Quitar margen superior del h3 dentro de device-section */
@@ -106,9 +121,9 @@ class HtmlExporter:
             vertical-align: top; /* Mejor para contenido multilínea */
         }}
         th {{
-            background-color: #f8f9fa;
+            background-color: #A6BBC8; /* azul_claro */
             font-weight: 600;
-            color: #34495e; /* Ligeramente más oscuro */
+            color: #091F2C; /* azul_oscuro */
         }}
         tr:nth-child(even) td {{ /* Aplicar solo a td para que th mantenga su fondo */
             background-color: #fcfdff; /* Muy sutil */
@@ -158,7 +173,7 @@ class HtmlExporter:
             margin: 0;
             font-size: 1.8em;
             font-weight: 700;
-            color: #3498db;
+            color: #C10016; /* rojo */
         }}
         footer {{
             text-align: center;
@@ -171,7 +186,7 @@ class HtmlExporter:
         /* Estilos para la lista de puertos */
         .ports-list {{
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Ajustado para ~4 por fila */
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajustado para ~4+ por fila, reduciendo tamaño */
             gap: 20px; /* Aumentado el gap */
             margin-top: 15px;
         }}
@@ -198,7 +213,7 @@ class HtmlExporter:
         }}
         .port-number {{
             font-weight: 600;
-            color: #2c3e50;
+            color: #091F2C; /* azul_oscuro */
             font-size: 1em; /* Ajustado */
         }}
         .port-details {{ /* Tabla dentro de cada port-block */
@@ -597,8 +612,17 @@ class HtmlExporter:
         """
         Genera un reporte HTML para la lista de dispositivos dada.
         """
+        # Asegurarse de que devices sea una lista, incluso si está vacío o es None
         if not devices:
-            return "<h1>No se encontraron dispositivos en los resultados del escaneo.</h1>"
+             # Devolver un HTML básico indicando que no hay dispositivos
+            return """<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Reporte Vacío</title></head>
+<body>
+    <h1>Reporte de Escaneo de Red</h1>
+    <p>No se encontraron dispositivos en los resultados del escaneo.</p>
+</body>
+</html>"""
         
         device_count = len(devices)
         windows_count = 0
@@ -630,8 +654,17 @@ class HtmlExporter:
             except Exception as e:
                 print(f"Error generando HTML para dispositivo {getattr(device, 'ip_address', 'desconocido')}: {e}")
         
+        # Si no se pudo generar HTML para ningún dispositivo, devolver un reporte de error
         if not devices_html_list:
-            return "<h1>No se pudo generar data HTML para ningún dispositivo.</h1>"
+             return """<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Error al Generar Reporte</title></head>
+<body>
+    <h1>Error al Generar Reporte</h1>
+    <p class="error">No se pudo generar contenido HTML para ningún dispositivo escaneado.</p>
+    <p>Por favor, revise los logs para más detalles.</p>
+</body>
+</html>"""
         
         # Asegurar que unknown_os_count no sea negativo si la lógica de arriba es exhaustiva
         # unknown_os_count = device_count - (windows_count + linux_count + network_device_count)
@@ -655,12 +688,21 @@ class HtmlExporter:
         except KeyError as ke:
             error_msg = f"Error de plantilla: Falta la clave {str(ke)} en los datos de formato."
             print(error_msg)
-            # ... (código de error HTML como antes) ...
+            # Devolver un HTML de error para que html_content no sea None
+            return f"""<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Error de Plantilla</title></head>
+<body>
+    <h1>Error de Plantilla</h1>
+    <p class="error">Se encontró un error al generar el reporte debido a una clave faltante en la plantilla: {self._format_value_for_html(str(ke))}</p>
+    <p>Por favor, revise la plantilla HTML y asegúrese de que todas las llaves de estilo CSS ({{}}) estén correctamente escapadas como {{{{}}}} y {{{{'}}'}}}} si están dentro de la cadena de formato principal.</p>
+</body>
+</html>"""
         except Exception as e:
             error_msg = str(e)
             print(f"Error generando reporte: {error_msg}")
             return f"""
-            <!DOCTYPE html><html><head><title>Error</title></head>
+            <!DOCTYPE html><html><head><meta charset="UTF-8"><title>Error</title></head>
             <body><h1>Error al Generar Reporte</h1><p class="error">{self._format_value_for_html(error_msg)}</p></body></html>
             """ # HTML de error simplificado
     
@@ -670,6 +712,9 @@ class HtmlExporter:
         """
         try:
             html_content = self.generate_report(devices, target)
+            
+            # generate_report ahora siempre devuelve una cadena, incluso en caso de error.
+            # No necesitamos verificar si es None aquí.
             
             output_dir = os.path.dirname(os.path.abspath(output_path))
             if output_dir and not os.path.exists(output_dir): # Crear directorio solo si no existe

@@ -871,10 +871,41 @@ class NmapScanner:
         else:
             device.status = "Activo"  # Asumir que está activo si no se especifica
             
-        # OS Detection
-        os_info = host.find(".//osmatch")
-        if os_info is not None:
-            device.os_info = self.data_normalizer.normalize_os_info(os_info)
+        # OS Detection - Modificado para construir la estructura anidada completa
+        parsed_os_info_dict = {}
+        os_element = host.find("os") # Encuentra el elemento <os> principal
+        
+        if os_element is not None:
+            osmatches_list = []
+            for osmatch_elem in os_element.findall("osmatch"): # Itera sobre todos los <osmatch>
+                match_dict = {
+                    'name': osmatch_elem.get('name', ''),
+                    'accuracy': osmatch_elem.get('accuracy', '0'),
+                    # Puedes añadir más atributos de <osmatch> si son necesarios, como 'line'
+                    'line': osmatch_elem.get('line', '')
+                }
+                osclasses_list = []
+                for osclass_elem in osmatch_elem.findall("osclass"):
+                    class_dict = {
+                        'type': osclass_elem.get('type', ''),
+                        'vendor': osclass_elem.get('vendor', ''),
+                        'osfamily': osclass_elem.get('osfamily', ''),
+                        'osgen': osclass_elem.get('osgen', ''),
+                        'accuracy': osclass_elem.get('accuracy', '0'),
+                    }
+                    cpe_list = [cpe.text for cpe in osclass_elem.findall("cpe") if cpe.text]
+                    if cpe_list:
+                        class_dict['cpe'] = cpe_list # Nmap puede tener múltiples CPEs por osclass
+                    osclasses_list.append(class_dict)
+                
+                if osclasses_list: # Solo añadir el osmatch si tiene al menos un osclass
+                    match_dict['osclass'] = osclasses_list
+                osmatches_list.append(match_dict)
+            
+            if osmatches_list:
+                parsed_os_info_dict['osmatch'] = osmatches_list
+        
+        device.os_info = parsed_os_info_dict # Asignar la estructura completa
             
         # Obtener puertos TCP/UDP
         tcp_ports = []
@@ -995,4 +1026,3 @@ class NmapScanner:
         device.determine_device_type()
         
         return device
-
