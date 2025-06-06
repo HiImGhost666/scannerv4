@@ -43,6 +43,7 @@ from miproyectored.risk.risk_analyzer import RiskAnalyzer
 from miproyectored.inventory.inventory_manager import InventoryManager
 from miproyectored.export import html_exporter
 from miproyectored.auth.network_credentials import NetworkCredentials
+from miproyectored.model.network_report import NetworkReport # Añadido para _export_data
 # Importar nuevos módulos para escaneo detallado
 
 # Configuración del sistema de logging
@@ -673,6 +674,7 @@ class NetworkScannerGUI(ttk.Window):
                     self._start_automatic_detailed_scans()
                 else:
                     self.after(0, lambda: self._update_scan_ui(False, f"Escaneo completado. {devices_found} dispositivos encontrados."))
+                    self.after(0, self._save_scan_to_db) # Guardar resultados de Nmap si no hay escaneos detallados automáticos
             else:
                 logger.warning("[WARN] No se encontraron dispositivos en el escaneo detallado")
                 self.after(0, lambda: self._update_scan_ui(False, "No se encontraron dispositivos con información detallada."))
@@ -1074,6 +1076,7 @@ class NetworkScannerGUI(ttk.Window):
         self._update_text_widget(self.wmi_details_text, wmi_info_str)
 
 
+    # Removed _save_scan_to_db from here, moved to _start_automatic_detailed_scans
     def _save_scan_to_db(self):
         """Guarda los resultados del escaneo en la base de datos."""
         try:
@@ -1098,6 +1101,7 @@ class NetworkScannerGUI(ttk.Window):
             self.inventory_manager.save_report(report)
             logging.info("Reporte guardado exitosamente en la base de datos.")
 
+            # Optional: Show a success message in the UI
         except Exception as e:
             logging.error(f"Error inesperado al guardar en la base de datos: {str(e)}")
             logging.debug(f"Detalles del error:", exc_info=True)
@@ -1113,25 +1117,22 @@ class NetworkScannerGUI(ttk.Window):
             return
 
         file_path = filedialog.asksaveasfilename(
-            defaultextension=".csv",
-            filetypes=[("CSV files", "*.csv"), ("JSON files", "*.json"), ("HTML files", "*.html"), ("All files", "*.*")],
+            defaultextension=".html",
+            filetypes=[("HTML files", "*.html"), ("All files", "*.*")],
             title="Guardar Reporte Como"
         )
         if not file_path:
             return
 
-        report = NetworkReport(devices=self.scan_results)
+        # El target para el reporte puede ser el rango de red escaneado
+        report_target = self.network_range.get()
         file_ext = os.path.splitext(file_path)[1].lower()
 
         try:
-            if file_ext == ".csv":
-                csv_exporter.export_to_csv(report, file_path)
-            elif file_ext == ".json":
-                json_exporter.export_to_json(report, file_path)
-            elif file_ext == ".html":
-                html_exporter.export_to_html(report, file_path)
+            if file_ext == ".html":
+                html_exporter().save_report(self.scan_results, file_path, target=report_target)
             else:
-                messagebox.showerror("Error de Formato", f"Formato de archivo no soportado: {file_ext}", parent=self)
+                messagebox.showerror("Error de Formato", f"Formato de archivo no soportado: {file_ext}. Por favor, guarde como .html.", parent=self)
                 return
 
             messagebox.showinfo("Exportación Exitosa", f"Datos exportados correctamente a:\n{file_path}", parent=self)
@@ -1257,8 +1258,9 @@ class NetworkScannerGUI(ttk.Window):
         # Submenú de exportación
         export_menu = tk.Menu(file_menu, tearoff=0)
         file_menu.add_cascade(label="Exportar", menu=export_menu)
-        export_menu.add_command(label="Exportar a CSV", command=lambda: self._export_results("csv"))
-        export_menu.add_command(label="Exportar a JSON", command=lambda: self._export_results("json"))
+        # Eliminadas opciones CSV y JSON
+        # export_menu.add_command(label="Exportar a CSV", command=lambda: self._export_results("csv"))
+        # export_menu.add_command(label="Exportar a JSON", command=lambda: self._export_results("json"))
         export_menu.add_command(label="Exportar a HTML", command=lambda: self._export_results("html"))
         export_menu.add_command(label="Exportar a PDF", command=lambda: self._export_results("pdf"))
         export_menu.add_separator()
@@ -1376,7 +1378,8 @@ class NetworkScannerGUI(ttk.Window):
         )
         if file_path:
             try:
-                json_exporter.export_to_json(self.scan_results, file_path)
+                # La exportación directa a JSON se ha eliminado, pero si se quisiera guardar
+                # el estado de los dispositivos para recargar, se podría hacer aquí.
                 messagebox.showinfo("Guardar", f"Resultados guardados exitosamente en {file_path}")
             except Exception as e:
                 messagebox.showerror("Error", f"Error al guardar resultados: {e}")
@@ -1669,31 +1672,18 @@ class NetworkScannerGUI(ttk.Window):
             return
 
         try:
-            if format_type == "csv":
-                file_path = filedialog.asksaveasfilename(
-                    title="Exportar a CSV",
-                    defaultextension=".csv",
-                    filetypes=[("Archivos CSV", "*.csv"), ("Todos los archivos", "*.*")])
-                if file_path:
-                    csv_exporter.export_to_csv(self.scan_results, file_path)
-                    messagebox.showinfo("Exportar", f"Resultados exportados correctamente a {file_path}")
+            # CSV y JSON eliminados
+            # if format_type == "csv": ...
+            # elif format_type == "json": ...
 
-            elif format_type == "json":
-                file_path = filedialog.asksaveasfilename(
-                    title="Exportar a JSON",
-                    defaultextension=".json",
-                    filetypes=[("Archivos JSON", "*.json"), ("Todos los archivos", "*.*")])
-                if file_path:
-                    json_exporter.export_to_json(self.scan_results, file_path)
-                    messagebox.showinfo("Exportar", f"Resultados exportados correctamente a {file_path}")
-
-            elif format_type == "html":
+            if format_type == "html":
                 file_path = filedialog.asksaveasfilename(
                     title="Exportar a HTML",
                     defaultextension=".html",
                     filetypes=[("Archivos HTML", "*.html"), ("Todos los archivos", "*.*")])
                 if file_path:
-                    html_exporter.export_to_html(self.scan_results, file_path)
+                    report_target = self.network_range.get()
+                    html_exporter.HtmlExporter().save_report(self.scan_results, file_path, target=report_target)
                     messagebox.showinfo("Exportar", f"Resultados exportados correctamente a {file_path}")
 
             elif format_type == "pdf":
@@ -2142,50 +2132,127 @@ class NetworkScannerGUI(ttk.Window):
         """Inicia escaneos detallados automáticos (SNMP, SSH, WMI) para los dispositivos encontrados."""
         try:
             self.after(0, lambda: self._update_scan_ui(True, "Iniciando escaneos detallados automáticos..."))
-            
+
             # Crear credenciales para los escaneos
             credentials = NetworkCredentials(
                 username=self.ssh_username.get(),
                 password=self.ssh_password.get(),
                 domain=self.wmi_domain.get(),
                 ssh_key_path=self.ssh_key_file.get(),
-                snmp_community=self.snmp_community.get()
+                snmp_community=self.snmp_community.get() # Use the value from the entry
             )
-            
+
             # Contador para dispositivos escaneados con éxito
-            successful_scans = 0
+            successful_detailed_scans = 0
             total_devices = len(self.scan_results)
-            
-            # Realizar escaneos SNMP para todos los dispositivos
-            for device in self.scan_results:
-                try:
-                    # Actualizar estado
-                    self.after(0, lambda ip=device.ip_address: self._update_scan_ui(
-                        True, f"Escaneando {ip} con SNMP..."))
-                    
-                    # Intentar escaneo SNMP
-                    if self.snmp_scanner.scan_device(device, credentials):
-                        successful_scans += 1
-                        self.snmp_devices_count += 1
-                        
-                        # Actualizar la vista de detalles si este es el dispositivo seleccionado actualmente
-                        if self.selected_device_ip == device.ip_address:
-                            self.after(0, lambda d=device: self._update_device_details_view(d))
-                    
-                    # Actualizar la tabla de resultados para reflejar los cambios
+
+            # Use ThreadPoolExecutor for parallel detailed scans
+            from concurrent.futures import ThreadPoolExecutor, as_completed
+            max_detailed_workers = 3 # Limit parallel detailed scans to avoid overwhelming the network or target devices
+
+            def perform_device_detailed_scan(device: Device):
+                nonlocal successful_detailed_scans
+                device_ip = device.ip_address
+                logger.debug(f"[DEBUG] Evaluando escaneos detallados para {device_ip}")
+
+                # Determine potential based on Nmap results (OS, open ports)
+                # NmapScanner._parse_single_host already sets has_wmi_port, has_ssh_port, has_snmp_port
+                # and determine_device_type sets has_wmi_potential based on type.
+                # Let's rely on these flags.
+
+                scan_success = False
+                scan_types_attempted = []
+
+                # Attempt WMI scan if enabled and potential exists
+                if self.wmi_scan_enabled.get() and device.has_wmi_potential:
+                    self.after(0, lambda ip=device_ip: self._update_scan_ui(
+                        True, f"Escaneando {ip} con WMI..."))
+                    logger.info(f"Intentando escaneo WMI para {device_ip}")
+                    scan_types_attempted.append("WMI")
+                    try:
+                        wmi_success = self.wmi_scanner.scan_device(device, credentials)
+                        if wmi_success:
+                            scan_success = True
+                            logger.info(f"Escaneo WMI exitoso para {device_ip}")
+                        else:
+                            logger.warning(f"Escaneo WMI fallido para {device_ip}")
+                    except Exception as e:
+                        logger.error(f"Error inesperado durante escaneo WMI para {device_ip}: {e}", exc_info=True)
+                        device.wmi_specific_info = {"error": f"Error inesperado: {e}"} # Record the error
+
+                # Attempt SSH scan if potential exists (no separate checkbox for SSH)
+                # Check if SSH port (22) is open or OS is Linux/Unix/macOS
+                if device.has_ssh_port or any(x in device.get_os().lower() for x in ["linux", "unix", "mac", "os x"]):
+                     if credentials.has_ssh_credentials():
+                        self.after(0, lambda ip=device_ip: self._update_scan_ui(
+                            True, f"Escaneando {ip} con SSH..."))
+                        logger.info(f"Intentando escaneo SSH para {device_ip}")
+                        scan_types_attempted.append("SSH")
+                        try:
+                            ssh_success = self.ssh_scanner.scan_device(device, credentials)
+                            if ssh_success:
+                                scan_success = True
+                                logger.info(f"Escaneo SSH exitoso para {device_ip}")
+                            else:
+                                logger.warning(f"Escaneo SSH fallido para {device_ip}")
+                        except Exception as e:
+                            logger.error(f"Error inesperado durante escaneo SSH para {device_ip}: {e}", exc_info=True)
+                            device.ssh_specific_info = {"error": f"Error inesperado: {e}"} # Record the error
+
+
+                # Attempt SNMP scan if potential exists (no separate checkbox for SNMP)
+                # Check if SNMP port (161 UDP) is open or OS suggests network device
+                if device.has_snmp_port or device.type == "Network Device":
+                     if credentials.snmp_community: # SNMP only needs community string
+                        self.after(0, lambda ip=device_ip: self._update_scan_ui(
+                            True, f"Escaneando {ip} con SNMP..."))
+                        logger.info(f"Intentando escaneo SNMP para {device_ip}")
+                        scan_types_attempted.append("SNMP")
+                        try:
+                            snmp_success = self.snmp_scanner.scan_device(device, credentials)
+                            if snmp_success:
+                                scan_success = True
+                                logger.info(f"Escaneo SNMP exitoso para {device_ip}")
+                            else:
+                                logger.warning(f"Escaneo SNMP fallido para {device_ip}")
+                        except Exception as e:
+                            logger.error(f"Error inesperado durante escaneo SNMP para {device_ip}: {e}", exc_info=True)
+                            device.snmp_info = {"error": f"Error inesperado: {e}"} # Record the error
+
+
+                if scan_success:
+                    successful_detailed_scans += 1
+                    logger.debug(f"Detalles actualizados para {device_ip}")
+                    # Update the UI for this specific device
+                    self.after(0, lambda d=device: self._update_device_details_view(d))
+                    # Update the main tree view to reflect potential changes (like OS from detailed scan)
                     self.after(0, self._populate_results_tree)
-                    
-                except Exception as e:
-                    logger.error(f"Error en escaneo SNMP para {device.ip_address}: {e}", exc_info=True)
-            
+                elif scan_types_attempted:
+                     logger.warning(f"Ningún escaneo detallado exitoso para {device_ip} (intentados: {', '.join(scan_types_attempted)})")
+                     # Update the UI to show potential errors in detail view
+                     self.after(0, lambda d=device: self._update_device_details_view(d))
+
+
+            with ThreadPoolExecutor(max_workers=max_detailed_workers) as executor:
+                futures = {executor.submit(perform_device_detailed_scan, device): device for device in self.scan_results}
+
+                completed_detailed = 0
+                for future in as_completed(futures):
+                    device = futures[future]
+                    completed_detailed += 1
+                    # Update progress message
+                    self.after(0, lambda c=completed_detailed, t=total_devices:
+                              self.scan_status.set(f"Escaneos detallados: {c}/{t} completados."))
+
             # Actualizar contadores y UI
             self._count_device_types()
-            self.after(0, lambda: self._update_scan_ui(
-                False, f"Escaneo completado. {successful_scans}/{total_devices} dispositivos escaneados con SNMP."))
-            
+            self.after(0, lambda: self._update_scan_ui(False, f"Escaneo detallado completado. {successful_detailed_scans}/{total_devices} dispositivos con detalles adicionales."))
+            self.after(0, self._save_scan_to_db) # Save to DB after all scans are done
+
         except Exception as e:
             logger.error(f"Error en escaneos detallados automáticos: {e}", exc_info=True)
             self.after(0, lambda: self._update_scan_ui(False, "Error en escaneos detallados automáticos."))
+            self.after(0, self._save_scan_to_db) # Attempt to save even on error
 
     def _update_results_table(self):
         """Actualiza la tabla de resultados."""
@@ -2210,7 +2277,7 @@ if __name__ == '__main__':
     from miproyectored.model.device import Device
     from miproyectored.risk.risk_analyzer import RiskAnalyzer
     from miproyectored.inventory.inventory_manager import InventoryManager
-    from miproyectored.export import html_exporter
+    from miproyectored.export import html_exporter # HtmlExporter es la clase
     from miproyectored.auth.network_credentials import NetworkCredentials
 
     app = NetworkScannerGUI()

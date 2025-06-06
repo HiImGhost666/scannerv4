@@ -982,20 +982,14 @@ class NmapScanner:
         device.udp_ports = [p for p in udp_ports if p['state'] == 'open']
         
         # Configurar puertos abiertos en formato JSON
-        device.open_ports = json.dumps({
-            'tcp': [{
-                'number': p['number'],
-                'service': p.get('name', 'unknown'),
-                'product': p.get('product', ''),
-                'version': p.get('version', '')
-            } for p in tcp_ports if p['state'] == 'open'],
-            'udp': [{
-                'number': p['number'],
-                'service': p.get('name', 'unknown'),
-                'product': p.get('product', ''),
-                'version': p.get('version', '')
-            } for p in udp_ports if p['state'] == 'open']
-        }, indent=4)
+        open_port_numbers = set()
+        if hasattr(device, 'tcp_ports') and device.tcp_ports:
+            for p in device.tcp_ports: # device.tcp_ports ya está filtrado por abiertos
+                open_port_numbers.add(p['number'])
+        if hasattr(device, 'udp_ports') and device.udp_ports:
+            for p in device.udp_ports: # device.udp_ports ya está filtrado por abiertos
+                open_port_numbers.add(p['number'])
+        device.open_ports = sorted(list(open_port_numbers))
         
         # Determinar tipo de dispositivo basado en puertos y OS
         device.determine_device_type()
