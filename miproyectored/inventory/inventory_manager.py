@@ -6,6 +6,7 @@ from typing import List, Dict, Optional
 from miproyectored.model.device import Device
 from miproyectored.model.network_report import NetworkReport
 import os
+import time # Añadido para device.last_scan_timestamp
 
 class InventoryManager:
     DATABASE_PATH = "network_inventory.db"
@@ -81,8 +82,8 @@ class InventoryManager:
                     os_architecture TEXT,
                     cpu_name TEXT,
                     cpu_cores TEXT,
-                    total_memory_kb TEXT,
-                    free_memory_kb TEXT,
+                    total_visible_memory_kb TEXT, -- Cambiado para coincidir con WmiClient
+                    free_physical_memory_kb TEXT, -- Cambiado para coincidir con WmiClient
                     FOREIGN KEY (device_id) REFERENCES Devices(device_id) ON DELETE CASCADE
                 )
             ''')
@@ -160,9 +161,10 @@ class InventoryManager:
         cursor.execute('''
             INSERT INTO Devices (
                 report_id, ip_address, hostname, mac_address, vendor,
-                os_info, os_type, os_vendor, os_family, os_gen, risk_level,
-                open_ports, last_scan_timestamp  # Added open_ports and last_scan_timestamp
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                os_info, os_type, os_vendor, os_family, os_gen,
+                risk_level, last_scan_timestamp, last_scan_success, last_scan_error,
+                open_ports
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             report_id,
             device.ip_address,
@@ -174,9 +176,11 @@ class InventoryManager:
             device.os_vendor if hasattr(device, 'os_vendor') else None,
             device.os_family if hasattr(device, 'os_family') else None,
             device.os_gen if hasattr(device, 'os_gen') else None,
-            device.risk_level if hasattr(device, 'risk_level') else 'Unknown',
-            device.open_ports if hasattr(device, 'open_ports') else None, # Save the JSON string of open_ports
-            device.last_scan_timestamp if hasattr(device, 'last_scan_timestamp') else int(time.time())
+            getattr(device, 'risk_level', 'Unknown'), # Usar getattr para acceso seguro
+            device.last_scan_timestamp if hasattr(device, 'last_scan_timestamp') and device.last_scan_timestamp else int(time.time()),
+            getattr(device, 'last_scan_success', True), # Asumir éxito si se guarda, a menos que se especifique
+            getattr(device, 'scan_error', None), # Usar device.scan_error si existe
+            json.dumps(device.open_ports) if hasattr(device, 'open_ports') and device.open_ports is not None else None # Serializar lista de puertos a JSON
         ))
         
         device_id = cursor.lastrowid
@@ -380,7 +384,7 @@ def _save_wmi_data(self, cursor, device_id: int, wmi_data: Dict[str, Any]) -> in
     cursor.execute('''
         INSERT INTO WmiData (
             device_id, os_caption, os_version, os_architecture,
-            cpu_name, cpu_cores, total_memory_kb, free_memory_kb
+            cpu_name, cpu_cores, total_visible_memory_kb, free_physical_memory_kb
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     ''', (
         device_id,
@@ -389,8 +393,8 @@ def _save_wmi_data(self, cursor, device_id: int, wmi_data: Dict[str, Any]) -> in
         wmi_data.get("os_architecture"),
         wmi_data.get("cpu_name"),
         wmi_data.get("cpu_cores"),
-        wmi_data.get("total_visible_memory_kb"),
-        wmi_data.get("free_physical_memory_kb")
+        wmi_data.get("total_visible_memory_kb"), # Clave usada por WmiClient
+        wmi_data.get("free_physical_memory_kb")  # Clave usada por WmiClient
     ))
     return cursor.lastrowid
 
@@ -420,10 +424,10 @@ def _save_snmp_data(self, cursor, device_id: int, snmp_data: Dict[str, Any]) -> 
         ) VALUES (?, ?, ?, ?, ?, ?)
     ''', (
         device_id,
-        snmp_data.get("system_name"),
-        snmp_data.get("system_description"),
-        snmp_data.get("system_location"),
-        snmp_data.get("system_contact"),
-        snmp_data.get("system_uptime")
+        snmp_data.get("sysName"), # Clave usada por SNMPClient
+        snmp_data.get("sysDescr"), # Clave usada por SNMPClient
+        snmp_data.get("sysLocation"), # Clave usada por SNMPClient
+        snmp_data.get("sysContact"), # Clave usada por SNMPClient
+        snmp_data.get("sysUpTime") # Clave usada por SNMPClient
     ))
     return cursor.lastrowid
