@@ -71,29 +71,46 @@ class NmapScanner:
     def quick_scan(self, target: str) -> List[str]:
         """Realiza un escaneo rápido para encontrar hosts activos."""
         try:
-            # -sn: Ping Scan - disable port scan
-            # -n: No DNS resolution
-            # --max-parallelism: Máximo número de escaneos paralelos
+            # Usar -sn (Ping Scan) para descubrir hosts que están activos,
+            # independientemente de si tienen puertos abiertos comunes.
+            # -PE -PP -PM: Diferentes tipos de sondas ICMP (Echo, Timestamp, Netmask)
+            # -PS21,22,23,25,80,110,135,139,443,3389,8080: TCP SYN Ping a puertos comunes
+            # -PA80,443,3389: TCP ACK Ping a puertos comunes
+            # Esto es más completo que solo -sn.
             command = [
                 self.nmap_path,
-                "-sn",  # Solo ping scan
+                "-T4",  # Timing template (agresivo)
+                "-sn",  # Ping Scan - no hacer escaneo de puertos
+                # Añadir más tipos de sondas para mejorar el descubrimiento
+                "-PE", "-PP", "-PM", # Sondas ICMP
+                "-PS21,22,23,25,80,110,135,139,443,3389,5900,8080", # TCP SYN Ping
+                "-PA80,443,3389,5900", # TCP ACK Ping
                 "-n",   # No DNS resolution
-                "--max-parallelism", "256",  # Máximo paralelismo
-                "-T4",  # Timing template (higher is faster)
+                "-oX", "-", # Salida XML a stdout
                 target
             ]
+            logger.info(f"Ejecutando quick_scan con comando: {' '.join(command)}")
+            result = subprocess.run(command, capture_output=True, text=True, check=False)
             
-            result = subprocess.run(command, capture_output=True, text=True)
-            
-            # Extraer IPs de la salida usando expresiones regulares
-            import re
-            ip_pattern = re.compile(r'Nmap scan report for (\d+\.\d+\.\d+\.\d+)')
-            active_ips = ip_pattern.findall(result.stdout)
-            
+            active_ips = []
+            if result.returncode == 0 and result.stdout:
+                try:
+                    root = ET.fromstring(result.stdout)
+                    for host_node in root.findall(".//host[status[@state='up']]"):
+                        # Con -sn, solo necesitamos verificar que el host esté 'up'
+                        addr_node = host_node.find("address[@addrtype='ipv4']")
+                        if addr_node is not None and addr_node.get("addr"):
+                            active_ips.append(addr_node.get("addr"))
+                except ET.ParseError as e:
+                    logger.error(f"Error parseando XML de quick_scan: {e}\nSalida XML parcial: {result.stdout[:500]}")
+            elif result.returncode != 0:
+                logger.error(f"Error en quick_scan (código {result.returncode}): {result.stderr}")
+
+            logger.info(f"Quick_scan encontró {len(active_ips)} IPs activas: {active_ips}")
             return active_ips
             
         except Exception as e:
-            print(f"Error en quick_scan: {e}")
+            logger.error(f"Error en quick_scan: {e}", exc_info=True)
             return []
 
     def detailed_scan(self, ip: str) -> Optional[Device]:

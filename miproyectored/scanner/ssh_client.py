@@ -1,5 +1,8 @@
 from typing import Dict, Optional
 import paramiko
+import socket # Añadido para socket.timeout
+import logging # Añadido para logging
+logger = logging.getLogger(__name__) # Configurar logger para este módulo
 
 class SshClient:
     def __init__(self, host: str, port: int = 22, username: Optional[str] = None, password: Optional[str] = None, key_filename: Optional[str] = None, timeout: int = 10):
@@ -16,7 +19,7 @@ class SshClient:
             self.client = paramiko.SSHClient()
             self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy()) # Aceptar automáticamente la clave del host (considerar implicaciones de seguridad)
             
-            print(f"Intentando conectar a {self.host}:{self.port} vía SSH con usuario {self.username}...")
+            logger.info(f"Intentando conectar a {self.host}:{self.port} vía SSH con usuario {self.username}...")
             if self.key_filename:
                 self.client.connect(
                     hostname=self.host,
@@ -48,19 +51,19 @@ class SshClient:
                     allow_agent=True, # Permitir uso del agente SSH
                     look_for_keys=True # Buscar claves en ubicaciones por defecto
                 )
-            print(f"Conexión SSH a {self.host} exitosa.")
+            logger.info(f"Conexión SSH a {self.host} exitosa.")
         except paramiko.AuthenticationException:
             self.connection_error = "Error de autenticación SSH."
-            print(f"{self.connection_error} para {self.host} con usuario {self.username}")
+            logger.warning(f"{self.connection_error} para {self.host} con usuario {self.username}")
         except paramiko.SSHException as e:
             self.connection_error = f"Error de SSH: {e}"
-            print(f"{self.connection_error} para {self.host}")
+            logger.warning(f"{self.connection_error} para {self.host}")
         except socket.timeout:
             self.connection_error = "Timeout durante la conexión SSH."
-            print(f"{self.connection_error} para {self.host}")
+            logger.warning(f"{self.connection_error} para {self.host}")
         except Exception as e:
             self.connection_error = f"Error inesperado en conexión SSH: {e}"
-            print(f"{self.connection_error} para {self.host}")
+            logger.error(f"{self.connection_error} para {self.host}", exc_info=True)
         
         if self.connection_error and self.client:
             self.client.close()
@@ -75,18 +78,18 @@ class SshClient:
             output = stdout.read().decode('utf-8', errors='replace').strip()
             error = stderr.read().decode('utf-8', errors='replace').strip()
             if error and "stdin: is not a tty" not in error.lower(): # Ignorar error común de tty
-                # print(f"Error ejecutando comando SSH '{command}' en {self.host}: {error}")
+                logger.warning(f"Error ejecutando comando SSH '{command}' en {self.host}: {error}")
                 # Podríamos devolver el error o parte de él si es relevante
                 return f"Error: {error}" if not output else output + f"\nError: {error}"
             return output
         except paramiko.SSHException as e:
-            print(f"Error SSH ejecutando comando '{command}' en {self.host}: {e}")
+            logger.warning(f"Error SSH ejecutando comando '{command}' en {self.host}: {e}")
             return f"Error SSH: {e}"
         except socket.timeout:
-            print(f"Timeout ejecutando comando SSH '{command}' en {self.host}")
+            logger.warning(f"Timeout ejecutando comando SSH '{command}' en {self.host}")
             return "Error: Timeout ejecutando comando"
         except Exception as e:
-            print(f"Error inesperado ejecutando comando SSH '{command}' en {self.host}: {e}")
+            logger.error(f"Error inesperado ejecutando comando SSH '{command}' en {self.host}: {e}", exc_info=True)
             return f"Error inesperado: {e}"
 
     def collect_system_info(self) -> Dict[str, str]:

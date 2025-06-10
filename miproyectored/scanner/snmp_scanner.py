@@ -41,24 +41,8 @@ class SnmpScanner:
                     self.logger.warning(f"Error SNMP para {device.ip_address} con comunidad {community}: {system_info['error']}")
                     continue
                 
-                # Actualizar información del dispositivo
-                device.snmp_info = system_info
-                
-                # Extraer información relevante para el dispositivo
-                if "sysName" in system_info:
-                    device.hostname = system_info["sysName"]
-                
-                if "osType" in system_info:
-                    device.os_type = system_info["osType"]
-                
-                if "osName" in system_info:
-                    device.os_name = system_info["osName"]
-                
-                if "manufacturer" in system_info:
-                    device.manufacturer = system_info["manufacturer"]
-                
-                if "macAddress" in system_info:
-                    device.mac_address = system_info["macAddress"]
+                # Dejar que el método update_from_snmp del dispositivo maneje la lógica de actualización
+                device.update_from_snmp(system_info)
                 
                 success = True
                 self.logger.info(f"Escaneo SNMP exitoso para {device.ip_address} con comunidad {community}")
@@ -68,8 +52,12 @@ class SnmpScanner:
                 self.logger.error(f"Error durante el escaneo SNMP de {device.ip_address}: {str(e)}")
         
         if not success:
-            self.logger.warning(f"No se pudo obtener información SNMP de {device.ip_address}")
-            device.snmp_info = {"error": "No se pudo obtener información SNMP del dispositivo"}
+            error_message_snmp = f"No se pudo obtener información SNMP de {device.ip_address}."
+            if communities: # communities se define antes en el bucle
+                error_message_snmp += f" Se intentó con las comunidades: {', '.join(communities)}."
+            error_message_snmp += " Verificar la configuración SNMP del dispositivo (agente habilitado, versión, ACLs) y las comunidades."
+            self.logger.warning(error_message_snmp)
+            device.snmp_info = {"error": error_message_snmp}
         
         return success
     

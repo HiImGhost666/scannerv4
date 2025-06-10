@@ -43,6 +43,7 @@ from miproyectored.risk.risk_analyzer import RiskAnalyzer
 from miproyectored.inventory.inventory_manager import InventoryManager
 from miproyectored.export import html_exporter
 from miproyectored.auth.network_credentials import NetworkCredentials
+from miproyectored.util.network_utils import detect_local_networks # Importar la utilidad de detección de red
 from miproyectored.model.network_report import NetworkReport # Añadido para _export_data
 # Importar nuevos módulos para escaneo detallado
 
@@ -163,9 +164,46 @@ class NetworkScannerGUI(ttk.Window):
             self.wmi_scan_enabled = ttk.BooleanVar(value=False)
 
             # Variable para habilitar/deshabilitar escaneo automático
-            self.auto_scan_enabled = ttk.BooleanVar(value=True)
+            # self.auto_scan_enabled = ttk.BooleanVar(value=True) # Eliminada, reemplazada por toggles individuales
 
-            self.network_range = ttk.StringVar(value=self._get_local_network_range())
+            # Variables para habilitar/deshabilitar escaneos detallados individuales
+            self.snmp_detailed_scan_enabled = ttk.BooleanVar(value=False) # Para SNMP
+            self.ssh_detailed_scan_enabled = ttk.BooleanVar(value=False)  # Para SSH
+
+            # --- Lógica actualizada para el Combobox de Rango de Red ---
+            # ASUNCIÓN IMPORTANTE: Se asume que detect_local_networks() ahora devuelve
+            # una List[Tuple[str, str]], por ejemplo: [("192.168.1.0/24", "Ethernet 0"), ...]
+            # Si detect_local_networks() no ha sido modificada para proveer nombres de interfaz,
+            # esta funcionalidad no mostrará los nombres.
+            try:
+                detected_networks_with_names: List[Tuple[str, str]] = detect_local_networks()
+                if not detected_networks_with_names:
+                    logger.warning("detect_local_networks() no devolvió ninguna red. Usando default.")
+                    detected_networks_with_names = [("192.168.1.0/24", "Default")]
+            except Exception as e:
+                logger.error(f"Error al llamar a detect_local_networks(): {e}. Usando default.", exc_info=True)
+                detected_networks_with_names = [("192.168.1.0/24", "ErrorDefault")]
+
+            self.available_network_details: List[Tuple[str, str]] = [] # Almacena (ip_real, texto_mostrado)
+            self.combobox_display_values_list: List[str] = []
+
+            for ip_r, if_name in detected_networks_with_names:
+                display_text = f"{ip_r} ({if_name})"
+                self.available_network_details.append((ip_r, display_text))
+                self.combobox_display_values_list.append(display_text)
+
+            if not self.available_network_details: # Fallback si todo lo anterior falla
+                default_ip = "192.168.1.0/24"
+                default_display = f"{default_ip} (Fallback)"
+                self.available_network_details.append((default_ip, default_display))
+                self.combobox_display_values_list.append(default_display)
+
+            initial_actual_ip = self.available_network_details[0][0]
+            initial_display_value_for_combobox = self.available_network_details[0][1]
+
+            self.network_range = ttk.StringVar(value=initial_actual_ip) # Almacena el IP real para escanear
+            self.combobox_selected_text_var = ttk.StringVar(value=initial_display_value_for_combobox) # Para el texto del Combobox
+            # --- Fin de la lógica actualizada ---
 
             self.search_filter = ttk.StringVar()
             self.search_filter.trace_add("write", self._apply_filter)
@@ -269,49 +307,6 @@ class NetworkScannerGUI(ttk.Window):
                   background=[('selected', self.COLORES['azul_medio'])],
                   foreground=[('selected', self.COLORES['blanco'])])
 
-    def _get_local_network_range(self) -> str:
-        """Intenta detectar el rango de red local (ej. 192.168.1.0/24)."""
-        try:
-            hostname = socket.gethostname()
-            local_ip = socket.gethostbyname(hostname)
-
-            if local_ip.startswith("127."): # IP de Loopback, no útil para escanear la LAN
-                # Intenta obtener una IP no loopback conectándose a un host externo (dummy)
-                # Esto ayuda a identificar la interfaz de red principal usada para salir.
-                s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                s.settimeout(0.1) # Timeout corto para no bloquear mucho
-                try:
-                    s.connect(('10.254.254.254', 1)) # IP dummy, no necesita ser alcanzable
-                    local_ip = s.getsockname()[0]
-                except Exception:
-                    logger.warning("No se pudo determinar la IP no-loopback mediante conexión dummy. Usando IP de hostname si es válida.")
-                    # Re-evaluar la IP del hostname, podría ser una IP de LAN si hay múltiples interfaces
-                    local_ip = socket.gethostbyname(hostname) # Obtener de nuevo por si acaso
-                    if local_ip.startswith("127."): # Si sigue siendo loopback
-                        logger.warning("La IP del hostname sigue siendo loopback. Usando rango por defecto.")
-                        return "192.168.1.0/24" # Fallback a un rango común
-                finally:
-                    s.close()
-
-            if local_ip and not local_ip.startswith("127."):
-                ip_parts = local_ip.split('.')
-                if len(ip_parts) == 4: # Asegurarse de que es una IPv4 válida
-                    network_base = ".".join(ip_parts[:3])
-                    detected_range = f"{network_base}.0/24"
-                    logger.info(f"Rango de red local detectado: {detected_range}")
-                    return detected_range
-                else:
-                    logger.warning(f"Formato de IP local inesperado: {local_ip}. Usando rango por defecto.")
-            else:
-                logger.warning(f"No se pudo determinar una IP local adecuada (IP actual: {local_ip}). Usando rango por defecto.")
-
-        except socket.gaierror:
-            logger.error("Error al obtener hostname o IP (gaierror). La red podría estar desconectada o mal configurada. Usando rango por defecto.", exc_info=False)
-        except Exception as e:
-            logger.error(f"Error inesperado al detectar la red local: {e}. Usando rango por defecto.", exc_info=True)
-
-        return "192.168.1.0/24" # Rango por defecto como fallback
-
     def _create_widgets(self):
         """Crea los widgets de la interfaz gráfica."""
         # Crear la barra de menú principal
@@ -360,16 +355,24 @@ class NetworkScannerGUI(ttk.Window):
         scan_frame.pack(fill=X, pady=5)
 
         ttk.Label(scan_frame, text="Rango de Red", style="Section.TLabel").pack(fill=X, pady=(0,2))
-        ttk.Entry(scan_frame, textvariable=self.network_range).pack(fill=X, pady=(0,5))
-
-        # Opción para escaneo automático
-        auto_scan_check = ttk.Checkbutton(
+        # Combobox actualizado para mostrar IP (Nombre Interfaz)
+        self.network_range_combobox = ttk.Combobox(
             scan_frame,
-            text="Escaneo automático detallado (SSH, SNMP)",
-            variable=self.auto_scan_enabled,
+            textvariable=self.combobox_selected_text_var, # Vinculado a la variable de texto mostrado
+            values=self.combobox_display_values_list,     # Lista de textos formateados
+            state="readonly" # Evitar edición manual, solo selección
+        )
+        self.network_range_combobox.pack(fill=X, pady=(0,5))
+        self.network_range_combobox.bind("<<ComboboxSelected>>", self._on_network_range_select)
+
+        # Opción para escaneo SNMP detallado
+        snmp_detailed_scan_check = ttk.Checkbutton(
+            scan_frame,
+            text="Incluir escaneo detallado SNMP",
+            variable=self.snmp_detailed_scan_enabled,
             bootstyle="round-toggle"
         )
-        auto_scan_check.pack(fill=X, pady=2)
+        snmp_detailed_scan_check.pack(fill=X, pady=2)
 
         # Opción para escaneo WMI
         wmi_scan_check = ttk.Checkbutton(
@@ -379,6 +382,15 @@ class NetworkScannerGUI(ttk.Window):
             bootstyle="round-toggle"
         )
         wmi_scan_check.pack(fill=X, pady=2)
+
+        # Opción para escaneo SSH detallado
+        ssh_detailed_scan_check = ttk.Checkbutton(
+            scan_frame,
+            text="Incluir escaneo detallado SSH",
+            variable=self.ssh_detailed_scan_enabled,
+            bootstyle="round-toggle"
+        )
+        ssh_detailed_scan_check.pack(fill=X, pady=2)
 
         self.scan_button = ttk.Button(scan_frame, text="Iniciar Escaneo", command=self._start_nmap_scan, style="Action.TButton")
         self.scan_button.pack(fill=X, pady=5)
@@ -531,6 +543,29 @@ class NetworkScannerGUI(ttk.Window):
         self.details_notebook.add(self.ssh_details_text, text="Info SSH")
         self.details_notebook.add(self.snmp_details_text, text="Info SNMP") # Añadir pestaña SNMP
 
+    def _on_network_range_select(self, event=None):
+        """
+        Se llama cuando se selecciona un nuevo rango de red del Combobox.
+        Actualiza self.network_range (StringVar que almacena el IP real) 
+        basado en el texto mostrado seleccionado.
+        """
+        selected_display_text = self.combobox_selected_text_var.get()
+        actual_ip_to_set = None
+
+        for ip_range, display_text in self.available_network_details:
+            if display_text == selected_display_text:
+                actual_ip_to_set = ip_range
+                break
+        
+        if actual_ip_to_set:
+            self.network_range.set(actual_ip_to_set)
+            logger.debug(f"Rango de red seleccionado: {actual_ip_to_set} (mostrado como: {selected_display_text})")
+        else:
+            logger.warning(f"No se pudo encontrar el IP real para el texto mostrado: {selected_display_text}. Usando el texto mostrado directamente como fallback.")
+            # Fallback: intentar extraer el IP del texto mostrado "IP (Nombre)"
+            parsed_ip = selected_display_text.split(" (")[0]
+            self.network_range.set(parsed_ip)
+
     def _browse_ssh_key(self):
         """Abre un diálogo para seleccionar un archivo de clave SSH."""
         filepath = filedialog.askopenfilename(title="Seleccionar archivo de clave SSH")
@@ -668,12 +703,15 @@ class NetworkScannerGUI(ttk.Window):
                 self._count_device_types()
                 logger.info(f"[INFO] Escaneo completado. Encontrados {devices_found} dispositivos.")
                 
-                # Si el escaneo automático está habilitado, iniciar escaneos detallados
-                if self.auto_scan_enabled.get():
-                    logger.debug("[DEBUG] Iniciando escaneos detallados automáticos")
+                # Si algún escaneo detallado está habilitado, iniciar escaneos detallados
+                if self.snmp_detailed_scan_enabled.get() or \
+                   self.wmi_scan_enabled.get() or \
+                   self.ssh_detailed_scan_enabled.get():
+                    logger.debug("[DEBUG] Iniciando escaneos detallados (SNMP, WMI y/o SSH según selección)")
                     self._start_automatic_detailed_scans()
                 else:
-                    self.after(0, lambda: self._update_scan_ui(False, f"Escaneo completado. {devices_found} dispositivos encontrados."))
+                    logger.debug("[DEBUG] No hay escaneos detallados habilitados. Finalizando después de Nmap.")
+                    self.after(0, lambda: self._update_scan_ui(False, f"Escaneo Nmap completado. {devices_found} dispositivos encontrados."))
                     self.after(0, self._save_scan_to_db) # Guardar resultados de Nmap si no hay escaneos detallados automáticos
             else:
                 logger.warning("[WARN] No se encontraron dispositivos en el escaneo detallado")
@@ -2131,7 +2169,17 @@ class NetworkScannerGUI(ttk.Window):
     def _start_automatic_detailed_scans(self):
         """Inicia escaneos detallados automáticos (SNMP, SSH, WMI) para los dispositivos encontrados."""
         try:
-            self.after(0, lambda: self._update_scan_ui(True, "Iniciando escaneos detallados automáticos..."))
+            scan_types_to_run = []
+            if self.snmp_detailed_scan_enabled.get(): scan_types_to_run.append("SNMP")
+            if self.wmi_scan_enabled.get(): scan_types_to_run.append("WMI")
+            if self.ssh_detailed_scan_enabled.get(): scan_types_to_run.append("SSH")
+
+            if scan_types_to_run:
+                status_msg = f"Iniciando escaneos detallados ({', '.join(scan_types_to_run)})..."
+                self.after(0, lambda: self._update_scan_ui(True, status_msg))
+            else: # No debería llegar aquí si la lógica en _perform_nmap_scan_thread es correcta
+                self.after(0, lambda: self._update_scan_ui(False, "No hay escaneos detallados seleccionados."))
+                return # No continuar si no hay nada que escanear detalladamente
 
             # Crear credenciales para los escaneos
             credentials = NetworkCredentials(
@@ -2160,15 +2208,15 @@ class NetworkScannerGUI(ttk.Window):
                 # and determine_device_type sets has_wmi_potential based on type.
                 # Let's rely on these flags.
 
-                scan_success = False
-                scan_types_attempted = []
+                scan_success_for_this_device = False
+                scan_types_attempted_for_this_device = []
 
                 # Attempt WMI scan if enabled and potential exists
                 if self.wmi_scan_enabled.get() and device.has_wmi_potential:
                     self.after(0, lambda ip=device_ip: self._update_scan_ui(
                         True, f"Escaneando {ip} con WMI..."))
                     logger.info(f"Intentando escaneo WMI para {device_ip}")
-                    scan_types_attempted.append("WMI")
+                    scan_types_attempted_for_this_device.append("WMI")
                     try:
                         wmi_success = self.wmi_scanner.scan_device(device, credentials)
                         if wmi_success:
@@ -2180,55 +2228,63 @@ class NetworkScannerGUI(ttk.Window):
                         logger.error(f"Error inesperado durante escaneo WMI para {device_ip}: {e}", exc_info=True)
                         device.wmi_specific_info = {"error": f"Error inesperado: {e}"} # Record the error
 
-                # Attempt SSH scan if potential exists (no separate checkbox for SSH)
-                # Check if SSH port (22) is open or OS is Linux/Unix/macOS
-                if device.has_ssh_port or any(x in device.get_os().lower() for x in ["linux", "unix", "mac", "os x"]):
+                # Attempt SSH scan if SSH toggle is enabled and potential exists
+                if self.ssh_detailed_scan_enabled.get() and \
+                   (device.has_ssh_port or any(x in device.get_os().lower() for x in ["linux", "unix", "mac", "os x"])):
                      if credentials.has_ssh_credentials():
                         self.after(0, lambda ip=device_ip: self._update_scan_ui(
                             True, f"Escaneando {ip} con SSH..."))
                         logger.info(f"Intentando escaneo SSH para {device_ip}")
-                        scan_types_attempted.append("SSH")
+                        scan_types_attempted_for_this_device.append("SSH")
                         try:
                             ssh_success = self.ssh_scanner.scan_device(device, credentials)
                             if ssh_success:
-                                scan_success = True
+                                scan_success_for_this_device = True
                                 logger.info(f"Escaneo SSH exitoso para {device_ip}")
                             else:
                                 logger.warning(f"Escaneo SSH fallido para {device_ip}")
                         except Exception as e:
                             logger.error(f"Error inesperado durante escaneo SSH para {device_ip}: {e}", exc_info=True)
                             device.ssh_specific_info = {"error": f"Error inesperado: {e}"} # Record the error
+                     else:
+                        logger.info(f"Escaneo SSH para {device_ip} omitido: No se proporcionaron credenciales SSH.")
+                        if not device.ssh_specific_info or "error" not in device.ssh_specific_info : # No sobrescribir un error existente
+                            device.ssh_specific_info = {"info": "Omitido, sin credenciales SSH."}
 
 
-                # Attempt SNMP scan if potential exists (no separate checkbox for SNMP)
-                # Check if SNMP port (161 UDP) is open or OS suggests network device
-                if device.has_snmp_port or device.type == "Network Device":
+                # Attempt SNMP scan if SNMP toggle is enabled and potential exists
+                if self.snmp_detailed_scan_enabled.get() and \
+                   (device.has_snmp_port or device.type == "Network Device"):
                      if credentials.snmp_community: # SNMP only needs community string
                         self.after(0, lambda ip=device_ip: self._update_scan_ui(
                             True, f"Escaneando {ip} con SNMP..."))
                         logger.info(f"Intentando escaneo SNMP para {device_ip}")
-                        scan_types_attempted.append("SNMP")
+                        scan_types_attempted_for_this_device.append("SNMP")
                         try:
                             snmp_success = self.snmp_scanner.scan_device(device, credentials)
                             if snmp_success:
-                                scan_success = True
+                                scan_success_for_this_device = True
                                 logger.info(f"Escaneo SNMP exitoso para {device_ip}")
                             else:
                                 logger.warning(f"Escaneo SNMP fallido para {device_ip}")
                         except Exception as e:
                             logger.error(f"Error inesperado durante escaneo SNMP para {device_ip}: {e}", exc_info=True)
                             device.snmp_info = {"error": f"Error inesperado: {e}"} # Record the error
+                     else:
+                        logger.info(f"Escaneo SNMP para {device_ip} omitido: No se proporcionó comunidad SNMP.")
+                        if not device.snmp_info or "error" not in device.snmp_info: # No sobrescribir un error existente
+                            device.snmp_info = {"info": "Omitido, sin comunidad SNMP."}
 
 
-                if scan_success:
+                if scan_success_for_this_device:
                     successful_detailed_scans += 1
-                    logger.debug(f"Detalles actualizados para {device_ip}")
+                    logger.debug(f"Detalles actualizados para {device_ip} a través de {', '.join(scan_types_attempted_for_this_device)}")
                     # Update the UI for this specific device
                     self.after(0, lambda d=device: self._update_device_details_view(d))
                     # Update the main tree view to reflect potential changes (like OS from detailed scan)
                     self.after(0, self._populate_results_tree)
-                elif scan_types_attempted:
-                     logger.warning(f"Ningún escaneo detallado exitoso para {device_ip} (intentados: {', '.join(scan_types_attempted)})")
+                elif scan_types_attempted_for_this_device:
+                     logger.warning(f"Ningún escaneo detallado exitoso para {device_ip} (intentados: {', '.join(scan_types_attempted_for_this_device)})")
                      # Update the UI to show potential errors in detail view
                      self.after(0, lambda d=device: self._update_device_details_view(d))
 
@@ -2242,8 +2298,12 @@ class NetworkScannerGUI(ttk.Window):
                     completed_detailed += 1
                     # Update progress message
                     self.after(0, lambda c=completed_detailed, t=total_devices:
-                              self.scan_status.set(f"Escaneos detallados: {c}/{t} completados."))
+                              self.scan_status.set(f"Procesando escaneos detallados: {c}/{t} dispositivos."))
 
+            final_status_msg = f"Escaneos detallados completados. {successful_detailed_scans}/{total_devices} dispositivos con detalles adicionales."
+            if not scan_types_to_run: # Si por alguna razón se llamó sin toggles activos
+                final_status_msg = "No se seleccionaron escaneos detallados."
+                
             # Actualizar contadores y UI
             self._count_device_types()
             self.after(0, lambda: self._update_scan_ui(False, f"Escaneo detallado completado. {successful_detailed_scans}/{total_devices} dispositivos con detalles adicionales."))

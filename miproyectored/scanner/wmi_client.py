@@ -1,12 +1,14 @@
 from typing import Dict, Optional
+import logging # Añadido para logging
 
 # Necesitarás instalar la librería wmi: pip install wmi
 # Esta librería es específica para Windows.
 try:
     import wmi
 except ImportError:
-    print("Librería 'wmi' no encontrada. Este módulo solo funcionará en Windows con 'wmi' instalado.")
-    print("Puedes instalarla con: pip install wmi")
+    # Registrar el error en lugar de imprimirlo directamente si el logger ya está configurado
+    logging.getLogger(__name__).error("Librería 'wmi' no encontrada. Este módulo solo funcionará en Windows con 'wmi' instalado.")
+    logging.getLogger(__name__).error("Puedes instalarla con: pip install wmi")
     wmi = None
 
 class WmiClient:
@@ -18,9 +20,10 @@ class WmiClient:
         self.connection = None
         self.connection_error: Optional[str] = None # Añadido
 
+        logger = logging.getLogger(__name__) # Usar logger específico del módulo
         if not wmi:
             self.connection_error = "Librería 'wmi' no disponible."
-            print(self.connection_error + " WmiClient no funcionará.")
+            logger.error(self.connection_error + " WmiClient no funcionará.")
             return
 
         try:
@@ -31,39 +34,45 @@ class WmiClient:
 
             if host.lower() == "localhost" or host == "127.0.0.1":
                 if user_connect: # Si se proveen credenciales para localhost, usarlas
-                     print(f"Intentando conectar a WMI localmente en {self.host} con usuario {user_connect}...")
+                     logger.info(f"Intentando conectar a WMI localmente en {self.host} con usuario {user_connect}...")
                      self.connection = wmi.WMI(computer=self.host, user=user_connect, password=self.password)
                 else: # Conexión local sin credenciales explícitas
-                    print(f"Intentando conectar a WMI localmente en {self.host} sin credenciales explícitas...")
+                    logger.info(f"Intentando conectar a WMI localmente en {self.host} sin credenciales explícitas...")
                     self.connection = wmi.WMI() # Conexión local
             else:
                 # Conexión remota
                 if not user_connect or not self.password:
                     self.connection_error = f"Credenciales (usuario/contraseña) incompletas para conexión WMI remota a {self.host}."
-                    print(self.connection_error)
+                    logger.warning(self.connection_error)
                     return # Salir si no hay credenciales para host remoto
 
-                print(f"Intentando conectar a WMI en {self.host} con usuario {user_connect}...")
+                logger.info(f"Intentando conectar a WMI en {self.host} con usuario {user_connect}...")
                 self.connection = wmi.WMI(computer=self.host, user=user_connect, password=self.password)
             
             # Realizar una consulta simple para verificar la conexión
             _ = self.connection.Win32_OperatingSystem()[0] 
-            print(f"Conexión WMI a {self.host} exitosa.")
+            logger.info(f"Conexión WMI a {self.host} exitosa.")
 
         except wmi.x_wmi as e:
             self.connection_error = f"Error WMI al conectar a {self.host}: {e}"
-            print(self.connection_error)
-            print("Asegúrate de que el servicio WMI esté corriendo, el firewall lo permita, y las credenciales sean correctas.")
+            # Analizar 'e' para un mensaje más específico sobre permisos
+            if hasattr(e, 'com_error') and hasattr(e.com_error, 'hresult'):
+                # HRESULT 0x80070005 es Access Denied
+                if e.com_error.hresult == -2147024891: # 0x80070005
+                    self.connection_error += " (Acceso Denegado - verificar permisos y credenciales WMI remotas, y configuración del firewall)"
+            logger.warning(self.connection_error)
+            logger.warning("Asegúrate de que el servicio WMI esté corriendo, el firewall lo permita, y las credenciales sean correctas.")
             self.connection = None
         except IndexError: # Si la consulta de verificación no devuelve nada
             self.connection_error = f"Error WMI: La consulta de verificación no devolvió resultados en {self.host}."
-            print(self.connection_error)
+            logger.warning(self.connection_error)
             self.connection = None
         except Exception as e:
             self.connection_error = f"Error inesperado al inicializar WMI para {self.host}: {e}"
-            print(self.connection_error)
+            logger.error(self.connection_error, exc_info=True)
             self.connection = None
 
+        logger = logging.getLogger(__name__) # Asegurar que logger esté definido para el método
 
     def collect_system_info(self) -> Dict[str, str]:
         info: Dict[str, str] = {}
@@ -73,6 +82,8 @@ class WmiClient:
         if not self.connection: # Si no hubo error en init pero la conexión es None (caso improbable si init se corrige)
             info["error"] = "No se pudo establecer la conexión WMI (conexión es None)."
             return info
+
+        logger = logging.getLogger(__name__) # Asegurar que logger esté definido
 
         try:
             # Información del Sistema Operativo
@@ -150,16 +161,19 @@ class WmiClient:
 
         except wmi.x_wmi as e:
             err_msg = f"Error WMI durante la recolección de datos en {self.host}: {e}"
-            print(err_msg)
+            if hasattr(e, 'com_error') and hasattr(e.com_error, 'hresult'):
+                if e.com_error.hresult == -2147024891: # 0x80070005
+                    err_msg += " (Acceso Denegado durante la recolección de datos)"
+            logger.warning(err_msg)
             info["error"] = err_msg
         except IndexError:
             # Esto puede pasar si una consulta no devuelve resultados (ej. Win32_Processor() está vacío)
             err_msg = f"Error WMI: Una consulta no devolvió los resultados esperados en {self.host}."
-            print(err_msg)
+            logger.warning(err_msg)
             info["error"] = err_msg
         except Exception as e:
             err_msg = f"Error inesperado durante la recolección de datos WMI en {self.host}: {e}"
-            print(err_msg)
+            logger.error(err_msg, exc_info=True)
             info["error"] = err_msg
             
         return info
