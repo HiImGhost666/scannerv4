@@ -153,7 +153,7 @@ class HTMLViewer(QMainWindow):
 
 def show_about_dialog(parent=None):
     """
-    Muestra un diálogo simple 'Acerca de' con la información de la aplicación.
+    Muestra un diálogo 'Acerca de' con información de la aplicación y créditos.
     """
     try:
         # Crear aplicación Qt si no existe
@@ -164,37 +164,21 @@ def show_about_dialog(parent=None):
         else:
             is_new_app = False
 
-        # Crear ventana de diálogo sin padre para evitar conflictos con Tkinter
+        # Crear ventana de diálogo
         dialog = QDialog(None, Qt.WindowTitleHint | Qt.WindowCloseButtonHint)
         dialog.setWindowTitle("Acerca de")
-        dialog.setFixedSize(400, 400)
+        dialog.setFixedSize(500, 650)  # Aumentamos el tamaño para los créditos
 
         # Configurar el ícono de la ventana
         try:
             icon_path = os.path.join(os.path.dirname(__file__), 'resources', 'SG - Logotipo IA negro.png')
             if os.path.exists(icon_path):
                 from PyQt5.QtGui import QIcon, QPixmap
-                from PyQt5.QtCore import QSize
-
-                # Crear un ícono con tamaño adecuado
-                icon = QIcon()
-                pixmap = QPixmap(icon_path)
-
-                # Asegurarse de que el ícono tenga un tamaño adecuado
-                if not pixmap.isNull():
-                    # Ajustar el tamaño si es muy grande
-                    if pixmap.width() > 128 or pixmap.height() > 128:
-                        pixmap = pixmap.scaled(128, 128, Qt.KeepAspectRatio, Qt.SmoothTransformation)
-
-                    icon.addPixmap(pixmap)
-                    dialog.setWindowIcon(icon)
-
-                    # Configurar el ícono en la barra de título
-                    dialog.setWindowFlags(dialog.windowFlags() | Qt.WindowSystemMenuHint | Qt.WindowMinMaxButtonsHint)
-
+                icon = QIcon(icon_path)
+                dialog.setWindowIcon(icon)
         except Exception as e:
-            logger.warning(f"No se pudo cargar el ícono de la ventana: {e}")
-            logger.exception("Detalles del error:")
+            logger.warning(f"No se pudo cargar el ícono: {e}")
+
         dialog.setStyleSheet("""
             QDialog {
                 background-color: white;
@@ -215,6 +199,14 @@ def show_about_dialog(parent=None):
             }
             QPushButton:hover {
                 background-color: #A00016;
+            }
+            QScrollArea {
+                border: none;
+            }
+            QFrame#creditsFrame {
+                background-color: #F0F0F0;
+                border-radius: 5px;
+                padding: 10px;
             }
         """)
 
@@ -258,6 +250,42 @@ def show_about_dialog(parent=None):
         description.setStyleSheet("font-size: 12px; line-height: 1.4;")
         layout.addWidget(description)
 
+        # Frame para los créditos
+        credits_frame = QFrame()
+        credits_frame.setObjectName("creditsFrame")
+        credits_layout = QVBoxLayout(credits_frame)
+
+        # Título de créditos
+        credits_title = QLabel("Equipo de Desarrollo")
+        credits_title.setStyleSheet("font-weight: bold; color: #091F2C; font-size: 14px; margin-top: 15px;")
+        credits_layout.addWidget(credits_title)
+
+        # Separador
+        separator = QFrame()
+        separator.setFrameShape(QFrame.HLine)
+        separator.setStyleSheet("border: 1px solid #eee; margin: 5px 0 10px 0;")
+        credits_layout.addWidget(separator)
+
+
+        # Lista de créditos
+        team_members = [
+            "Rodrigo Alfonso Riffo Mendoza - Desarrollador Principal",
+            "Luke Eric Marten Llorente - Desarrollador Principal",
+            "Aday David Vera Encinoso - Documentación e Integración SNMP",
+            "Silvia Cabello Negrín - Desarrolladora Python e Integración WMI",
+            "Roberto García Hidalgo - Documentación",
+            "Ibrahim Álvarez El Outmani - Documentación",
+            "Asier Aragón Atanes - Documentación"
+        ]
+
+        for member in team_members:
+            label = QLabel(f"• {member}")
+            label.setStyleSheet("font-size: 12px; padding: 3px 0 3px 10px;")
+            credits_layout.addWidget(label)
+
+        # Agregar los créditos directamente al layout principal
+        layout.addWidget(credits_frame)
+
         # Espaciador
         layout.addStretch()
 
@@ -272,22 +300,18 @@ def show_about_dialog(parent=None):
         close_btn.clicked.connect(dialog.accept)
         close_btn.setFixedWidth(100)
 
-        # Contenedor para centrar el botón
-        btn_container = QWidget()
-        btn_layout = QHBoxLayout(btn_container)
-        btn_layout.addStretch()
-        btn_layout.addWidget(close_btn)
-        btn_layout.addStretch()
-
-        layout.addWidget(btn_container)
+        # Contenedor para centrar el botón de cerrar
+        close_container = QWidget()
+        close_layout = QHBoxLayout(close_container)
+        close_layout.addStretch()
+        close_layout.addWidget(close_btn)
+        close_layout.addStretch()
+        layout.addWidget(close_container)
 
         # Mostrar el diálogo
         dialog.exec_()
 
-        # Si creamos una aplicación, no la cerramos con sys.exit()
-        # ya que podría cerrar el programa principal
         if is_new_app:
-            # En lugar de sys.exit(), simplemente retornamos
             pass
 
     except Exception as e:
