@@ -96,11 +96,14 @@ class NmapScanner:
             if result.returncode == 0 and result.stdout:
                 try:
                     root = ET.fromstring(result.stdout)
-                    for host_node in root.findall(".//host[status[@state='up']]"):
-                        # Con -sn, solo necesitamos verificar que el host esté 'up'
-                        addr_node = host_node.find("address[@addrtype='ipv4']")
-                        if addr_node is not None and addr_node.get("addr"):
-                            active_ips.append(addr_node.get("addr"))
+                    # Modificación para compatibilidad con xml.etree.ElementTree:
+                    # Primero encontrar todos los hosts, luego filtrar.
+                    for host_node in root.findall(".//host"):
+                        status_node = host_node.find("status")
+                        if status_node is not None and status_node.get("state") == "up":
+                            addr_node = host_node.find("address[@addrtype='ipv4']")
+                            if addr_node is not None and addr_node.get("addr"):
+                                active_ips.append(addr_node.get("addr"))
                 except ET.ParseError as e:
                     logger.error(f"Error parseando XML de quick_scan: {e}\nSalida XML parcial: {result.stdout[:500]}")
             elif result.returncode != 0:
