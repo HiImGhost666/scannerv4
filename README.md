@@ -165,17 +165,6 @@ NetScan es una solución integral para la gestión, monitorización y auditoría
 
 ### 🎨 Interfaz y Usabilidad
 
-- **Diseño moderno y profesional**:
-  - Interfaz basada en ttkbootstrap con tema personalizado
-  - Paleta de colores corporativos:
-    - Azul oscuro (#091F2C) - Color principal
-    - Rojo (#C10016) - Acentos y alertas
-    - Púrpura suave (#B4B5DF) - Elementos secundarios
-    - Azul medio (#7A99AC) - Navegación
-    - Azul claro (#A6BBC8) - Fondos alternativos
-  - Diseño responsivo adaptable a diferentes resoluciones
-  - Modo oscuro/claro conmutable
-
 - **Experiencia de usuario optimizada**:
   - Operaciones asíncronas para mantener la interfaz receptiva
   - Indicadores de progreso para tareas prolongadas
