@@ -1,6 +1,6 @@
 # NetScan: Herramienta Avanzada de Inventariado y Monitoreo de Red
 <div align="center">
-  <img src="NetScan/gui/resources/logo.png" alt="NetScan Logo">
+  <img src="miproyectored/gui/resources/logo.png" alt="NetScan Logo">
 </div>
 ## 🌐 Visión General
 
