@@ -17,7 +17,7 @@ import os
 import sys
 
 # Ensure the project root is in sys.path for relative imports when running the script directly.
-# This allows Python to find the 'miproyectored' module.
+# This allows Python to find the 'NetScan' module.
 _project_root_app_gui = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 if _project_root_app_gui not in sys.path:
     sys.path.insert(0, _project_root_app_gui)
