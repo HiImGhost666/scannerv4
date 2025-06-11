@@ -1,9 +1,5 @@
 # MiProyectoRed: Herramienta Avanzada de Inventariado y Monitoreo de Red
 
-<div align="center">
-  <img src="miproyectored/gui/resources/SG - Logo Laberit principal.png" alt="MiProyectoRed Banner">
-</div>
-
 ## 🌐 Visión General
 
 MiProyectoRed es una solución integral para la gestión, monitorización y auditoría de seguridad de redes corporativas. Esta herramienta combina capacidades avanzadas de escaneo de red con análisis de seguridad, visualización de topología y gestión de inventario, todo integrado en una interfaz gráfica intuitiva y moderna.
