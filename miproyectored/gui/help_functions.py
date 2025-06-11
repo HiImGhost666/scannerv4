@@ -216,7 +216,7 @@ def show_about_dialog(parent=None):
         layout.setSpacing(15)
 
         # Título
-        title = QLabel("LÃBERIT")
+        title = QLabel("NetScan")
         title.setStyleSheet("font-size: 24px; font-weight: bold; color: #091F2C;")
         title.setAlignment(Qt.AlignCenter)
         layout.addWidget(title)
@@ -290,7 +290,7 @@ def show_about_dialog(parent=None):
         layout.addStretch()
 
         # Copyright
-        copyright = QLabel("© 2025 LÃBERIT - Propulsando tus resultados")
+        copyright = QLabel("© 2025 NetScan")
         copyright.setStyleSheet("color: #7A99AC; font-size: 11px;")
         copyright.setAlignment(Qt.AlignCenter)
         layout.addWidget(copyright)

@@ -325,7 +325,7 @@ class NetworkScannerGUI(ttk.Window):
         logo_frame.pack(fill=X, pady=(0, 5))
 
         # Ruta al archivo de logo PNG
-        logo_path = os.path.join(os.path.dirname(__file__), 'resources', 'SG - Logo Laberit principal.png')
+        logo_path = os.path.join(os.path.dirname(__file__), 'resources', 'logo.png')
 
         # Cargar y mostrar el logo con tamaño fijo
         if os.path.exists(logo_path):
