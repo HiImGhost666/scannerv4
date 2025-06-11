@@ -1,8 +1,10 @@
-# MiProyectoRed: Herramienta Avanzada de Inventariado y Monitoreo de Red
-
+# NetScan: Herramienta Avanzada de Inventariado y Monitoreo de Red
+<div align="center">
+  <img src="NetScan/gui/resources/logo.png" alt="NetScan Logo">
+</div>
 ## 🌐 Visión General
 
-MiProyectoRed es una solución integral para la gestión, monitorización y auditoría de seguridad de redes corporativas. Esta herramienta combina capacidades avanzadas de escaneo de red con análisis de seguridad, visualización de topología y gestión de inventario, todo integrado en una interfaz gráfica intuitiva y moderna.
+NetScan es una solución integral para la gestión, monitorización y auditoría de seguridad de redes corporativas. Esta herramienta combina capacidades avanzadas de escaneo de red con análisis de seguridad, visualización de topología y gestión de inventario, todo integrado en una interfaz gráfica intuitiva y moderna.
 
 ### Diseñada para profesionales de TI que necesitan:
 
@@ -266,8 +268,8 @@ logging
 
 3. **Clonar o descargar el repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/miproyectored.git
-   cd miproyectored
+   git clone https://github.com/tu-usuario/NetScan.git
+   cd NetScan
    ```
 
 4. **Instalar dependencias Python**:
@@ -302,10 +304,10 @@ pip install -r requirements.txt
 
 ```bash
 # Construir la imagen
-docker build -t miproyectored .
+docker build -t NetScan .
 
 # Ejecutar el contenedor
-docker run -d --name scanner-red -p 8080:8080 --network host miproyectored
+docker run -d --name scanner-red -p 8080:8080 --network host NetScan
 ```
 
 ## 🎮 Guía de Uso
@@ -396,7 +398,7 @@ El monitoreo en tiempo real utiliza diversas técnicas:
 
 ## 🔌 Integración con Otras Herramientas
 
-MiProyectoRed está diseñado para integrarse con otras herramientas de gestión y seguridad:
+NetScan está diseñado para integrarse con otras herramientas de gestión y seguridad:
 
 - **Exportación para SIEM**: Formatos compatibles con sistemas SIEM populares.
 - **API REST**: Interfaz programática para integración con otras aplicaciones (próximamente).
@@ -407,7 +409,7 @@ MiProyectoRed está diseñado para integrarse con otras herramientas de gestión
 ## 📚 Estructura del Proyecto
 
 ```
-miproyectored/
+NetScan/
 ├── auth/                 # Gestión de autenticación y credenciales
 ├── controller/           # Controladores de la aplicación
 ├── export/               # Módulos de exportación e informes
@@ -431,7 +433,7 @@ miproyectored/
 
 ## 🤝 Contribución
 
-¡Las contribuciones son bienvenidas! Si deseas mejorar MiProyectoRed:
+¡Las contribuciones son bienvenidas! Si deseas mejorar NetScan:
 
 1. Haz un fork del repositorio
 2. Crea una rama para tu característica (`git checkout -b feature/amazing-feature`)
@@ -455,5 +457,5 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE par
 
 <div align="center">
   <p>Desarrollado por los alumnos en prácticas</p>
-  <p style="color: #091F2C;">© 2025 MiProyectoRed - Todos los derechos reservados</p>
+  <p style="color: #091F2C;">© 2025 NetScan - Todos los derechos reservados</p>
 </div>
