@@ -399,17 +399,70 @@ NetScan está diseñado para integrarse con otras herramientas de gestión y seg
 
 ```
 NetScan/
-├── auth/                 # Gestión de autenticación y credenciales
-├── controller/           # Controladores de la aplicación
-├── export/               # Módulos de exportación e informes
-├── gui/                  # Interfaz gráfica de usuario
-├── inventory/            # Gestión de inventario y base de datos
-├── model/                # Modelos de datos
-├── risk/                 # Análisis de riesgos y seguridad
-├── scanner/              # Motor de escaneo y descubrimiento
-├── util/                 # Utilidades comunes
-├── main.py               # Punto de entrada principal
-└── network_inventory.db  # Base de datos SQLite
+│
+├── main.py  # Punto de entrada principal de la aplicación
+│
+└── miproyectored/  # Paquete principal
+    │
+    # Módulo de autenticación y credenciales
+    ├── auth/
+    │   └── network_credentials.py  # Manejo de credenciales de red
+    │
+    # Exportación de informes
+    ├── export/
+    │   └── html_exporter.py  # Generación de informes en HTML
+    │
+    # Interfaz gráfica
+    ├── gui/
+    │   ├── app_gui.py  # Interfaz principal de la aplicación
+    │   ├── help_functions.py  # Funciones auxiliares para la GUI
+    │   ├── network_inventory.db  # Base de datos local
+    │   ├── network_scanner_gui.log  # Archivo de logs
+    │   │
+    │   └── resources/  # Recursos de la interfaz
+    │       ├── logo.png  # Logo de la aplicación
+    │       │
+    │       # Documentación de ayuda
+    │       ├── help/
+    │       │   ├── acerca_de.html  # Información sobre la aplicación
+    │       │   ├── faq.html  # Preguntas frecuentes
+    │       │   ├── quick_guide.html  # Guía rápida
+    │       │   ├── tutorials.html  # Tutoriales
+    │       │   └── user_manual.html  # Manual de usuario completo
+    │       │
+    │       # Visualización de topología de red
+    │       └── topologia/
+    │           ├── topology.html  # Visualizador de topología
+    │           └── img/  # Imágenes para la topología
+    │
+    # Gestión de inventario
+    ├── inventory/
+    │   └── inventory_manager.py  # Manejo del inventario de red
+    │
+    # Modelos de datos
+    ├── model/
+    │   ├── device.py  # Modelo de dispositivo de red
+    │   └── network_report.py  # Estructura de informes
+    │
+    # Análisis de riesgos
+    ├── risk/
+    │   └── risk_analyzer.py  # Análisis de vulnerabilidades
+    │
+    # Módulo de escaneo
+    ├── scanner/
+    │   ├── nmap_scanner.py  # Escaneo con Nmap
+    │   ├── snmp_client.py  # Cliente SNMP
+    │   ├── snmp_scanner.py  # Escaneo SNMP
+    │   ├── ssh_client.py  # Conexión SSH
+    │   ├── ssh_scanner.py  # Escaneo vía SSH
+    │   ├── wmi_client.py  # Cliente WMI
+    │   └── wmi_scanner.py  # Escaneo WMI
+    │
+    # Utilidades
+    └── util/
+        ├── data_normalizer.py  # Normalización de datos
+        ├── mac_manufacturer_manager.py  # Gestión de fabricantes por MAC
+        └── network_utils.py  # Utilidades de red
 ```
 
 ## 📜 Notas de Seguridad
